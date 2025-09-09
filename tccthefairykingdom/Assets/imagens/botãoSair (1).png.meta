@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e3bbe6727925c4d4b8a846908d512932
+guid: 2495065953845264d9984c313826ca1b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1352286224650603416
-    second: "bot\xE3oSair_0"
+      213: 6792067956103310854
+    second: "bot\xE3oSair (1)_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "bot\xE3oSair_0"
+      name: "bot\xE3oSair (1)_0"
       rect:
         serializedVersion: 2
-        x: 162
-        y: 477
-        width: 540
-        height: 180
+        x: 161
+        y: 475
+        width: 543
+        height: 184
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2f07124324085f643b54a21bb3364f89
-      internalID: 1216728740
+      spriteID: 60ee9d5f1d5424e50800000000000000
+      internalID: 6792067956103310854
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 46222750b7ebaa145bfcc52768413fb7
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "bot\xE3oSair_0": 1216728740
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
