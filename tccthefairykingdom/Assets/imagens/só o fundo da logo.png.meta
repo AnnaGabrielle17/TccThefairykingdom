@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "s\xF3 o fundo da logo_0": -8432397310250348778
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

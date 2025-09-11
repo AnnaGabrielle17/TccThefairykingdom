@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      logotipoFairy_0: -5233831989842740560
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
