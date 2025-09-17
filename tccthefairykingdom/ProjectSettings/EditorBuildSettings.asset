@@ -10,6 +10,9 @@ EditorBuildSettings:
     guid: feafc4646dce8944fa59c8ddd8db94c8
   - enabled: 1
     path: Assets/Scenes/Menu.unity
+    guid: ffd728bc88e5acb4eb3070ccc8e3b919
+  - enabled: 1
+    path: Assets/Scenes/Fase1.unity
     guid: ea1c21e0e9ab8b94e8a643b599cfc085
   - enabled: 0
     path: Assets/Scenes/Jogo.unity
