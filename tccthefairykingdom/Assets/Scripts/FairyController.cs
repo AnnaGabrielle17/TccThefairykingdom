@@ -11,9 +11,9 @@ public class FairyController : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            anim.SetTrigger("Attack");
-        }
+       if (Input.GetKeyDown(KeyCode.W))
+    {
+        anim.SetTrigger("Attack");
+    }
     }
 }
