@@ -67,7 +67,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -81,7 +81,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -160,9 +160,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 728
-        y: 6155
+        y: 6152
         width: 119
-        height: 128
+        height: 134
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,9 +182,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2528
-        y: 6155
+        y: 6152
         width: 119
-        height: 128
+        height: 134
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: esferasdeCalor_2
       rect:
         serializedVersion: 2
-        x: 4319
-        y: 6146
-        width: 137
-        height: 146
+        x: 4317
+        y: 6145
+        width: 141
+        height: 148
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +225,10 @@ TextureImporter:
       name: esferasdeCalor_3
       rect:
         serializedVersion: 2
-        x: 719
-        y: 4346
-        width: 137
-        height: 146
+        x: 717
+        y: 4345
+        width: 141
+        height: 148
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,9 +248,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2510
-        y: 4337
+        y: 4335
         width: 155
-        height: 164
+        height: 169
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,9 +270,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 4310
-        y: 4337
+        y: 4335
         width: 155
-        height: 164
+        height: 169
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,9 +292,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 710
-        y: 2537
+        y: 2535
         width: 155
-        height: 164
+        height: 169
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,10 +313,10 @@ TextureImporter:
       name: esferasdeCalor_7
       rect:
         serializedVersion: 2
-        x: 2492
-        y: 2519
-        width: 191
-        height: 200
+        x: 2489
+        y: 2517
+        width: 197
+        height: 204
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,10 +335,10 @@ TextureImporter:
       name: esferasdeCalor_8
       rect:
         serializedVersion: 2
-        x: 4292
-        y: 2519
-        width: 191
-        height: 200
+        x: 4289
+        y: 2517
+        width: 197
+        height: 204
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,10 +357,10 @@ TextureImporter:
       name: esferasdeCalor_9
       rect:
         serializedVersion: 2
-        x: 683
+        x: 682
         y: 710
-        width: 209
-        height: 218
+        width: 211
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -379,10 +379,10 @@ TextureImporter:
       name: esferasdeCalor_10
       rect:
         serializedVersion: 2
-        x: 2483
+        x: 2482
         y: 710
-        width: 209
-        height: 218
+        width: 211
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -401,7 +401,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e7a729da13e364747a8aa4cbbd42e582
     internalID: 0
     vertices: []
     indices: 
@@ -410,7 +410,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      esferasdeCalor_0: 7941113520674966115
+      esferasdeCalor_1: 1572333048606707887
+      esferasdeCalor_10: -7666100022601858780
+      esferasdeCalor_2: 6310341593693072037
+      esferasdeCalor_3: 8810948579549482761
+      esferasdeCalor_4: -8310205623400957820
+      esferasdeCalor_5: -2177365089533446268
+      esferasdeCalor_6: -4603456093381047848
+      esferasdeCalor_7: 3973113006684438176
+      esferasdeCalor_8: 1094042861027365030
+      esferasdeCalor_9: 8597192662124423485
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

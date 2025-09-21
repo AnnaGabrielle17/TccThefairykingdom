@@ -61,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -153,10 +153,10 @@ TextureImporter:
       name: guardaSolAbreFecha_0
       rect:
         serializedVersion: 2
-        x: 692
-        y: 4220
-        width: 398
-        height: 164
+        x: 691
+        y: 4219
+        width: 401
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,9 +176,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2492
-        y: 4220
+        y: 4219
         width: 398
-        height: 164
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,9 +197,9 @@ TextureImporter:
       name: guardaSolAbreFecha_2
       rect:
         serializedVersion: 2
-        x: 4292
+        x: 4290
         y: 4211
-        width: 398
+        width: 401
         height: 182
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -219,10 +219,10 @@ TextureImporter:
       name: guardaSolAbreFecha_3
       rect:
         serializedVersion: 2
-        x: 692
-        y: 2375
-        width: 398
-        height: 254
+        x: 691
+        y: 2373
+        width: 401
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,9 +242,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2492
-        y: 2330
+        y: 2328
         width: 398
-        height: 335
+        height: 338
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,10 +263,10 @@ TextureImporter:
       name: guardaSolAbreFecha_5
       rect:
         serializedVersion: 2
-        x: 4292
-        y: 2321
-        width: 398
-        height: 353
+        x: 4290
+        y: 2320
+        width: 401
+        height: 354
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,10 +285,10 @@ TextureImporter:
       name: guardaSolAbreFecha_6
       rect:
         serializedVersion: 2
-        x: 692
-        y: 476
-        width: 398
-        height: 470
+        x: 691
+        y: 475
+        width: 401
+        height: 472
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,9 +308,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2492
-        y: 476
+        y: 475
         width: 398
-        height: 470
+        height: 472
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,10 +329,10 @@ TextureImporter:
       name: guardaSolAbreFecha_8
       rect:
         serializedVersion: 2
-        x: 4292
-        y: 476
-        width: 398
-        height: 470
+        x: 4290
+        y: 475
+        width: 401
+        height: 472
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,7 +351,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f530b2cd627a5ec43ba9f782c0e2d891
     internalID: 0
     vertices: []
     indices: 
@@ -360,7 +360,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      guardaSolAbreFecha_0: 7122694928342406981
+      guardaSolAbreFecha_1: -4481115645819779769
+      guardaSolAbreFecha_2: 2822691624429825795
+      guardaSolAbreFecha_3: 6859896609902809831
+      guardaSolAbreFecha_4: 2296895773667043249
+      guardaSolAbreFecha_5: 3210257813374825627
+      guardaSolAbreFecha_6: -3213701988957227112
+      guardaSolAbreFecha_7: 429322690341986760
+      guardaSolAbreFecha_8: -8373257468450952241
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
