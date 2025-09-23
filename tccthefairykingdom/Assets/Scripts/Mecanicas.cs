@@ -18,5 +18,13 @@ public class Mecanicas : MonoBehaviour
     {
         transform.Translate(Vector3.left * velocidadeDaMecanica * Time.deltaTime);
     }
-
+    
+     public void OnTriggerEnter2D(Collider2D other)
+{
+    if (other.CompareTag("Player"))
+    {
+        Debug.Log("Jogador levou dano!");
+        // aqui você pode chamar a função de reduzir vida do jogador
+    }
+}
 }
