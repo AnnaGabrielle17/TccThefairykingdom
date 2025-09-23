@@ -140,6 +140,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -147,10 +160,10 @@ TextureImporter:
       name: FadaMarisolVoando__0
       rect:
         serializedVersion: 2
-        x: 47
-        y: 4919
-        width: 2102
-        height: 2198
+        x: 46
+        y: 4918
+        width: 2106
+        height: 2201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +182,10 @@ TextureImporter:
       name: FadaMarisolVoando__1
       rect:
         serializedVersion: 2
-        x: 2447
+        x: 2443
         y: 4943
-        width: 2126
-        height: 2198
+        width: 2131
+        height: 2201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +204,10 @@ TextureImporter:
       name: FadaMarisolVoando__2
       rect:
         serializedVersion: 2
-        x: 4835
-        y: 5051
-        width: 2162
-        height: 2138
+        x: 4834
+        y: 5048
+        width: 2166
+        height: 2141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,7 +229,7 @@ TextureImporter:
         x: 35
         y: 2651
         width: 2162
-        height: 2138
+        height: 2141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,10 +248,10 @@ TextureImporter:
       name: FadaMarisolVoando__4
       rect:
         serializedVersion: 2
-        x: 2435
+        x: 2433
         y: 2651
-        width: 2162
-        height: 2138
+        width: 2165
+        height: 2141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,10 +270,10 @@ TextureImporter:
       name: FadaMarisolVoando__5
       rect:
         serializedVersion: 2
-        x: 4847
-        y: 2543
-        width: 2126
-        height: 2198
+        x: 4845
+        y: 2542
+        width: 2130
+        height: 2201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,10 +292,10 @@ TextureImporter:
       name: FadaMarisolVoando__6
       rect:
         serializedVersion: 2
-        x: 47
-        y: 119
-        width: 2102
-        height: 2198
+        x: 46
+        y: 120
+        width: 2106
+        height: 2200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,7 +314,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b8182ebfdd33be84ca7176e08e07a7f1
     internalID: 0
     vertices: []
     indices: 

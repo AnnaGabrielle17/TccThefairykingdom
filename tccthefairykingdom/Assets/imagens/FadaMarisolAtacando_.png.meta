@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -143,6 +143,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -150,10 +163,10 @@ TextureImporter:
       name: FadaMarisolAtacando__0
       rect:
         serializedVersion: 2
-        x: 47
-        y: 4919
-        width: 2102
-        height: 2198
+        x: 46
+        y: 4918
+        width: 2106
+        height: 2201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +185,10 @@ TextureImporter:
       name: FadaMarisolAtacando__1
       rect:
         serializedVersion: 2
-        x: 2495
+        x: 2493
         y: 4943
-        width: 2078
-        height: 2198
+        width: 2081
+        height: 2201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +207,10 @@ TextureImporter:
       name: FadaMarisolAtacando__2
       rect:
         serializedVersion: 2
-        x: 4931
-        y: 5051
-        width: 2066
-        height: 2138
+        x: 4929
+        y: 5048
+        width: 2071
+        height: 2141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +229,10 @@ TextureImporter:
       name: FadaMarisolAtacando__3
       rect:
         serializedVersion: 2
-        x: 131
+        x: 130
         y: 2651
-        width: 2066
-        height: 2138
+        width: 2067
+        height: 2141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,10 +251,10 @@ TextureImporter:
       name: FadaMarisolAtacando__4
       rect:
         serializedVersion: 2
-        x: 2531
+        x: 2528
         y: 2651
-        width: 2066
-        height: 2138
+        width: 2070
+        height: 2141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,10 +273,10 @@ TextureImporter:
       name: FadaMarisolAtacando__5
       rect:
         serializedVersion: 2
-        x: 4931
+        x: 4929
         y: 2651
-        width: 2066
-        height: 2138
+        width: 2071
+        height: 2141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,9 +296,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 95
-        y: 143
+        y: 141
         width: 2078
-        height: 2198
+        height: 2200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,10 +317,10 @@ TextureImporter:
       name: FadaMarisolAtacando__7
       rect:
         serializedVersion: 2
-        x: 2447
-        y: 119
-        width: 2102
-        height: 2198
+        x: 2443
+        y: 120
+        width: 2106
+        height: 2200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,7 +339,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1dafd99cc7191d84d8f42e9da2db2781
     internalID: 0
     vertices: []
     indices: 
@@ -335,7 +348,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FadaMarisolAtacando__0: 8644748962913596527
+      FadaMarisolAtacando__1: 3411471130009899756
+      FadaMarisolAtacando__2: 8983622164993066227
+      FadaMarisolAtacando__3: -5970212306985242203
+      FadaMarisolAtacando__4: -4422844018050359196
+      FadaMarisolAtacando__5: -5482353755428061486
+      FadaMarisolAtacando__6: -6346305609873033150
+      FadaMarisolAtacando__7: 5370003935265297468
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
