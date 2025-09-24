@@ -2,19 +2,26 @@ using UnityEngine;
 
 public class EnemyFairy : MonoBehaviour
 {
-   public float speed = 2f;         // Velocidade de movimento
-    public float moveRange = 2f;     // Quanto ela sobe e desce
-    private Vector3 startPos;
+   public float horizontalSpeed = 2f;  // velocidade horizontal
+       public float verticalSpeed = 2f;    // velocidade de sobe/desce
+       public float verticalRange = 1f;    // altura do movimento
+       private float startY;
+   
+       void Start()
+       {
+           startY = transform.position.y; // salva a posição inicial no eixo Y
+       }
+   
+       void Update()
+       {
+           // Movimento horizontal constante (para a esquerda)
+           transform.Translate(Vector2.left * horizontalSpeed * Time.deltaTime);
+   
+           // Movimento vertical em onda (sobe e desce)
+           float newY = startY + Mathf.Sin(Time.time * verticalSpeed) * verticalRange;
+   
+           // Atualiza posição
+           transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+       }
+   }
 
-    void Start()
-    {
-        startPos = transform.position;
-    }
-
-    void Update()
-    {
-        // Movimento vertical automático (sobe e desce em loop)
-        float newY = startPos.y + Mathf.Sin(Time.time * speed) * moveRange;
-        transform.position = new Vector3(startPos.x, newY, startPos.z);
-    }
-}
