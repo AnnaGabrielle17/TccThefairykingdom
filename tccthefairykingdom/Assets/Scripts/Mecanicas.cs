@@ -2,29 +2,19 @@ using UnityEngine;
 
 public class Mecanicas : MonoBehaviour
 {
-    public float velocidadeDaMecanica;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float velocidade = 2f;
+    private Rigidbody2D rb;
+
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        MovimentarMecanica();
+        // sempre anda para a esquerda
+        rb.linearVelocity = new Vector2(-velocidade, rb.linearVelocity.y);
     }
-    private void MovimentarMecanica()
-    {
-        transform.Translate(Vector3.left * velocidadeDaMecanica * Time.deltaTime);
     }
-    
-     public void OnTriggerEnter2D(Collider2D other)
-{
-    if (other.CompareTag("Player"))
-    {
-        Debug.Log("Jogador levou dano!");
-        // aqui você pode chamar a função de reduzir vida do jogador
-    }
-}
-}
+
+
