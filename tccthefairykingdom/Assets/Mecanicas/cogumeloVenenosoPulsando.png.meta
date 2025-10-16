@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: 79f6f895d40731d44ad30cbc030070cd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7183932434597816930
+    second: cogumeloVenenosoPulsando_0
+  - first:
+      213: -2346149193496184801
+    second: cogumeloVenenosoPulsando_1
+  - first:
+      213: 6665902518927230244
+    second: cogumeloVenenosoPulsando_2
+  - first:
+      213: 6503325218880056519
+    second: cogumeloVenenosoPulsando_3
+  - first:
+      213: -697641179580686805
+    second: cogumeloVenenosoPulsando_4
+  - first:
+      213: 5405797011748263846
+    second: cogumeloVenenosoPulsando_5
+  - first:
+      213: 4135480294960662909
+    second: cogumeloVenenosoPulsando_6
+  - first:
+      213: -1422847426815148948
+    second: cogumeloVenenosoPulsando_7
+  - first:
+      213: 7200004788718617705
+    second: cogumeloVenenosoPulsando_8
+  - first:
+      213: -1250587281095399238
+    second: cogumeloVenenosoPulsando_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cogumeloVenenosoPulsando_0
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 5579
+        width: 710
+        height: 1136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e95d369438b8d4c90800000000000000
+      internalID: -7183932434597816930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cogumeloVenenosoPulsando_1
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 5593
+        width: 725
+        height: 1132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f18379b2dbdc07fd0800000000000000
+      internalID: -2346149193496184801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cogumeloVenenosoPulsando_2
+      rect:
+        serializedVersion: 2
+        x: 4103
+        y: 5604
+        width: 770
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4250a04060b028c50800000000000000
+      internalID: 6665902518927230244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cogumeloVenenosoPulsando_3
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 3793
+        width: 815
+        height: 1178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cc6f2a94d3704a50800000000000000
+      internalID: 6503325218880056519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cogumeloVenenosoPulsando_4
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 3793
+        width: 815
+        height: 1178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2e986e1b0b7156f0800000000000000
+      internalID: -697641179580686805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cogumeloVenenosoPulsando_5
+      rect:
+        serializedVersion: 2
+        x: 4075
+        y: 3793
+        width: 815
+        height: 1178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a79f15bdbf350b40800000000000000
+      internalID: 5405797011748263846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cogumeloVenenosoPulsando_6
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 1993
+        width: 815
+        height: 1178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7902c4ea6d246930800000000000000
+      internalID: 4135480294960662909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cogumeloVenenosoPulsando_7
+      rect:
+        serializedVersion: 2
+        x: 2303
+        y: 2004
+        width: 770
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6cba1bcdc7014ce0800000000000000
+      internalID: -1422847426815148948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cogumeloVenenosoPulsando_8
+      rect:
+        serializedVersion: 2
+        x: 4120
+        y: 1993
+        width: 725
+        height: 1132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9644fa4453e8be360800000000000000
+      internalID: 7200004788718617705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cogumeloVenenosoPulsando_9
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 179
+        width: 710
+        height: 1136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab8efa56e7505aee0800000000000000
+      internalID: -1250587281095399238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f68357b8637435840bd73539b91884e4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      cogumeloVenenosoPulsando_0: -7183932434597816930
+      cogumeloVenenosoPulsando_1: -2346149193496184801
+      cogumeloVenenosoPulsando_2: 6665902518927230244
+      cogumeloVenenosoPulsando_3: 6503325218880056519
+      cogumeloVenenosoPulsando_4: -697641179580686805
+      cogumeloVenenosoPulsando_5: 5405797011748263846
+      cogumeloVenenosoPulsando_6: 4135480294960662909
+      cogumeloVenenosoPulsando_7: -1422847426815148948
+      cogumeloVenenosoPulsando_8: 7200004788718617705
+      cogumeloVenenosoPulsando_9: -1250587281095399238
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
