@@ -442,7 +442,7 @@ Transform:
   m_GameObject: {fileID: 558402193}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.205, y: 0.8803, z: 0}
+  m_LocalPosition: {x: 6.205, y: 1.24, z: 0}
   m_LocalScale: {x: 0.2723925, y: 0.2723925, z: 0.2723925}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -796,8 +796,9 @@ GameObject:
   - component: {fileID: 1041778170}
   - component: {fileID: 1041778169}
   - component: {fileID: 1041778168}
-  - component: {fileID: 1041778167}
   - component: {fileID: 1041778171}
+  - component: {fileID: 1041778172}
+  - component: {fileID: 1041778173}
   m_Layer: 3
   m_Name: Cogumelo
   m_TagString: Untagged
@@ -805,26 +806,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1041778167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041778166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88f5ebfb9a9e53d4c813c10a74dc03ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bubblePrefab: {fileID: 0}
-  spawnInterval: 0.4
-  radius: 0.25
-  speedMin: 0.6
-  speedMax: 1.2
-  lifeMin: 1.2
-  lifeMax: 2.4
-  spawnOnStart: 1
 --- !u!95 &1041778168
 Animator:
   serializedVersion: 7
@@ -911,7 +892,7 @@ Transform:
   m_GameObject: {fileID: 1041778166}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.3945, y: -0.1511, z: 0}
+  m_LocalPosition: {x: -3.3945, y: -0.39, z: 0}
   m_LocalScale: {x: 0.3207474, y: 0.3207474, z: 0.3207474}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -945,6 +926,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1041778172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041778166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2e20c135bbca024fad0f349f6372e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particulas: {fileID: 1520969787}
+  bubblePrefab: {fileID: 0}
+  bubbleSpawnPoint: {fileID: 0}
+  burstCount: 8
+  prefabBurstInterval: 0.03
+  prefabRadius: 0.12
+--- !u!114 &1041778173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041778166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493e6e17d2b3d8042b7fb754293594c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!1 &1520969784
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,7 +984,7 @@ Transform:
   m_GameObject: {fileID: 1520969784}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1190,8 +1202,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 1.2
+      minMaxState: 0
+      scalar: 0.2
       minScalar: 0.4
       maxCurve:
         serializedVersion: 2
@@ -1633,7 +1645,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.2
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2636,7 +2648,7 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -2693,7 +2705,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: -0.8
       minScalar: 0
       maxCurve:
         serializedVersion: 2
