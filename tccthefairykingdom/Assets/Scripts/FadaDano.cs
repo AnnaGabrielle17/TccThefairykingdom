@@ -123,4 +123,37 @@ public class FadaDano : MonoBehaviour
         vida = Mathf.Clamp(vida + quantidade, 0, maxVida);
         AtualizarBarraVisualInstantanea();
     }
+    // adiciona na classe FadaDano
+public void CurarVisivel(int quantidade, float delayEntrePassosLocal = 0.05f)
+{
+    if (quantidade <= 0) return;
+    StartCoroutine(CurarStepsVisiveis(quantidade, delayEntrePassosLocal));
+}
+
+private IEnumerator CurarStepsVisiveis(int quantidade, float delay)
+{
+    // aumenta vida internamente passo a passo e atualiza o frameCycler visualmente
+    for (int i = 0; i < quantidade; i++)
+    {
+        int novaVida = Mathf.Clamp(vida + 1, 0, maxVida);
+        if (novaVida == vida) // já está cheio
+            break;
+
+        vida = novaVida;
+
+        if (usarStepDecreaseVisivel && frameCycler != null)
+        {
+            frameCycler.IncreaseOne();
+        }
+        else
+        {
+            AtualizarBarraVisualInstantanea();
+        }
+
+        yield return new WaitForSeconds(delay);
+    }
+
+    // garante sincronização final
+    AtualizarBarraVisualInstantanea();
+}
 }
