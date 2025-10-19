@@ -37,17 +37,23 @@ public class FadaDano : MonoBehaviour
         AtualizarBarraVisualInstantanea();
     }
 
+    // agora usa o método centralizado TryTakeDamageFromExternal
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Mecanica"))
         {
-            if (Time.time >= tempoUltimoDano + intervaloDano)
-            {
-                TomarDano(1);
-                tempoUltimoDano = Time.time;
-                StartCoroutine(PiscarDano());
-            }
+            TryTakeDamageFromExternal(1);
         }
+    }
+
+    // Método público centralizado para aplicar dano de fontes externas (mecânicas, partículas, triggers)
+    public void TryTakeDamageFromExternal(int quantidade)
+    {
+        if (Time.time < tempoUltimoDano + intervaloDano) return;
+
+        tempoUltimoDano = Time.time;
+        TomarDano(quantidade);
+        StartCoroutine(PiscarDano());
     }
 
     public void TomarDano(int quantidade)
@@ -123,37 +129,35 @@ public class FadaDano : MonoBehaviour
         vida = Mathf.Clamp(vida + quantidade, 0, maxVida);
         AtualizarBarraVisualInstantanea();
     }
-    // adiciona na classe FadaDano
-public void CurarVisivel(int quantidade, float delayEntrePassosLocal = 0.05f)
-{
-    if (quantidade <= 0) return;
-    StartCoroutine(CurarStepsVisiveis(quantidade, delayEntrePassosLocal));
-}
 
-private IEnumerator CurarStepsVisiveis(int quantidade, float delay)
-{
-    // aumenta vida internamente passo a passo e atualiza o frameCycler visualmente
-    for (int i = 0; i < quantidade; i++)
+    public void CurarVisivel(int quantidade, float delayEntrePassosLocal = 0.05f)
     {
-        int novaVida = Mathf.Clamp(vida + 1, 0, maxVida);
-        if (novaVida == vida) // já está cheio
-            break;
-
-        vida = novaVida;
-
-        if (usarStepDecreaseVisivel && frameCycler != null)
-        {
-            frameCycler.IncreaseOne();
-        }
-        else
-        {
-            AtualizarBarraVisualInstantanea();
-        }
-
-        yield return new WaitForSeconds(delay);
+        if (quantidade <= 0) return;
+        StartCoroutine(CurarStepsVisiveis(quantidade, delayEntrePassosLocal));
     }
 
-    // garante sincronização final
-    AtualizarBarraVisualInstantanea();
-}
+    private IEnumerator CurarStepsVisiveis(int quantidade, float delay)
+    {
+        for (int i = 0; i < quantidade; i++)
+        {
+            int novaVida = Mathf.Clamp(vida + 1, 0, maxVida);
+            if (novaVida == vida) // já está cheio
+                break;
+
+            vida = novaVida;
+
+            if (usarStepDecreaseVisivel && frameCycler != null)
+            {
+                frameCycler.IncreaseOne();
+            }
+            else
+            {
+                AtualizarBarraVisualInstantanea();
+            }
+
+            yield return new WaitForSeconds(delay);
+        }
+
+        AtualizarBarraVisualInstantanea();
+    }
 }
