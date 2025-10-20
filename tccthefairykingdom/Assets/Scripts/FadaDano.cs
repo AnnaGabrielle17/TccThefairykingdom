@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FadaDano : MonoBehaviour
 {
-    [Header("Vida")]
+ [Header("Vida")]
     public int maxVida = 6;
     [Tooltip("-1 = inicializar automaticamente com maxVida")]
     public int vida = -1;
@@ -24,6 +24,13 @@ public class FadaDano : MonoBehaviour
     [Tooltip("Delay entre cada DecreaseOne quando usarStepDecreaseVisivel=true")]
     public float delayEntrePassos = 0.05f;
 
+    [Header("Debug / Teste")]
+    public bool enableDebugKeys = true; // pressionar K/L para testar em runtime
+
+    // controle de corrotina/estado para evitar race conditions
+    private Coroutine currentVisualCoroutine = null;
+    private bool isAnimating = false;
+
     private void Awake()
     {
         if (vida < 0) vida = maxVida;
@@ -33,11 +40,37 @@ public class FadaDano : MonoBehaviour
 
     private void Start()
     {
-        // sincroniza barra no início
+        // tentativa automática de encontrar frameCycler se não atribuído
+        if (frameCycler == null)
+        {
+            frameCycler = FindObjectOfType<DebugFrameCycler>();
+        }
+
         AtualizarBarraVisualInstantanea();
     }
 
-    // agora usa o método centralizado TryTakeDamageFromExternal
+    private void Update()
+    {
+        if (!enableDebugKeys) return;
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            TomarDano(1);
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Curar(1);
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            if (frameCycler != null) frameCycler.DecreaseOne();
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            if (frameCycler != null) frameCycler.IncreaseOne();
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Mecanica"))
@@ -67,9 +100,17 @@ public class FadaDano : MonoBehaviour
 
         if (passos > 0)
         {
+            // cancela qualquer animação visual em progresso (cura/dano)
+            if (currentVisualCoroutine != null)
+            {
+                StopCoroutine(currentVisualCoroutine);
+                currentVisualCoroutine = null;
+                isAnimating = false;
+            }
+
             if (usarStepDecreaseVisivel && frameCycler != null)
             {
-                StartCoroutine(DecreaseStepsVisiveis(passos));
+                currentVisualCoroutine = StartCoroutine(DecreaseStepsVisiveis(passos));
             }
             else
             {
@@ -82,31 +123,93 @@ public class FadaDano : MonoBehaviour
         if (vida <= 0) Morrer();
     }
 
+    // --- Substituída: versão que caminha até o índice alvo (resolve problemas de sincronização) ---
     private IEnumerator DecreaseStepsVisiveis(int passos)
     {
-        for (int i = 0; i < passos; i++)
+        isAnimating = true;
+
+        if (frameCycler == null || frameCycler.frames == null || frameCycler.frames.Length == 0)
         {
-            if (frameCycler != null) frameCycler.DecreaseOne();
-            yield return new WaitForSeconds(delayEntrePassos);
+            isAnimating = false;
+            yield break;
         }
-        AtualizarBarraVisualInstantanea();
+
+        int last = frameCycler.frames.Length - 1;
+
+        // índice alvo baseado no valor atual de 'vida'
+        int targetIndex = Mathf.RoundToInt(last * ((float)vida / Mathf.Max(1, maxVida)));
+
+        // índice atual do frameCycler (fonte da verdade visual)
+        int currentIndex = frameCycler.GetIndex();
+
+        // mover passo-a-passo até o índice alvo de forma determinística
+        if (frameCycler.framesAreInverted)
+        {
+            // invertido: full = 0, empty = last
+            while (currentIndex < targetIndex)
+            {
+                currentIndex++;
+                frameCycler.SetIndex(currentIndex);
+                yield return new WaitForSeconds(delayEntrePassos);
+            }
+            while (currentIndex > targetIndex)
+            {
+                currentIndex--;
+                frameCycler.SetIndex(currentIndex);
+                yield return new WaitForSeconds(delayEntrePassos);
+            }
+        }
+        else
+        {
+            // padrão: 0 = vazio ... last = cheio
+            while (currentIndex > targetIndex)
+            {
+                currentIndex--;
+                frameCycler.SetIndex(currentIndex);
+                yield return new WaitForSeconds(delayEntrePassos);
+            }
+            while (currentIndex < targetIndex)
+            {
+                currentIndex++;
+                frameCycler.SetIndex(currentIndex);
+                yield return new WaitForSeconds(delayEntrePassos);
+            }
+        }
+
+        // garante que termine exatamente no alvo
+        frameCycler.SetIndex(targetIndex);
+
+        isAnimating = false;
+        currentVisualCoroutine = null;
     }
+    // --- fim DecreaseStepsVisiveis ---
 
     private void AtualizarBarraVisualInstantanea()
     {
-        if (frameCycler != null && frameCycler.frames != null && frameCycler.frames.Length > 0)
+        if (isAnimating) return;
+
+        if (frameCycler == null)
         {
-            int last = frameCycler.frames.Length - 1;
-            float fraction = (float)vida / Mathf.Max(1, maxVida); // 0..1
-            int index = Mathf.RoundToInt(last * fraction);
-            frameCycler.SetIndex(index);
+            Debug.LogWarning("[FadaDano] frameCycler == null em AtualizarBarraVisualInstantanea");
+            return;
         }
+
+        if (frameCycler.frames == null || frameCycler.frames.Length == 0)
+        {
+            Debug.LogWarning("[FadaDano] frameCycler.frames inválido em AtualizarBarraVisualInstantanea");
+            return;
+        }
+
+        int last = frameCycler.frames.Length - 1;
+        float fraction = (float)vida / Mathf.Max(1, maxVida);
+        int index = Mathf.RoundToInt(last * fraction);
+        frameCycler.SetIndex(index);
     }
 
     private void Morrer()
     {
         Debug.Log("Fada morreu!");
-        // animação de morte, desativar, etc.
+        // se quiser: GameOverController.Instance.ShowGameOver();
     }
 
     private IEnumerator PiscarDano()
@@ -126,24 +229,43 @@ public class FadaDano : MonoBehaviour
     public void Curar(int quantidade)
     {
         if (quantidade <= 0) return;
+
+        if (currentVisualCoroutine != null)
+        {
+            StopCoroutine(currentVisualCoroutine);
+            currentVisualCoroutine = null;
+            isAnimating = false;
+        }
+
+        int vidaAntiga = vida;
         vida = Mathf.Clamp(vida + quantidade, 0, maxVida);
+        Debug.Log($"[FadaDano] Curar: vidaAntiga={vidaAntiga} => vida={vida}");
         AtualizarBarraVisualInstantanea();
     }
 
+    // cura visível por passos (um-por-um)
     public void CurarVisivel(int quantidade, float delayEntrePassosLocal = 0.05f)
     {
         if (quantidade <= 0) return;
-        StartCoroutine(CurarStepsVisiveis(quantidade, delayEntrePassosLocal));
+
+        if (currentVisualCoroutine != null)
+        {
+            StopCoroutine(currentVisualCoroutine);
+            currentVisualCoroutine = null;
+            isAnimating = false;
+        }
+
+        currentVisualCoroutine = StartCoroutine(CurarStepsVisiveis(quantidade, delayEntrePassosLocal));
     }
 
     private IEnumerator CurarStepsVisiveis(int quantidade, float delay)
     {
+        isAnimating = true;
+
         for (int i = 0; i < quantidade; i++)
         {
             int novaVida = Mathf.Clamp(vida + 1, 0, maxVida);
-            if (novaVida == vida) // já está cheio
-                break;
-
+            if (novaVida == vida) break;
             vida = novaVida;
 
             if (usarStepDecreaseVisivel && frameCycler != null)
@@ -159,5 +281,8 @@ public class FadaDano : MonoBehaviour
         }
 
         AtualizarBarraVisualInstantanea();
+        isAnimating = false;
+        currentVisualCoroutine = null;
     }
 }
+   

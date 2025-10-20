@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2574875988700888067, guid: 367b11ed557799c43b10d9d65d35f05d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.2
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: 2574875988700888067, guid: 367b11ed557799c43b10d9d65d35f05d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -320,7 +320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2574875988700888067, guid: 367b11ed557799c43b10d9d65d35f05d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.4
+      value: 19.78
       objectReference: {fileID: 0}
     - target: {fileID: 2574875988700888067, guid: 367b11ed557799c43b10d9d65d35f05d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -871,7 +871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2574875988700888067, guid: 367b11ed557799c43b10d9d65d35f05d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.03
+      value: -6.72
       objectReference: {fileID: 0}
     - target: {fileID: 2574875988700888067, guid: 367b11ed557799c43b10d9d65d35f05d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1882,7 +1882,7 @@ MonoBehaviour:
   - {fileID: 7913151281080650752, guid: 595e3f2425f6ec34db82ea6c56df5759, type: 3}
   - {fileID: -7971907271230261253, guid: 595e3f2425f6ec34db82ea6c56df5759, type: 3}
   - {fileID: 2751168257964595218, guid: 595e3f2425f6ec34db82ea6c56df5759, type: 3}
-  framesAreInverted: 1
+  framesAreInverted: 0
 --- !u!1 &1515337562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2322,6 +2322,7 @@ MonoBehaviour:
   frameCycler: {fileID: 1445403467}
   usarStepDecreaseVisivel: 1
   delayEntrePassos: 0.05
+  enableDebugKeys: 1
 --- !u!1 &1826654236
 GameObject:
   m_ObjectHideFlags: 0
