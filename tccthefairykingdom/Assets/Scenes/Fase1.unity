@@ -2581,7 +2581,7 @@ MonoBehaviour:
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -2609,11 +2609,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frames:
   - {fileID: -5502043956471043075, guid: 595e3f2425f6ec34db82ea6c56df5759, type: 3}
-  - {fileID: 7856078298056302662, guid: 595e3f2425f6ec34db82ea6c56df5759, type: 3}
-  - {fileID: 7293141396466371742, guid: 595e3f2425f6ec34db82ea6c56df5759, type: 3}
-  - {fileID: 7913151281080650752, guid: 595e3f2425f6ec34db82ea6c56df5759, type: 3}
+  - {fileID: -5860139993574734454, guid: 595e3f2425f6ec34db82ea6c56df5759, type: 3}
+  - {fileID: -6974739284987040131, guid: 595e3f2425f6ec34db82ea6c56df5759, type: 3}
+  - {fileID: -414121078039896213, guid: 595e3f2425f6ec34db82ea6c56df5759, type: 3}
   - {fileID: -7971907271230261253, guid: 595e3f2425f6ec34db82ea6c56df5759, type: 3}
-  - {fileID: 2751168257964595218, guid: 595e3f2425f6ec34db82ea6c56df5759, type: 3}
+  - {fileID: 6957568912709532560, guid: 595e3f2425f6ec34db82ea6c56df5759, type: 3}
   framesAreInverted: 0
 --- !u!1 &1515337562
 GameObject:

@@ -1,9 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DebugFrameCycler : MonoBehaviour
 {
-   [Tooltip("Sprites: 0 = vazio ... last = cheio (ou marque inverted se o contrário)")]
+    [Tooltip("Sprites: 0 = vazio ... last = cheio (ou marque inverted se o contrário)")]
     public Sprite[] frames;
 
     [Tooltip("Marque se frames[0] = cheio e frames[last] = vazio")]
@@ -15,9 +16,14 @@ public class DebugFrameCycler : MonoBehaviour
     private void Awake()
     {
         img = GetComponent<Image>();
+
         // inicia cheio automaticamente
         if (frames != null && frames.Length > 0)
             idx = framesAreInverted ? 0 : frames.Length - 1;
+
+        // valida e tenta corrigir problemas comuns (duplicatas, wrapmode, tiled)
+        ValidateAndFixFrames();
+
         UpdateSprite();
     }
 
@@ -92,4 +98,68 @@ public class DebugFrameCycler : MonoBehaviour
 
     // retorna índice atual (útil para sincronização)
     public int GetIndex() => idx;
+
+
+    // ================== validação / correção automática ==================
+    // rotina pequena que tenta corrigir os problemas mais comuns sem alterar o resto do projeto
+    private void ValidateAndFixFrames()
+    {
+        if (frames == null || frames.Length == 0)
+        {
+            Debug.LogWarning("[DebugFrameCycler] frames está vazio ou não atribuído!");
+            return;
+        }
+
+        // 1) se Image estiver em Tiled, troca para Simple (Tiled causa repetição)
+        if (img != null && img.type == Image.Type.Tiled)
+        {
+            Debug.LogWarning("[DebugFrameCycler] Image estava em Tiled -> trocando para Simple para evitar repeat.");
+            img.type = Image.Type.Simple;
+        }
+
+        // 2) tenta forçar wrapMode = Clamp na textura usada pelo sprite (em runtime)
+        try
+        {
+            Texture2D tex = img?.sprite?.texture;
+            if (tex != null)
+            {
+                tex.wrapMode = TextureWrapMode.Clamp;
+                Debug.Log("[DebugFrameCycler] wrapMode forçado para Clamp em runtime.");
+            }
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogWarning("[DebugFrameCycler] falha ao ajustar wrapMode: " + ex.Message);
+        }
+
+        // 3) detecta duplicatas por InstanceID no array frames e loga (não altera automaticamente nada)
+        Dictionary<int, int> seen = new Dictionary<int, int>();
+        for (int i = 0; i < frames.Length; i++)
+        {
+            var s = frames[i];
+            if (s == null)
+            {
+                Debug.LogWarning($"[DebugFrameCycler] frames[{i}] = NULL");
+                continue;
+            }
+
+            int id = s.GetInstanceID();
+            if (seen.ContainsKey(id))
+            {
+                Debug.LogWarning($"[DebugFrameCycler] DUPLICATE: frames[{seen[id]}] and frames[{i}] referem-se ao mesmo Sprite ('{s.name}').");
+            }
+            else
+            {
+                seen[id] = i;
+            }
+        }
+
+        // 4) imprime estado atual resumido (ajuda no debug)
+        Debug.Log("[DebugFrameCycler] estado dos frames após validação:");
+        for (int i = 0; i < frames.Length; i++)
+        {
+            var s = frames[i];
+            Debug.Log($"  frames[{i}] = {(s == null ? "NULL" : s.name)}");
+        }
+    }
 }
