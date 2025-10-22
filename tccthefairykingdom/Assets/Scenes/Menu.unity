@@ -925,7 +925,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dd2b888a556714e8f9bf776ad44f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeDoLevelDeJogo: Fase1
+  jogarCommand: {fileID: 11400000, guid: 6354c126136cf5c4cb441e7ec6009703, type: 2}
+  sairCommand: {fileID: 11400000, guid: 5d3faaf727fa2e44aa98fabc99a84508, type: 2}
 --- !u!4 &1693871414
 Transform:
   m_ObjectHideFlags: 0

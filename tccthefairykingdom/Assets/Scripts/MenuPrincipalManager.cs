@@ -1,18 +1,29 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MenuPrincipalManager : MonoBehaviour
 {
-    [SerializeField] private string nomeDoLevelDeJogo;
+    [Header("Commands")]
+    [SerializeField] private CommandSO jogarCommand;
+    [SerializeField] private CommandSO sairCommand;
 
+    // Chamados pelos botões do UI (OnClick)
     public void Jogar()
     {
-        SceneManager.LoadScene(nomeDoLevelDeJogo);
+        if (jogarCommand == null)
+        {
+            Debug.LogWarning("[MenuPrincipalManager] jogarCommand não atribuído.");
+            return;
+        }
+        jogarCommand.Execute();
     }
 
     public void SairJogo()
     {
-        Debug.Log("Sair do Jogo");
-        Application.Quit();
+        if (sairCommand == null)
+        {
+            Debug.LogWarning("[MenuPrincipalManager] sairCommand não atribuído.");
+            return;
+        }
+        sairCommand.Execute();
     }
 }
