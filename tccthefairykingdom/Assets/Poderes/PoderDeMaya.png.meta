@@ -1,0 +1,490 @@
+fileFormatVersion: 2
+guid: 0644cbd45ada1f74fadd48656fd12342
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8972903276987770387
+    second: PoderDeMaya_0
+  - first:
+      213: 4591645457579560595
+    second: PoderDeMaya_1
+  - first:
+      213: 7392229627786368884
+    second: PoderDeMaya_2
+  - first:
+      213: 1996442606686031871
+    second: PoderDeMaya_3
+  - first:
+      213: -5424134866796608053
+    second: PoderDeMaya_4
+  - first:
+      213: -8063420992713635405
+    second: PoderDeMaya_5
+  - first:
+      213: 4207311036607793104
+    second: PoderDeMaya_6
+  - first:
+      213: 7499719281453282128
+    second: PoderDeMaya_7
+  - first:
+      213: -683942206879576703
+    second: PoderDeMaya_8
+  - first:
+      213: -8877243030605806418
+    second: PoderDeMaya_9
+  - first:
+      213: -6825574120741749041
+    second: PoderDeMaya_10
+  - first:
+      213: 3458546868317350183
+    second: PoderDeMaya_11
+  - first:
+      213: 1500676201303148593
+    second: PoderDeMaya_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PoderDeMaya_0
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 4200
+        width: 59
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3166bcc6df7268c70800000000000000
+      internalID: 8972903276987770387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDeMaya_1
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 4198
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39ec091573dc8bf30800000000000000
+      internalID: 4591645457579560595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDeMaya_2
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 4198
+        width: 104
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47713564ea9769660800000000000000
+      internalID: 7392229627786368884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDeMaya_4
+      rect:
+        serializedVersion: 2
+        x: 3898
+        y: 4188
+        width: 122
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc507c2b31a99b4b0800000000000000
+      internalID: -5424134866796608053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDeMaya_20
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 2993
+        width: 158
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e4141a9c717f6f46ad6e803078aae3b
+      internalID: 316108137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDeMaya_23
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 2993
+        width: 179
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65bb0448b277cd04b8628c94e61767ed
+      internalID: 2097304796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDeMaya_24
+      rect:
+        serializedVersion: 2
+        x: 2662
+        y: 2993
+        width: 158
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1624338c23e590241b21b40f08f9e50b
+      internalID: 16483066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDeMaya_27
+      rect:
+        serializedVersion: 2
+        x: 3898
+        y: 2988
+        width: 122
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e68f697d74afd8c408cbdce1ce4d78a4
+      internalID: -474724459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDeMaya_40
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 1798
+        width: 104
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a394b30a2a6f3f49bd5306bbc244c80
+      internalID: -842633655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDeMaya_41
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 1798
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9999644ed73db40917ba5a7ed2390f
+      internalID: 1160420790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDeMaya_42
+      rect:
+        serializedVersion: 2
+        x: 2756
+        y: 1800
+        width: 59
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061e1a65c13f4ad4fa52104de4a4035a
+      internalID: 1176191177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDeMaya_43
+      rect:
+        serializedVersion: 2
+        x: 3956
+        y: 1800
+        width: 59
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01fbc1243071d644b914e92d997dbb79
+      internalID: -275987675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3ba1e238b8ddeee438b01313687f24cd
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PoderDeMaya_0: 8972903276987770387
+      PoderDeMaya_1: 4591645457579560595
+      PoderDeMaya_10: -6825574120741749041
+      PoderDeMaya_11: 3458546868317350183
+      PoderDeMaya_12: 1500676201303148593
+      PoderDeMaya_13: 978031302
+      PoderDeMaya_14: 594288278
+      PoderDeMaya_15: 1919196231
+      PoderDeMaya_16: 1533107603
+      PoderDeMaya_17: 1237029406
+      PoderDeMaya_18: 2126034545
+      PoderDeMaya_19: -1499810903
+      PoderDeMaya_2: 7392229627786368884
+      PoderDeMaya_20: 316108137
+      PoderDeMaya_21: -266790177
+      PoderDeMaya_22: 1399067569
+      PoderDeMaya_23: 2097304796
+      PoderDeMaya_24: 16483066
+      PoderDeMaya_25: -377398607
+      PoderDeMaya_26: 1481666009
+      PoderDeMaya_27: -474724459
+      PoderDeMaya_28: -1538298773
+      PoderDeMaya_29: -19490706
+      PoderDeMaya_3: 1996442606686031871
+      PoderDeMaya_30: -438962604
+      PoderDeMaya_31: -1013229061
+      PoderDeMaya_32: -453712713
+      PoderDeMaya_33: 161273766
+      PoderDeMaya_34: -1302231439
+      PoderDeMaya_35: -1563638179
+      PoderDeMaya_36: -654821132
+      PoderDeMaya_37: -824050215
+      PoderDeMaya_38: 1254444885
+      PoderDeMaya_39: 773256580
+      PoderDeMaya_4: -5424134866796608053
+      PoderDeMaya_40: -842633655
+      PoderDeMaya_41: 1160420790
+      PoderDeMaya_42: 1176191177
+      PoderDeMaya_43: -275987675
+      PoderDeMaya_5: -8063420992713635405
+      PoderDeMaya_6: 4207311036607793104
+      PoderDeMaya_7: 7499719281453282128
+      PoderDeMaya_8: -683942206879576703
+      PoderDeMaya_9: -8877243030605806418
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
