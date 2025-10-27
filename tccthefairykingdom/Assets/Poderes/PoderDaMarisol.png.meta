@@ -1,0 +1,563 @@
+fileFormatVersion: 2
+guid: 85cb9cade30353e48a97ee91a60710ff
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1282385355639569440
+    second: PoderDaMarisol_0
+  - first:
+      213: -6366334492288413760
+    second: PoderDaMarisol_1
+  - first:
+      213: 3462984363566298222
+    second: PoderDaMarisol_2
+  - first:
+      213: 6878483411223681306
+    second: PoderDaMarisol_3
+  - first:
+      213: -8812495636443601339
+    second: PoderDaMarisol_4
+  - first:
+      213: 8884480768222722409
+    second: PoderDaMarisol_5
+  - first:
+      213: -2109448686527473990
+    second: PoderDaMarisol_6
+  - first:
+      213: -4899650517595153050
+    second: PoderDaMarisol_7
+  - first:
+      213: 2193147100493220861
+    second: PoderDaMarisol_8
+  - first:
+      213: 3363643403665383872
+    second: PoderDaMarisol_9
+  - first:
+      213: -5417830633094027943
+    second: PoderDaMarisol_10
+  - first:
+      213: -647374769536734054
+    second: PoderDaMarisol_11
+  - first:
+      213: 4070293299425947987
+    second: PoderDaMarisol_12
+  - first:
+      213: -2460360641556787503
+    second: PoderDaMarisol_13
+  - first:
+      213: 624686254637739902
+    second: PoderDaMarisol_14
+  - first:
+      213: 1251765564735191052
+    second: PoderDaMarisol_15
+  - first:
+      213: -3964887109984585798
+    second: PoderDaMarisol_16
+  - first:
+      213: -4207223406903256873
+    second: PoderDaMarisol_17
+  - first:
+      213: -5600896434634618991
+    second: PoderDaMarisol_18
+  - first:
+      213: 215717066789810898
+    second: PoderDaMarisol_19
+  - first:
+      213: -3895817748240046609
+    second: PoderDaMarisol_20
+  - first:
+      213: 6685705876458238546
+    second: PoderDaMarisol_21
+  - first:
+      213: 7557444660162616099
+    second: PoderDaMarisol_22
+  - first:
+      213: -3142655469693941730
+    second: PoderDaMarisol_23
+  - first:
+      213: 6194152311738055189
+    second: PoderDaMarisol_24
+  - first:
+      213: -3238130119409218762
+    second: PoderDaMarisol_25
+  - first:
+      213: 4991731160711308893
+    second: PoderDaMarisol_26
+  - first:
+      213: 7074027625959073119
+    second: PoderDaMarisol_27
+  - first:
+      213: 5383925512333777553
+    second: PoderDaMarisol_28
+  - first:
+      213: 5784020010436491430
+    second: PoderDaMarisol_29
+  - first:
+      213: 6468826760651519581
+    second: PoderDaMarisol_30
+  - first:
+      213: 2438002706160004771
+    second: PoderDaMarisol_31
+  - first:
+      213: -3310205643959756915
+    second: PoderDaMarisol_32
+  - first:
+      213: -461175283716141595
+    second: PoderDaMarisol_33
+  - first:
+      213: -1981105901093802564
+    second: PoderDaMarisol_34
+  - first:
+      213: -6683832492099097319
+    second: PoderDaMarisol_35
+  - first:
+      213: -5635701053493094810
+    second: PoderDaMarisol_36
+  - first:
+      213: 4135457748076449992
+    second: PoderDaMarisol_37
+  - first:
+      213: 3071943725891927783
+    second: PoderDaMarisol_38
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PoderDaMarisol_0
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 4199
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02c3f04cfa2fbc110800000000000000
+      internalID: 1282385355639569440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaMarisol_1
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 4199
+        width: 107
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf05d1728c36a7a0800000000000000
+      internalID: -6366334492288413760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaMarisol_2
+      rect:
+        serializedVersion: 2
+        x: 4382
+        y: 4196
+        width: 128
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e64f9155eedfe0030800000000000000
+      internalID: 3462984363566298222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaMarisol_4
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 4202
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5466915c8e9b3b580800000000000000
+      internalID: -8812495636443601339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaMarisol_15
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 2996
+        width: 152
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c087b14262a2f5110800000000000000
+      internalID: 1251765564735191052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaMarisol_16
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 2996
+        width: 182
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab7f7da2e24e9f8c0800000000000000
+      internalID: -3964887109984585798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaMarisol_18
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 2996
+        width: 152
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1970ad51e5e9542b0800000000000000
+      internalID: -5600896434634618991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaMarisol_19
+      rect:
+        serializedVersion: 2
+        x: 4382
+        y: 2996
+        width: 128
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d2fef187816ef200800000000000000
+      internalID: 215717066789810898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaMarisol_34
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1799
+        width: 107
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbdafd6eda2b184e0800000000000000
+      internalID: -1981105901093802564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaMarisol_35
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 1799
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91d283ac2c14e33a0800000000000000
+      internalID: -6683832492099097319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaMarisol_36
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 1802
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 666df3640c7f9c1b0800000000000000
+      internalID: -5635701053493094810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaMarisol_37
+      rect:
+        serializedVersion: 2
+        x: 4385
+        y: 1814
+        width: 59
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c0dbb949e8146930800000000000000
+      internalID: 4135457748076449992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 85a49569730219644bc7c84c18c5ca36
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PoderDaMarisol_0: 1282385355639569440
+      PoderDaMarisol_1: -6366334492288413760
+      PoderDaMarisol_10: -5417830633094027943
+      PoderDaMarisol_11: -647374769536734054
+      PoderDaMarisol_12: 4070293299425947987
+      PoderDaMarisol_13: -2460360641556787503
+      PoderDaMarisol_14: 624686254637739902
+      PoderDaMarisol_15: 1251765564735191052
+      PoderDaMarisol_16: -3964887109984585798
+      PoderDaMarisol_17: -4207223406903256873
+      PoderDaMarisol_18: -5600896434634618991
+      PoderDaMarisol_19: 215717066789810898
+      PoderDaMarisol_2: 3462984363566298222
+      PoderDaMarisol_20: -3895817748240046609
+      PoderDaMarisol_21: 6685705876458238546
+      PoderDaMarisol_22: 7557444660162616099
+      PoderDaMarisol_23: -3142655469693941730
+      PoderDaMarisol_24: 6194152311738055189
+      PoderDaMarisol_25: -3238130119409218762
+      PoderDaMarisol_26: 4991731160711308893
+      PoderDaMarisol_27: 7074027625959073119
+      PoderDaMarisol_28: 5383925512333777553
+      PoderDaMarisol_29: 5784020010436491430
+      PoderDaMarisol_3: 6878483411223681306
+      PoderDaMarisol_30: 6468826760651519581
+      PoderDaMarisol_31: 2438002706160004771
+      PoderDaMarisol_32: -3310205643959756915
+      PoderDaMarisol_33: -461175283716141595
+      PoderDaMarisol_34: -1981105901093802564
+      PoderDaMarisol_35: -6683832492099097319
+      PoderDaMarisol_36: -5635701053493094810
+      PoderDaMarisol_37: 4135457748076449992
+      PoderDaMarisol_38: 3071943725891927783
+      PoderDaMarisol_4: -8812495636443601339
+      PoderDaMarisol_5: 8884480768222722409
+      PoderDaMarisol_6: -2109448686527473990
+      PoderDaMarisol_7: -4899650517595153050
+      PoderDaMarisol_8: 2193147100493220861
+      PoderDaMarisol_9: 3363643403665383872
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
