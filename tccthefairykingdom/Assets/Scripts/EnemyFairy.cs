@@ -128,13 +128,12 @@ public class EnemyFairy : MonoBehaviour
         }
 
         // move horizontalmente em direção ao target X (mantém oscilação vertical enquanto não chegou)
-        // vamos mover em direção ao X do target com velocidade horizontalSpeed
         float step = horizontalSpeed * Time.deltaTime;
         Vector3 newPos = transform.position;
 
         // move X em direção ao target X por step (sem pular)
         float newX = Mathf.MoveTowards(transform.position.x, targetPos.x, step);
-        // mantém a oscilação vertical enquanto ainda não chegou (mas você pode querer travar Y também)
+        // mantém a oscilação vertical enquanto ainda não chegou
         float newY = startY + Mathf.Sin(Time.time * verticalSpeed) * verticalRange;
         newPos = new Vector3(newX, newY, transform.position.z);
         transform.position = newPos;
@@ -180,7 +179,6 @@ public class EnemyFairy : MonoBehaviour
             else
             {
                 // se não encontrou jogador no momento, pode ficar em espera (ou ainda travar se preferir)
-                // aqui deixamos o inimigo parado mesmo sem player — se quiser que espere até o player chegar, troque a lógica
                 arrivedAndStopped = true;
                 attackPosition = transform.position;
                 canMove = false;
@@ -248,9 +246,22 @@ public class EnemyFairy : MonoBehaviour
     // ------------------------
     // Animation Event / Fire
     // ------------------------
+
+    // Método principal (com logs) — chamado pela Animation Event
     public void FireFromPrefab()
     {
-        if (particlePrefab == null || muzzle == null) return;
+        Debug.Log($"FireFromPrefab called on {name}");
+
+        if (particlePrefab == null)
+        {
+            Debug.LogWarning("FireFromPrefab: particlePrefab NÃO atribuído no Inspector.");
+            return;
+        }
+        if (muzzle == null)
+        {
+            Debug.LogWarning("FireFromPrefab: muzzle NÃO atribuído no Inspector.");
+            return;
+        }
 
         // fallback target
         if (currentTarget == null)
@@ -280,18 +291,40 @@ public class EnemyFairy : MonoBehaviour
             if (main.simulationSpace != ParticleSystemSimulationSpace.World)
                 Debug.LogWarning("ParticleSystem.simulationSpace != World. Recomendo definir como World no prefab.");
 
+            // força sorting alto pra teste de visibilidade
+            var rend = ps.GetComponent<ParticleSystemRenderer>();
+            if (rend != null) rend.sortingOrder = Mathf.Max(rend.sortingOrder, 100);
+
             ParticleSystem.EmitParams ep = new ParticleSystem.EmitParams();
             ep.position = spawnPos;
             ep.applyShapeToPosition = false;
             ep.velocity = dir * particleSpeed;
             ps.Emit(ep, 1);
+            ps.Play();
+        }
+        else
+        {
+            Debug.LogWarning("FireFromPrefab: prefab instanciado NÃO contém ParticleSystem!");
         }
 
-        Destroy(inst, instanceAutoDestroy);
+        // destruição correta dependendo do modo (Editor vs Play)
+        if (Application.isPlaying)
+            Destroy(inst, instanceAutoDestroy);
+        else
+            DestroyImmediate(inst);
     }
 
+    // Teste seguro só em Play Mode
     [ContextMenu("Test FireFromPrefab")]
-    public void TestFireFromPrefab() { FireFromPrefab(); }
+    public void TestFireFromPrefab()
+    {
+        if (!Application.isPlaying)
+        {
+            Debug.LogWarning("Test FireFromPrefab: execute este teste apenas em Play Mode. Entre no Play e tente de novo.");
+            return;
+        }
+        FireFromPrefab();
+    }
 
     // utility
     void ForceStopMovement()
@@ -299,6 +332,7 @@ public class EnemyFairy : MonoBehaviour
         var rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
+            // corrigido para propriedade correta
             rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
             rb.isKinematic = true;
