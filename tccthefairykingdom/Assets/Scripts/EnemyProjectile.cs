@@ -2,45 +2,61 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
-    public float lifeTime = 3f;
-    public int damage = 1;
+    [Header("Movimento")]
+    public Vector2 direction = Vector2.left;
+    public float speed = 8f;
+    public float lifeTime = 2f;
 
-    private Vector2 direction;
-    private float speed = 8f;
-    private Rigidbody2D rb;
+    [Header("Dano")]
+    public int damage = 1;
+    public string targetTag = "Player";
+
+    Rigidbody2D rb;
+    Collider2D col;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
+        // configurações seguras por script (pode ajustar no Inspector também)
+        rb.gravityScale = 0f;
+        rb.angularVelocity = 0f;
+        // deixamos kinematic = false para usar velocity; se preferir Kinematic, mude e use MovePosition.
+        rb.isKinematic = false;
+        col.isTrigger = true;
     }
 
     void Start()
     {
+        rb.linearVelocity = direction.normalized * speed;
         Destroy(gameObject, lifeTime);
-        if (rb != null)
-            rb.linearVelocity = direction * speed;
-    }
-
-    // inicializador opcional chamado pelo EnemyFairy se não usar Rigidbody direto
-    public void Init(Vector2 dir, float spd)
-    {
-        direction = dir.normalized;
-        speed = spd;
-        if (rb != null)
-            rb.linearVelocity = direction * speed;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            var ph = other.GetComponent<PlayerHealth>(); // substitua pelo seu componente de vida
-            if (ph != null) ph.TakeDamage(damage);
-            Destroy(gameObject);
-            return;
-        }
+        if (other == null) return;
 
-        // opcional: destruir em paredes
-        // if (other.CompareTag("Obstacle")) Destroy(gameObject);
+        // só reage ao jogador (usa tag)
+        if (other.CompareTag(targetTag))
+        {
+            var dano = other.GetComponent<FadaDano>();
+            if (dano != null)
+            {
+                // usa a função pública existente (respeita intervaloDano e faz piscar)
+                dano.TryTakeDamageFromExternal(damage);
+            }
+            else
+            {
+                // fallback: tenta encontrar PlayerHealth ou outro
+                Debug.LogWarning("EnemyProjectile: jogador atingido mas não encontrou FadaDano no objeto com Tag 'Player'.");
+            }
+
+            Destroy(gameObject);
+        }
+        else
+        {
+            // opcional: destruir ao colidir com cenário
+            // if (other.gameObject.layer == LayerMask.NameToLayer("Ground")) Destroy(gameObject);
+        }
     }
 }

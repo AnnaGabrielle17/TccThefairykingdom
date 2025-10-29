@@ -4,8 +4,8 @@ using System.Collections;
 
 public class EnemyFairy : MonoBehaviour
 {
- [Header("Movimento")]
- public float horizontalSpeed = 2f;
+    [Header("Movimento")]
+    public float horizontalSpeed = 2f;
     public float verticalSpeed = 2f;
     public float verticalRange = 1f;
 
@@ -225,79 +225,84 @@ public class EnemyFairy : MonoBehaviour
     // ------------------------
     // Animation Event / Fire (FORÇA O TIRO PARA A ESQUERDA)
     // ------------------------
-    public void FireFromPrefab()
+    
+        public void FireFromPrefab()
+{
+    Debug.Log($"FireFromPrefab called on {name}");
+
+    if (particlePrefab == null)
     {
-        Debug.Log($"FireFromPrefab called on {name}");
-
-        if (particlePrefab == null)
-        {
-            Debug.LogWarning("FireFromPrefab: particlePrefab NÃO atribuído no Inspector.");
-            return;
-        }
-        if (muzzle == null)
-        {
-            Debug.LogWarning("FireFromPrefab: muzzle NÃO atribuído no Inspector.");
-            return;
-        }
-
-        // FORÇAR direção para a ESQUERDA
-        Vector2 dir = Vector2.left;
-
-        // calculos de offset (coloque spawnOffset pequeno para não nascer muito longe)
-        float distanceToPlayer = currentTarget != null ? Vector2.Distance(muzzle.position, currentTarget.position) : Mathf.Infinity;
-        float extraOffset = 0f;
-        if (distanceToPlayer < minSpawnDistance)
-            extraOffset = (minSpawnDistance - distanceToPlayer) + 0.05f;
-
-        // desiredOffset controla quão longe do muzzle o projétil nasce
-        float desiredOffset = Mathf.Max(spawnOffset + extraOffset, fireDistance);
-        // se quiser nascer praticamente na frente, use spawnOffset = 0.12 no Inspector
-        Vector3 spawnPos = muzzle.position + (Vector3)(dir * desiredOffset);
-
-        // instancia o prefab DO PROJÉTIL (não um ParticleSystem isolado)
-        GameObject inst = Instantiate(particlePrefab, spawnPos, Quaternion.identity);
-        inst.transform.right = dir; // orienta a visualização
-
-        // tenta configurar o script do projétil caso exista (usa Init)
-        EnemyProjectile proj = inst.GetComponent<EnemyProjectile>() ?? inst.GetComponentInChildren<EnemyProjectile>();
-        Collider2D projCol = inst.GetComponent<Collider2D>() ?? inst.GetComponentInChildren<Collider2D>();
-
-        if (proj != null)
-        {
-            // usa Init para configurar direction/speed/lifetime/damage de forma segura
-            proj.Init(dir, particleSpeed, instanceAutoDestroy, projectileDamage);
-        }
-        else
-        {
-            Debug.LogWarning("FireFromPrefab: prefab instanciado NÃO contém EnemyProjectile (adicione o script ao prefab).");
-        }
-
-        // evita colisão com a própria inimiga (ignora entre todos os colliders do inimigo e do projétil)
-        if (projCol != null && enemyColliders != null)
-        {
-            foreach (var ec in enemyColliders)
-            {
-                if (ec == null) continue;
-                Physics2D.IgnoreCollision(ec, projCol, true);
-            }
-        }
-
-        // se o prefab tiver um ParticleSystem para visuals, força Play
-        ParticleSystem ps = inst.GetComponent<ParticleSystem>() ?? inst.GetComponentInChildren<ParticleSystem>();
-        if (ps != null)
-        {
-            var main = ps.main;
-            if (main.simulationSpace != ParticleSystemSimulationSpace.World)
-                Debug.LogWarning("ParticleSystem.simulationSpace != World. Recomendo definir como World no prefab.");
-            ps.Play();
-        }
-
-        // destruição segura
-        if (Application.isPlaying)
-            Destroy(inst, instanceAutoDestroy);
-        else
-            DestroyImmediate(inst);
+        Debug.LogWarning("FireFromPrefab: particlePrefab NÃO atribuído no Inspector.");
+        return;
     }
+    if (muzzle == null)
+    {
+        Debug.LogWarning("FireFromPrefab: muzzle NÃO atribuído no Inspector.");
+        return;
+    }
+
+    // FORÇAR direção para a ESQUERDA
+    Vector2 dir = Vector2.left;
+
+    // calculos de offset (coloque spawnOffset pequeno para não nascer muito longe)
+    float distanceToPlayer = currentTarget != null ? Vector2.Distance(muzzle.position, currentTarget.position) : Mathf.Infinity;
+    float extraOffset = 0f;
+    if (distanceToPlayer < minSpawnDistance)
+        extraOffset = (minSpawnDistance - distanceToPlayer) + 0.05f;
+
+    // desiredOffset controla quão longe do muzzle o projétil nasce
+    float desiredOffset = Mathf.Max(spawnOffset + extraOffset, fireDistance);
+    // se quiser nascer praticamente na frente, use spawnOffset = 0.12 no Inspector
+    Vector3 spawnPos = muzzle.position + (Vector3)(dir * desiredOffset);
+
+    // instancia o prefab DO PROJÉTIL (não um ParticleSystem isolado)
+    GameObject inst = Instantiate(particlePrefab, spawnPos, Quaternion.identity);
+    inst.transform.right = dir; // orienta a visualização
+
+    // tenta configurar o script do projétil caso exista
+    EnemyProjectile proj = inst.GetComponent<EnemyProjectile>() ?? inst.GetComponentInChildren<EnemyProjectile>();
+    Collider2D projCol = inst.GetComponent<Collider2D>() ?? inst.GetComponentInChildren<Collider2D>();
+
+    if (proj != null)
+    {
+        proj.direction = dir;
+        proj.speed = particleSpeed;       // ajuste no Inspector do inimigo
+        proj.lifeTime = Mathf.Max(proj.lifeTime, instanceAutoDestroy); // garante tempo
+        // proj.damage já pode ser ajustado no prefab ou aqui:
+        // proj.damage = 1;
+    }
+    else
+    {
+        Debug.LogWarning("FireFromPrefab: prefab instanciado NÃO contém EnemyProjectile (adicione o script ao prefab).");
+    }
+
+    // evita colisão com a própria inimiga (ignora entre todos os colliders do inimigo e do projétil)
+    if (projCol != null && enemyColliders != null)
+    {
+        foreach (var ec in enemyColliders)
+        {
+            if (ec == null) continue;
+            Physics2D.IgnoreCollision(ec, projCol, true);
+        }
+    }
+
+    // se o prefab tiver um ParticleSystem para visuals, força Play
+    ParticleSystem ps = inst.GetComponent<ParticleSystem>() ?? inst.GetComponentInChildren<ParticleSystem>();
+    if (ps != null)
+    {
+        var main = ps.main;
+        if (main.simulationSpace != ParticleSystemSimulationSpace.World)
+            Debug.LogWarning("ParticleSystem.simulationSpace != World. Recomendo definir como World no prefab.");
+        ps.Play();
+    }
+
+    // destruição segura
+    if (Application.isPlaying)
+        Destroy(inst, instanceAutoDestroy);
+    else
+        DestroyImmediate(inst);
+}
+    
 
     [ContextMenu("Test FireFromPrefab")]
     public void TestFireFromPrefab()
@@ -361,4 +366,5 @@ public class EnemyFairy : MonoBehaviour
             Gizmos.DrawWireSphere(muzzle.position, 0.08f);
         }
     }
+
 }
