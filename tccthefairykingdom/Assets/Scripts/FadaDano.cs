@@ -210,7 +210,20 @@ public class FadaDano : MonoBehaviour
     {
         Debug.Log("Fada morreu!");
         // se quiser: GameOverController.Instance.ShowGameOver();
+         if (currentVisualCoroutine != null)
+    {
+        StopCoroutine(currentVisualCoroutine);
+        currentVisualCoroutine = null;
     }
+
+    // se quiser tocar uma animação de morte, dispare aqui antes de destruir:
+    // var anim = GetComponent<Animator>();
+    // if (anim != null) anim.SetTrigger("Die");
+
+    // destroi o GameObject da fada
+    Destroy(gameObject);
+}
+    
 
     private IEnumerator PiscarDano()
     {

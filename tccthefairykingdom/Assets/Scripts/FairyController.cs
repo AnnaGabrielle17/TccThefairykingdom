@@ -18,7 +18,7 @@ public class FairyController : MonoBehaviour
     void Update()
     {
         // Exemplo: acionar ataque com W (só pra teste)
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             anim.SetTrigger("Attack");
         }

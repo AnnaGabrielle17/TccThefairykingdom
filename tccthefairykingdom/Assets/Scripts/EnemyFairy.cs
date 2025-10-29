@@ -5,23 +5,23 @@ using System.Collections;
 public class EnemyFairy : MonoBehaviour
 {
  [Header("Movimento")]
-    public float horizontalSpeed = 2f;
+ public float horizontalSpeed = 2f;
     public float verticalSpeed = 2f;
     public float verticalRange = 1f;
 
     [Header("Parar em um ponto")]
-    public bool useStopPoint = false;        // ativa o comportamento de "ir até um ponto e parar"
-    public bool stopByX = true;              // compara X (true) ou Y (false) se usar stopByCoordinate
-    public float stopX = -5f;                // se stopByX e useStopPoint: quando x <= stopX (inimigo vindo da direita)
-    public float stopY = 0f;                 // se !stopByX: quando y <= stopY (dependendo do movimento)
-    public Transform stopPoint;              // alternativa: arraste um Transform para parada exata (usa antes de stopX/Y se presente)
-    public float stopTolerance = 0.05f;      // tolerância de distância para considerar "chegou"
+    public bool useStopPoint = false;
+    public bool stopByX = true;
+    public float stopX = -5f;
+    public float stopY = 0f;
+    public Transform stopPoint;
+    public float stopTolerance = 0.05f;
 
     [Header("Detecção (opcional)")]
     public float detectionRadius = 3f;
     public LayerMask detectionLayer = ~0;
     public string playerTag = "Player";
-    public bool requirePlayerToAttack = true; // se true, só ataca quando o player estiver na cena/na detecção
+    public bool requirePlayerToAttack = true;
 
     [Header("Projétil (Prefab)")]
     public GameObject particlePrefab;
@@ -31,15 +31,17 @@ public class EnemyFairy : MonoBehaviour
     public float minSpawnDistance = 1f;
     public float fireDistance = 1.0f;
     public float instanceAutoDestroy = 2f;
+    public int projectileDamage = 1; // dano aplicado ao jogador pelo projétil
 
     [Header("Animator (opcional)")]
     public Animator animator;
     private const string ANIM_ATTACK_BOOL = "isAttacking";
+    public string attackStateName = "Sunfairy_Attack"; // altere se necessário
 
-    // estado
+    // estado interno
     private float startY;
     private bool canMove = true;
-    private bool arrivedAndStopped = false;   // flag: já chegou no ponto e parou
+    private bool arrivedAndStopped = false;
     private Transform currentTarget = null;
     private Vector3 attackPosition;
     private Collider2D[] enemyColliders;
@@ -53,35 +55,30 @@ public class EnemyFairy : MonoBehaviour
     {
         startY = transform.position.y;
         if (animator == null) animator = GetComponentInChildren<Animator>();
-        if (useStopPoint && stopPoint == null)
-        {
-            // se usar stopPoint opcional não definido, usa stopX/Y
-        }
 
-        // debug warnings para facilitar configuração
-        if (useStopPoint && stopPoint == null && !stopByX && Mathf.Approximately(stopY, 0f))
-            Debug.LogWarning("EnemyFairy: useStopPoint habilitado, mas stopPoint não atribuído e stopY=0. Verifique inspector.");
         if (useStopPoint && stopPoint == null && stopByX && Mathf.Approximately(stopX, 0f))
             Debug.LogWarning("EnemyFairy: useStopPoint habilitado, mas stopPoint não atribuído e stopX=0. Verifique inspector.");
+        if (useStopPoint && stopPoint == null && !stopByX && Mathf.Approximately(stopY, 0f))
+            Debug.LogWarning("EnemyFairy: useStopPoint habilitado, mas stopPoint não atribuído e stopY=0. Verifique inspector.");
     }
 
     void Update()
     {
-        // se já parou e está atacando, trava posição
+        // Se já chegou e parou: travamos SOMENTE no eixo X e mantemos oscilação vertical
         if (arrivedAndStopped)
         {
-            transform.position = attackPosition;
+            float y = attackPosition.y + Mathf.Sin(Time.time * verticalSpeed) * verticalRange;
+            transform.position = new Vector3(attackPosition.x, y, transform.position.z);
             return;
         }
 
-        // se usa o comportamento "ir até um ponto", prioriza isso
+        // Movimento padrão: sempre se move para a esquerda enquanto não chegou ao stop
         if (useStopPoint)
         {
             MoveTowardsStopPoint();
         }
         else
         {
-            // movimento padrão: caminha para a esquerda enquanto oscila verticalmente
             if (canMove)
             {
                 transform.Translate(Vector2.left * horizontalSpeed * Time.deltaTime);
@@ -90,15 +87,12 @@ public class EnemyFairy : MonoBehaviour
             }
         }
 
-        // opcional: se não usa stopPoint e requirePlayerToAttack==true, mantemos DetectPlayer pra iniciar ataque se player entrar
         if (!useStopPoint && requirePlayerToAttack)
             DetectPlayer();
     }
 
-    // move o inimigo até o stoppoint/stopX e, ao chegar, chama EnterAttackState()
     void MoveTowardsStopPoint()
     {
-        // Se um stopPoint Transform foi fornecido, mira nele (posição exata)
         Vector3 targetPos = Vector3.zero;
         bool haveTarget = false;
         if (stopPoint != null)
@@ -110,7 +104,6 @@ public class EnemyFairy : MonoBehaviour
         {
             if (stopByX)
             {
-                // mantemos mesma y atual, só checamos X
                 targetPos = new Vector3(stopX, transform.position.y, transform.position.z);
                 haveTarget = true;
             }
@@ -127,66 +120,42 @@ public class EnemyFairy : MonoBehaviour
             return;
         }
 
-        // move horizontalmente em direção ao target X (mantém oscilação vertical enquanto não chegou)
         float step = horizontalSpeed * Time.deltaTime;
-        Vector3 newPos = transform.position;
-
-        // move X em direção ao target X por step (sem pular)
         float newX = Mathf.MoveTowards(transform.position.x, targetPos.x, step);
-        // mantém a oscilação vertical enquanto ainda não chegou
         float newY = startY + Mathf.Sin(Time.time * verticalSpeed) * verticalRange;
-        newPos = new Vector3(newX, newY, transform.position.z);
-        transform.position = newPos;
+        transform.position = new Vector3(newX, newY, transform.position.z);
 
-        // checa se chegou no ponto (usando tolerância)
         bool reached = false;
         if (stopPoint != null)
-        {
             reached = Vector2.Distance(new Vector2(transform.position.x, transform.position.y),
                                        new Vector2(targetPos.x, targetPos.y)) <= stopTolerance;
-        }
         else
         {
-            if (stopByX)
-                reached = Mathf.Abs(transform.position.x - targetPos.x) <= stopTolerance;
-            else
-                reached = Mathf.Abs(transform.position.y - targetPos.y) <= stopTolerance;
+            if (stopByX) reached = Mathf.Abs(transform.position.x - targetPos.x) <= stopTolerance;
+            else reached = Mathf.Abs(transform.position.y - targetPos.y) <= stopTolerance;
         }
 
         if (reached)
         {
-            // travar e iniciar ataque (só se não exigir player ou se player estiver detectado/na cena)
+            // trava X e guarda posição para manter a oscilação vertical a partir daqui
+            arrivedAndStopped = true;
+            attackPosition = transform.position;
+            canMove = false;
+
+            // valida presença do player se necessário
             bool playerOk = true;
             if (requirePlayerToAttack)
             {
-                // checa se player está nas proximidades (OverlapCircleAll)
                 Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius, detectionLayer);
                 playerOk = false;
-                foreach (var c in hits)
-                {
-                    if (c != null && c.CompareTag(playerTag)) { playerOk = true; break; }
-                }
+                foreach (var c in hits) if (c != null && c.CompareTag(playerTag)) { playerOk = true; break; }
             }
 
-            if (playerOk)
-            {
-                // trava posição e entra em ataque
-                arrivedAndStopped = true;
-                attackPosition = transform.position;
-                canMove = false;
-                EnterAttackState();
-            }
-            else
-            {
-                // se não encontrou jogador no momento, pode ficar em espera (ou ainda travar se preferir)
-                arrivedAndStopped = true;
-                attackPosition = transform.position;
-                canMove = false;
-            }
+            if (playerOk) EnterAttackState();
+            else EnterAttackState(); // se quiser esperar até o player chegar altere aqui
         }
     }
 
-    // Detecta player se quiser atacar sem stopPoint
     void DetectPlayer()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius, detectionLayer);
@@ -205,36 +174,46 @@ public class EnemyFairy : MonoBehaviour
             currentTarget = detected;
             EnterAttackState();
         }
-        else if (detected == null && currentTarget != null)
-        {
-            // opcional: sair do estado (se quiser)
-            // ExitAttackState();
-            // currentTarget = null;
-        }
     }
 
-    // quando parar para atacar (mantém sua lógica existente)
     void EnterAttackState()
     {
-        // garante target de fallback
+        // fallback target
         if (currentTarget == null)
         {
             var p = GameObject.FindGameObjectWithTag(playerTag);
             if (p != null) currentTarget = p.transform;
         }
 
-        // força parada e grava posição (attackPosition já setada)
         canMove = false;
-        ForceStopMovement();
+        ForceStopMovement(); // zera apenas a velocidade X
 
-        if (animator != null) animator.SetBool(ANIM_ATTACK_BOOL, true);
+        // animação: seta bool e tenta forçar o state Attack (apenas para garantir)
+        if (animator != null)
+        {
+            animator.SetBool(ANIM_ATTACK_BOOL, true);
+            Debug.Log("EnterAttackState: isAttacking=true");
+
+            int hash = Animator.StringToHash(attackStateName);
+            if (animator.HasState(0, hash))
+            {
+                Debug.Log("EnterAttackState: animator.HasState -> forçando Play(" + attackStateName + ")");
+                animator.Play(attackStateName, 0, 0f);
+            }
+            else
+            {
+                Debug.LogWarning("EnterAttackState: state '" + attackStateName + "' não encontrado na layer 0 do Animator.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("EnterAttackState: animator não atribuído.");
+        }
 
         IgnoreCollisionsWithTarget(currentTarget, true);
-
         // FireFromPrefab deve ser chamado por Animation Event no clip de ataque
     }
 
-    // saída de ataque (opcional)
     void ExitAttackState()
     {
         if (animator != null) animator.SetBool(ANIM_ATTACK_BOOL, false);
@@ -244,10 +223,8 @@ public class EnemyFairy : MonoBehaviour
     }
 
     // ------------------------
-    // Animation Event / Fire
+    // Animation Event / Fire (FORÇA O TIRO PARA A ESQUERDA)
     // ------------------------
-
-    // Método principal (com logs) — chamado pela Animation Event
     public void FireFromPrefab()
     {
         Debug.Log($"FireFromPrefab called on {name}");
@@ -263,58 +240,65 @@ public class EnemyFairy : MonoBehaviour
             return;
         }
 
-        // fallback target
-        if (currentTarget == null)
-        {
-            var p = GameObject.FindGameObjectWithTag(playerTag);
-            if (p != null) currentTarget = p.transform;
-        }
+        // FORÇAR direção para a ESQUERDA
+        Vector2 dir = Vector2.left;
 
-        Vector2 dir = currentTarget != null ? (currentTarget.position - muzzle.position).normalized : transform.right;
-
+        // calculos de offset (coloque spawnOffset pequeno para não nascer muito longe)
         float distanceToPlayer = currentTarget != null ? Vector2.Distance(muzzle.position, currentTarget.position) : Mathf.Infinity;
         float extraOffset = 0f;
         if (distanceToPlayer < minSpawnDistance)
             extraOffset = (minSpawnDistance - distanceToPlayer) + 0.05f;
 
+        // desiredOffset controla quão longe do muzzle o projétil nasce
         float desiredOffset = Mathf.Max(spawnOffset + extraOffset, fireDistance);
+        // se quiser nascer praticamente na frente, use spawnOffset = 0.12 no Inspector
         Vector3 spawnPos = muzzle.position + (Vector3)(dir * desiredOffset);
 
+        // instancia o prefab DO PROJÉTIL (não um ParticleSystem isolado)
         GameObject inst = Instantiate(particlePrefab, spawnPos, Quaternion.identity);
-        inst.transform.right = dir;
+        inst.transform.right = dir; // orienta a visualização
 
-        ParticleSystem ps = inst.GetComponent<ParticleSystem>();
-        if (ps == null) ps = inst.GetComponentInChildren<ParticleSystem>();
+        // tenta configurar o script do projétil caso exista (usa Init)
+        EnemyProjectile proj = inst.GetComponent<EnemyProjectile>() ?? inst.GetComponentInChildren<EnemyProjectile>();
+        Collider2D projCol = inst.GetComponent<Collider2D>() ?? inst.GetComponentInChildren<Collider2D>();
+
+        if (proj != null)
+        {
+            // usa Init para configurar direction/speed/lifetime/damage de forma segura
+            proj.Init(dir, particleSpeed, instanceAutoDestroy, projectileDamage);
+        }
+        else
+        {
+            Debug.LogWarning("FireFromPrefab: prefab instanciado NÃO contém EnemyProjectile (adicione o script ao prefab).");
+        }
+
+        // evita colisão com a própria inimiga (ignora entre todos os colliders do inimigo e do projétil)
+        if (projCol != null && enemyColliders != null)
+        {
+            foreach (var ec in enemyColliders)
+            {
+                if (ec == null) continue;
+                Physics2D.IgnoreCollision(ec, projCol, true);
+            }
+        }
+
+        // se o prefab tiver um ParticleSystem para visuals, força Play
+        ParticleSystem ps = inst.GetComponent<ParticleSystem>() ?? inst.GetComponentInChildren<ParticleSystem>();
         if (ps != null)
         {
             var main = ps.main;
             if (main.simulationSpace != ParticleSystemSimulationSpace.World)
                 Debug.LogWarning("ParticleSystem.simulationSpace != World. Recomendo definir como World no prefab.");
-
-            // força sorting alto pra teste de visibilidade
-            var rend = ps.GetComponent<ParticleSystemRenderer>();
-            if (rend != null) rend.sortingOrder = Mathf.Max(rend.sortingOrder, 100);
-
-            ParticleSystem.EmitParams ep = new ParticleSystem.EmitParams();
-            ep.position = spawnPos;
-            ep.applyShapeToPosition = false;
-            ep.velocity = dir * particleSpeed;
-            ps.Emit(ep, 1);
             ps.Play();
         }
-        else
-        {
-            Debug.LogWarning("FireFromPrefab: prefab instanciado NÃO contém ParticleSystem!");
-        }
 
-        // destruição correta dependendo do modo (Editor vs Play)
+        // destruição segura
         if (Application.isPlaying)
             Destroy(inst, instanceAutoDestroy);
         else
             DestroyImmediate(inst);
     }
 
-    // Teste seguro só em Play Mode
     [ContextMenu("Test FireFromPrefab")]
     public void TestFireFromPrefab()
     {
@@ -326,16 +310,15 @@ public class EnemyFairy : MonoBehaviour
         FireFromPrefab();
     }
 
-    // utility
+    // utility: zera apenas componente X da velocidade se houver Rigidbody2D
     void ForceStopMovement()
     {
         var rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            // corrigido para propriedade correta
-            rb.linearVelocity = Vector2.zero;
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
             rb.angularVelocity = 0f;
-            rb.isKinematic = true;
+            // NÃO colocamos rb.isKinematic = true para preservar oscilações verticais feitas por física
         }
     }
 

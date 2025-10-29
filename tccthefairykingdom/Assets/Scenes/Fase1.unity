@@ -8318,7 +8318,8 @@ MonoBehaviour:
   minSpawnDistance: 1
   fireDistance: 1.5
   instanceAutoDestroy: 2
-  animator: {fileID: 0}
+  animator: {fileID: 1826654238}
+  attackStateName: Sunfairy_Attack
 --- !u!95 &1826654238
 Animator:
   serializedVersion: 7
