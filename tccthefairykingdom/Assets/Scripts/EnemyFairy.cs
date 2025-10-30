@@ -1,10 +1,10 @@
 using UnityEngine;
-using System.Collections;
+
 
 
 public class EnemyFairy : MonoBehaviour
 {
-    [Header("Movimento")]
+     [Header("Movimento")]
     public float horizontalSpeed = 2f;
     public float verticalSpeed = 2f;
     public float verticalRange = 1f;
@@ -24,6 +24,7 @@ public class EnemyFairy : MonoBehaviour
     public bool requirePlayerToAttack = true;
 
     [Header("Projétil (Prefab)")]
+    [Tooltip("Prefab do projétil: pode ser um GameObject com EnemyProjectile e/ou um ParticleSystem")]
     public GameObject particlePrefab;
     public Transform muzzle;
     public float particleSpeed = 8f;
@@ -31,12 +32,12 @@ public class EnemyFairy : MonoBehaviour
     public float minSpawnDistance = 1f;
     public float fireDistance = 1.0f;
     public float instanceAutoDestroy = 2f;
-    public int projectileDamage = 1; // dano aplicado ao jogador pelo projétil
+    public int projectileDamage = 1;
 
     [Header("Animator (opcional)")]
     public Animator animator;
     private const string ANIM_ATTACK_BOOL = "isAttacking";
-    public string attackStateName = "Sunfairy_Attack"; // altere se necessário
+    public string attackStateName = "Sunfairy_Attack";
 
     // estado interno
     private float startY;
@@ -64,7 +65,6 @@ public class EnemyFairy : MonoBehaviour
 
     void Update()
     {
-        // Se já chegou e parou: travamos SOMENTE no eixo X e mantemos oscilação vertical
         if (arrivedAndStopped)
         {
             float y = attackPosition.y + Mathf.Sin(Time.time * verticalSpeed) * verticalRange;
@@ -72,11 +72,8 @@ public class EnemyFairy : MonoBehaviour
             return;
         }
 
-        // Movimento padrão: sempre se move para a esquerda enquanto não chegou ao stop
         if (useStopPoint)
-        {
             MoveTowardsStopPoint();
-        }
         else
         {
             if (canMove)
@@ -95,6 +92,7 @@ public class EnemyFairy : MonoBehaviour
     {
         Vector3 targetPos = Vector3.zero;
         bool haveTarget = false;
+
         if (stopPoint != null)
         {
             targetPos = stopPoint.position;
@@ -137,12 +135,10 @@ public class EnemyFairy : MonoBehaviour
 
         if (reached)
         {
-            // trava X e guarda posição para manter a oscilação vertical a partir daqui
             arrivedAndStopped = true;
             attackPosition = transform.position;
             canMove = false;
 
-            // valida presença do player se necessário
             bool playerOk = true;
             if (requirePlayerToAttack)
             {
@@ -152,7 +148,7 @@ public class EnemyFairy : MonoBehaviour
             }
 
             if (playerOk) EnterAttackState();
-            else EnterAttackState(); // se quiser esperar até o player chegar altere aqui
+            else EnterAttackState();
         }
     }
 
@@ -178,7 +174,6 @@ public class EnemyFairy : MonoBehaviour
 
     void EnterAttackState()
     {
-        // fallback target
         if (currentTarget == null)
         {
             var p = GameObject.FindGameObjectWithTag(playerTag);
@@ -186,9 +181,8 @@ public class EnemyFairy : MonoBehaviour
         }
 
         canMove = false;
-        ForceStopMovement(); // zera apenas a velocidade X
+        ForceStopMovement();
 
-        // animação: seta bool e tenta forçar o state Attack (apenas para garantir)
         if (animator != null)
         {
             animator.SetBool(ANIM_ATTACK_BOOL, true);
@@ -211,7 +205,7 @@ public class EnemyFairy : MonoBehaviour
         }
 
         IgnoreCollisionsWithTarget(currentTarget, true);
-        // FireFromPrefab deve ser chamado por Animation Event no clip de ataque
+        // FireFromPrefab será chamado por Animation Event (ou pode chamar diretamente para teste)
     }
 
     void ExitAttackState()
@@ -223,99 +217,128 @@ public class EnemyFairy : MonoBehaviour
     }
 
     // ------------------------
-    // Animation Event / Fire (FORÇA O TIRO PARA A ESQUERDA)
+    // Animation Event / Fire
     // ------------------------
-    
-        public void FireFromPrefab()
-{
-    Debug.Log($"FireFromPrefab called on {name}");
-
-    if (particlePrefab == null)
+    public void FireFromPrefab()
     {
-        Debug.LogWarning("FireFromPrefab: particlePrefab NÃO atribuído no Inspector.");
-        return;
-    }
-    if (muzzle == null)
-    {
-        Debug.LogWarning("FireFromPrefab: muzzle NÃO atribuído no Inspector.");
-        return;
-    }
+        Debug.Log($"FireFromPrefab called on {name}");
 
-    // FORÇAR direção para a ESQUERDA
-    Vector2 dir = Vector2.left;
-
-    // calculos de offset (coloque spawnOffset pequeno para não nascer muito longe)
-    float distanceToPlayer = currentTarget != null ? Vector2.Distance(muzzle.position, currentTarget.position) : Mathf.Infinity;
-    float extraOffset = 0f;
-    if (distanceToPlayer < minSpawnDistance)
-        extraOffset = (minSpawnDistance - distanceToPlayer) + 0.05f;
-
-    // desiredOffset controla quão longe do muzzle o projétil nasce
-    float desiredOffset = Mathf.Max(spawnOffset + extraOffset, fireDistance);
-    // se quiser nascer praticamente na frente, use spawnOffset = 0.12 no Inspector
-    Vector3 spawnPos = muzzle.position + (Vector3)(dir * desiredOffset);
-
-    // instancia o prefab DO PROJÉTIL (não um ParticleSystem isolado)
-    GameObject inst = Instantiate(particlePrefab, spawnPos, Quaternion.identity);
-    inst.transform.right = dir; // orienta a visualização
-
-    // tenta configurar o script do projétil caso exista
-    EnemyProjectile proj = inst.GetComponent<EnemyProjectile>() ?? inst.GetComponentInChildren<EnemyProjectile>();
-    Collider2D projCol = inst.GetComponent<Collider2D>() ?? inst.GetComponentInChildren<Collider2D>();
-
-    if (proj != null)
-    {
-        proj.direction = dir;
-        proj.speed = particleSpeed;       // ajuste no Inspector do inimigo
-        proj.lifeTime = Mathf.Max(proj.lifeTime, instanceAutoDestroy); // garante tempo
-        // proj.damage já pode ser ajustado no prefab ou aqui:
-        // proj.damage = 1;
-    }
-    else
-    {
-        Debug.LogWarning("FireFromPrefab: prefab instanciado NÃO contém EnemyProjectile (adicione o script ao prefab).");
-    }
-
-    // evita colisão com a própria inimiga (ignora entre todos os colliders do inimigo e do projétil)
-    if (projCol != null && enemyColliders != null)
-    {
-        foreach (var ec in enemyColliders)
+        if (particlePrefab == null)
         {
-            if (ec == null) continue;
-            Physics2D.IgnoreCollision(ec, projCol, true);
+            Debug.LogWarning("FireFromPrefab: particlePrefab NÃO atribuído no Inspector.");
+            return;
         }
-    }
+        if (muzzle == null)
+        {
+            Debug.LogWarning("FireFromPrefab: muzzle NÃO atribuído no Inspector.");
+            return;
+        }
 
-    // se o prefab tiver um ParticleSystem para visuals, força Play
-    ParticleSystem ps = inst.GetComponent<ParticleSystem>() ?? inst.GetComponentInChildren<ParticleSystem>();
-    if (ps != null)
-    {
-        var main = ps.main;
-        if (main.simulationSpace != ParticleSystemSimulationSpace.World)
-            Debug.LogWarning("ParticleSystem.simulationSpace != World. Recomendo definir como World no prefab.");
-        ps.Play();
-    }
+        // força direção para esquerda
+        Vector2 dir = Vector2.left;
 
-    // destruição segura
-    if (Application.isPlaying)
-        Destroy(inst, instanceAutoDestroy);
-    else
-        DestroyImmediate(inst);
-}
-    
+        // offset de spawn
+        float distanceToPlayer = currentTarget != null ? Vector2.Distance(muzzle.position, currentTarget.position) : Mathf.Infinity;
+        float extraOffset = 0f;
+        if (distanceToPlayer < minSpawnDistance)
+            extraOffset = (minSpawnDistance - distanceToPlayer) + 0.05f;
+
+        float desiredOffset = Mathf.Max(spawnOffset + extraOffset, fireDistance);
+        Vector3 spawnPos = muzzle.position + (Vector3)(dir * desiredOffset);
+
+        // instancia prefab
+        GameObject inst = Instantiate(particlePrefab, spawnPos, Quaternion.identity);
+        inst.transform.right = dir;
+
+        // LOG pra debug (ajuda muito)
+        bool rootPS = inst.GetComponent<ParticleSystem>() != null;
+        bool childPS = inst.GetComponentInChildren<ParticleSystem>() != null;
+        Debug.Log($"Instanciado {inst.name} | rootPS={rootPS} | childPS={childPS} | pos={inst.transform.position} rot={inst.transform.eulerAngles} scale={inst.transform.lossyScale}");
+
+        // tenta configurar script do projétil
+        EnemyProjectile proj = inst.GetComponent<EnemyProjectile>() ?? inst.GetComponentInChildren<EnemyProjectile>();
+        Collider2D projCol = inst.GetComponent<Collider2D>() ?? inst.GetComponentInChildren<Collider2D>();
+
+        if (proj != null)
+        {
+            // usa o Init para evitar problemas de proteção/overload
+            proj.Init(dir, particleSpeed, Mathf.Max(proj.lifeTime, instanceAutoDestroy), projectileDamage);
+        }
+        else
+        {
+            Debug.LogWarning("FireFromPrefab: prefab instanciado NÃO contém EnemyProjectile (adicione o script ao prefab).");
+        }
+
+        // ignora colisões com a própria inimiga
+        if (projCol != null && enemyColliders != null)
+        {
+            foreach (var ec in enemyColliders)
+            {
+                if (ec == null) continue;
+                Physics2D.IgnoreCollision(ec, projCol, true);
+            }
+        }
+
+        // configura visual do ParticleSystem (se houver)
+        ParticleSystem ps = inst.GetComponent<ParticleSystem>() ?? inst.GetComponentInChildren<ParticleSystem>();
+        if (ps != null)
+        {
+            var main = ps.main;
+            // tenta forçar parâmetros mínimos seguros
+            if (main.simulationSpace != ParticleSystemSimulationSpace.World)
+            {
+                main.simulationSpace = ParticleSystemSimulationSpace.World;
+                Debug.Log("FireFromPrefab: definiu simulationSpace = World no ParticleSystem (por segurança).");
+            }
+
+            // ajustes mínimos se estiver muito pequeno
+            if (main.startLifetime.mode == ParticleSystemCurveMode.Constant && main.startLifetime.constant < 0.05f)
+                main.startLifetime = 0.6f;
+            if (main.startSize.mode == ParticleSystemCurveMode.Constant && main.startSize.constant < 0.02f)
+                main.startSize = 0.25f;
+
+            // Renderer: material / sorting
+            var rend = ps.GetComponent<ParticleSystemRenderer>();
+            if (rend != null)
+            {
+                if (rend.sharedMaterial == null)
+                {
+                    // cria um material simples para sprites (apenas em runtime)
+                    rend.material = new Material(Shader.Find("Sprites/Default"));
+                    Debug.Log("FireFromPrefab: ParticleSystemRenderer não tinha material -> atribuído Sprites/Default.");
+                }
+
+                // força order alto para ficar na frente
+                try
+                {
+                    rend.sortingOrder = Mathf.Max(rend.sortingOrder, 1000);
+                }
+                catch { }
+            }
+
+            // tenta tocar / emitir
+            ps.Play();
+            ps.Emit(8); // emite um pequeno burst para testar visibilidade
+        }
+
+        // destruição segura
+        if (Application.isPlaying)
+            Destroy(inst, instanceAutoDestroy);
+        else
+            DestroyImmediate(inst);
+    }
 
     [ContextMenu("Test FireFromPrefab")]
     public void TestFireFromPrefab()
     {
         if (!Application.isPlaying)
         {
-            Debug.LogWarning("Test FireFromPrefab: execute este teste apenas em Play Mode. Entre no Play e tente de novo.");
+            Debug.LogWarning("Test FireFrom Prefab: execute este teste apenas em Play Mode.");
             return;
         }
         FireFromPrefab();
     }
 
-    // utility: zera apenas componente X da velocidade se houver Rigidbody2D
     void ForceStopMovement()
     {
         var rb = GetComponent<Rigidbody2D>();
@@ -323,7 +346,6 @@ public class EnemyFairy : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
             rb.angularVelocity = 0f;
-            // NÃO colocamos rb.isKinematic = true para preservar oscilações verticais feitas por física
         }
     }
 
@@ -366,5 +388,4 @@ public class EnemyFairy : MonoBehaviour
             Gizmos.DrawWireSphere(muzzle.position, 0.08f);
         }
     }
-
 }
