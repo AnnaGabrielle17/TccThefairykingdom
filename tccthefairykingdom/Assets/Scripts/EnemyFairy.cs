@@ -1,10 +1,12 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 
 
 public class EnemyFairy : MonoBehaviour
 {
-     [Header("Movimento")]
+    [Header("Movimento")]
     public float horizontalSpeed = 2f;
     public float verticalSpeed = 2f;
     public float verticalRange = 1f;
@@ -24,20 +26,22 @@ public class EnemyFairy : MonoBehaviour
     public bool requirePlayerToAttack = true;
 
     [Header("Projétil (Prefab)")]
-    [Tooltip("Prefab do projétil: pode ser um GameObject com EnemyProjectile e/ou um ParticleSystem")]
+    [Tooltip("Prefab que contém EnemyProjectile (script) e/o ParticleSystem visual")]
     public GameObject particlePrefab;
+    [Tooltip("Transform de onde o projétil deve nascer (muzzle)")]
     public Transform muzzle;
     public float particleSpeed = 8f;
+    [Tooltip("Quanto o projétil nasce à frente do muzzle")]
     public float spawnOffset = 0.6f;
     public float minSpawnDistance = 1f;
     public float fireDistance = 1.0f;
     public float instanceAutoDestroy = 2f;
-    public int projectileDamage = 1;
+    public int projectileDamage = 1; // dano aplicado ao jogador
 
     [Header("Animator (opcional)")]
     public Animator animator;
     private const string ANIM_ATTACK_BOOL = "isAttacking";
-    public string attackStateName = "Sunfairy_Attack";
+    public string attackStateName = "Sunfairy_Attack"; // nome do state (se for usar Play)
 
     // estado interno
     private float startY;
@@ -46,6 +50,9 @@ public class EnemyFairy : MonoBehaviour
     private Transform currentTarget = null;
     private Vector3 attackPosition;
     private Collider2D[] enemyColliders;
+
+    // controla um tiro por ciclo/loop de ataque
+    private bool firedThisAttack = false;
 
     void Awake()
     {
@@ -58,13 +65,14 @@ public class EnemyFairy : MonoBehaviour
         if (animator == null) animator = GetComponentInChildren<Animator>();
 
         if (useStopPoint && stopPoint == null && stopByX && Mathf.Approximately(stopX, 0f))
-            Debug.LogWarning("EnemyFairy: useStopPoint habilitado, mas stopPoint não atribuído e stopX=0. Verifique inspector.");
+            Debug.LogWarning("EnemyFairy: useStopPoint habilitado, mas stopPoint não atribuído e stopX=0.");
         if (useStopPoint && stopPoint == null && !stopByX && Mathf.Approximately(stopY, 0f))
-            Debug.LogWarning("EnemyFairy: useStopPoint habilitado, mas stopPoint não atribuído e stopY=0. Verifique inspector.");
+            Debug.LogWarning("EnemyFairy: useStopPoint habilitado, mas stopPoint não atribuído e stopY=0.");
     }
 
     void Update()
     {
+        // Se já chegou e parou: trava X e permite oscilação vertical
         if (arrivedAndStopped)
         {
             float y = attackPosition.y + Mathf.Sin(Time.time * verticalSpeed) * verticalRange;
@@ -72,8 +80,11 @@ public class EnemyFairy : MonoBehaviour
             return;
         }
 
+        // Movimento normal: vai para a esquerda enquanto não parou
         if (useStopPoint)
+        {
             MoveTowardsStopPoint();
+        }
         else
         {
             if (canMove)
@@ -92,7 +103,6 @@ public class EnemyFairy : MonoBehaviour
     {
         Vector3 targetPos = Vector3.zero;
         bool haveTarget = false;
-
         if (stopPoint != null)
         {
             targetPos = stopPoint.position;
@@ -123,15 +133,13 @@ public class EnemyFairy : MonoBehaviour
         float newY = startY + Mathf.Sin(Time.time * verticalSpeed) * verticalRange;
         transform.position = new Vector3(newX, newY, transform.position.z);
 
-        bool reached = false;
+        bool reached;
         if (stopPoint != null)
             reached = Vector2.Distance(new Vector2(transform.position.x, transform.position.y),
                                        new Vector2(targetPos.x, targetPos.y)) <= stopTolerance;
         else
-        {
-            if (stopByX) reached = Mathf.Abs(transform.position.x - targetPos.x) <= stopTolerance;
-            else reached = Mathf.Abs(transform.position.y - targetPos.y) <= stopTolerance;
-        }
+            reached = stopByX ? Mathf.Abs(transform.position.x - targetPos.x) <= stopTolerance
+                              : Mathf.Abs(transform.position.y - targetPos.y) <= stopTolerance;
 
         if (reached)
         {
@@ -139,6 +147,7 @@ public class EnemyFairy : MonoBehaviour
             attackPosition = transform.position;
             canMove = false;
 
+            // checa player se necessário
             bool playerOk = true;
             if (requirePlayerToAttack)
             {
@@ -148,7 +157,7 @@ public class EnemyFairy : MonoBehaviour
             }
 
             if (playerOk) EnterAttackState();
-            else EnterAttackState();
+            else EnterAttackState(); // mantemos ataque mesmo sem player — ajuste se desejar
         }
     }
 
@@ -174,6 +183,7 @@ public class EnemyFairy : MonoBehaviour
 
     void EnterAttackState()
     {
+        // fallback target
         if (currentTarget == null)
         {
             var p = GameObject.FindGameObjectWithTag(playerTag);
@@ -183,29 +193,25 @@ public class EnemyFairy : MonoBehaviour
         canMove = false;
         ForceStopMovement();
 
+        // animações
         if (animator != null)
         {
             animator.SetBool(ANIM_ATTACK_BOOL, true);
             Debug.Log("EnterAttackState: isAttacking=true");
-
-            int hash = Animator.StringToHash(attackStateName);
-            if (animator.HasState(0, hash))
-            {
-                Debug.Log("EnterAttackState: animator.HasState -> forçando Play(" + attackStateName + ")");
-                animator.Play(attackStateName, 0, 0f);
-            }
-            else
-            {
-                Debug.LogWarning("EnterAttackState: state '" + attackStateName + "' não encontrado na layer 0 do Animator.");
-            }
+            // opcional: force play (recomendado usar transições baseadas no bool)
+            // animator.Play(attackStateName, 0, 0f);
         }
         else
         {
             Debug.LogWarning("EnterAttackState: animator não atribuído.");
         }
 
+        // permitir 1 disparo no início do ataque
+        firedThisAttack = false;
+
         IgnoreCollisionsWithTarget(currentTarget, true);
-        // FireFromPrefab será chamado por Animation Event (ou pode chamar diretamente para teste)
+
+        // Observação: FireFromPrefab() deve ser chamado por Animation Event
     }
 
     void ExitAttackState()
@@ -216,11 +222,20 @@ public class EnemyFairy : MonoBehaviour
         arrivedAndStopped = false;
     }
 
-    // ------------------------
+    // -------------------------
     // Animation Event / Fire
-    // ------------------------
+    // -------------------------
+
+    // Função chamada por Animation Event no frame do tiro
     public void FireFromPrefab()
     {
+        if (firedThisAttack)
+        {
+            Debug.Log("FireFromPrefab ignorado (já foi disparado neste ataque).");
+            return;
+        }
+
+        firedThisAttack = true;
         Debug.Log($"FireFromPrefab called on {name}");
 
         if (particlePrefab == null)
@@ -234,39 +249,35 @@ public class EnemyFairy : MonoBehaviour
             return;
         }
 
-        // força direção para esquerda
+        // força direção para a esquerda (troque para calcular direção até o player se desejar)
         Vector2 dir = Vector2.left;
 
-        // offset de spawn
+        // offset para não nascer dentro do muzzle
         float distanceToPlayer = currentTarget != null ? Vector2.Distance(muzzle.position, currentTarget.position) : Mathf.Infinity;
         float extraOffset = 0f;
         if (distanceToPlayer < minSpawnDistance)
             extraOffset = (minSpawnDistance - distanceToPlayer) + 0.05f;
-
         float desiredOffset = Mathf.Max(spawnOffset + extraOffset, fireDistance);
         Vector3 spawnPos = muzzle.position + (Vector3)(dir * desiredOffset);
 
-        // instancia prefab
+        // instancia o prefab
         GameObject inst = Instantiate(particlePrefab, spawnPos, Quaternion.identity);
         inst.transform.right = dir;
 
-        // LOG pra debug (ajuda muito)
-        bool rootPS = inst.GetComponent<ParticleSystem>() != null;
-        bool childPS = inst.GetComponentInChildren<ParticleSystem>() != null;
-        Debug.Log($"Instanciado {inst.name} | rootPS={rootPS} | childPS={childPS} | pos={inst.transform.position} rot={inst.transform.eulerAngles} scale={inst.transform.lossyScale}");
-
-        // tenta configurar script do projétil
-        EnemyProjectile proj = inst.GetComponent<EnemyProjectile>() ?? inst.GetComponentInChildren<EnemyProjectile>();
-        Collider2D projCol = inst.GetComponent<Collider2D>() ?? inst.GetComponentInChildren<Collider2D>();
+        // seta dados no script EnemyProjectile (se existir)
+        var proj = inst.GetComponent<EnemyProjectile>() ?? inst.GetComponentInChildren<EnemyProjectile>();
+        var projCol = inst.GetComponent<Collider2D>() ?? inst.GetComponentInChildren<Collider2D>();
 
         if (proj != null)
         {
-            // usa o Init para evitar problemas de proteção/overload
-            proj.Init(dir, particleSpeed, Mathf.Max(proj.lifeTime, instanceAutoDestroy), projectileDamage);
+            proj.direction = dir;
+            proj.speed = particleSpeed;
+            proj.lifeTime = Mathf.Max(proj.lifeTime, instanceAutoDestroy);
+            proj.damage = projectileDamage;
         }
         else
         {
-            Debug.LogWarning("FireFromPrefab: prefab instanciado NÃO contém EnemyProjectile (adicione o script ao prefab).");
+            Debug.LogWarning("FireFromPrefab: prefab instanciado NÃO contém EnemyProjectile (adicione ao prefab se quiser lógica).");
         }
 
         // ignora colisões com a própria inimiga
@@ -279,53 +290,27 @@ public class EnemyFairy : MonoBehaviour
             }
         }
 
-        // configura visual do ParticleSystem (se houver)
-        ParticleSystem ps = inst.GetComponent<ParticleSystem>() ?? inst.GetComponentInChildren<ParticleSystem>();
+        // toca particle system visuals se houver
+        var ps = inst.GetComponent<ParticleSystem>() ?? inst.GetComponentInChildren<ParticleSystem>();
         if (ps != null)
         {
             var main = ps.main;
-            // tenta forçar parâmetros mínimos seguros
             if (main.simulationSpace != ParticleSystemSimulationSpace.World)
-            {
-                main.simulationSpace = ParticleSystemSimulationSpace.World;
-                Debug.Log("FireFromPrefab: definiu simulationSpace = World no ParticleSystem (por segurança).");
-            }
-
-            // ajustes mínimos se estiver muito pequeno
-            if (main.startLifetime.mode == ParticleSystemCurveMode.Constant && main.startLifetime.constant < 0.05f)
-                main.startLifetime = 0.6f;
-            if (main.startSize.mode == ParticleSystemCurveMode.Constant && main.startSize.constant < 0.02f)
-                main.startSize = 0.25f;
-
-            // Renderer: material / sorting
-            var rend = ps.GetComponent<ParticleSystemRenderer>();
-            if (rend != null)
-            {
-                if (rend.sharedMaterial == null)
-                {
-                    // cria um material simples para sprites (apenas em runtime)
-                    rend.material = new Material(Shader.Find("Sprites/Default"));
-                    Debug.Log("FireFromPrefab: ParticleSystemRenderer não tinha material -> atribuído Sprites/Default.");
-                }
-
-                // força order alto para ficar na frente
-                try
-                {
-                    rend.sortingOrder = Mathf.Max(rend.sortingOrder, 1000);
-                }
-                catch { }
-            }
-
-            // tenta tocar / emitir
+                Debug.LogWarning("ParticleSystem.simulationSpace != World. Recomendo definir como World no prefab.");
             ps.Play();
-            ps.Emit(8); // emite um pequeno burst para testar visibilidade
         }
 
         // destruição segura
-        if (Application.isPlaying)
-            Destroy(inst, instanceAutoDestroy);
-        else
-            DestroyImmediate(inst);
+        if (Application.isPlaying) Destroy(inst, instanceAutoDestroy);
+        else DestroyImmediate(inst);
+    }
+
+    // Animation Event/Outro método para resetar a flag para o próximo loop
+    // Chame ResetFireFlag no final do clip de ataque (ou após os frames de dano)
+    public void ResetFireFlag()
+    {
+        firedThisAttack = false;
+        Debug.Log("ResetFireFlag chamado: pode disparar no próximo loop de ataque.");
     }
 
     [ContextMenu("Test FireFromPrefab")]
@@ -333,12 +318,13 @@ public class EnemyFairy : MonoBehaviour
     {
         if (!Application.isPlaying)
         {
-            Debug.LogWarning("Test FireFrom Prefab: execute este teste apenas em Play Mode.");
+            Debug.LogWarning("Test FireFromPrefab: execute este teste apenas em Play Mode.");
             return;
         }
         FireFromPrefab();
     }
 
+    // util
     void ForceStopMovement()
     {
         var rb = GetComponent<Rigidbody2D>();
