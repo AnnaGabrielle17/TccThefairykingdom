@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class EnemyFairy : MonoBehaviour
 {
-    [Header("Movimento")]
+     [Header("Movimento")]
     public float horizontalSpeed = 2f;
     public float verticalSpeed = 2f;
     public float verticalRange = 1f;
@@ -26,24 +26,26 @@ public class EnemyFairy : MonoBehaviour
     public bool requirePlayerToAttack = true;
 
     [Header("Projétil (Prefab)")]
-    [Tooltip("Prefab que contém EnemyProjectile (script) e/o ParticleSystem visual")]
+    [Tooltip("Prefab que contém EnemyProjectile (script) e/ou ParticleSystem visual")]
     public GameObject particlePrefab;
-    [Tooltip("Transform de onde o projétil deve nascer (muzzle)")]
+    [Tooltip("Transform de onde o projétil deve nascer (muzzle) — um child vazio posicionado na frente da varinha")]
     public Transform muzzle;
-    public float particleSpeed = 8f;
+    [Tooltip("Velocidade linear do projétil (vai para EnemyProjectile.speed)")]
+    public float particleSpeed = 12f;
     [Tooltip("Quanto o projétil nasce à frente do muzzle")]
-    public float spawnOffset = 0.6f;
+    public float spawnOffset = 0.12f;
     public float minSpawnDistance = 1f;
-    public float fireDistance = 1.0f;
-    public float instanceAutoDestroy = 2f;
-    public int projectileDamage = 1; // dano aplicado ao jogador
+    public float fireDistance = 0.6f;
+    [Tooltip("Tempo antes de destruir automaticamente a instância do projétil (usado como fallback)")]
+    public float instanceAutoDestroy = 4f;
+    public int projectileDamage = 1;
 
     [Header("Animator (opcional)")]
     public Animator animator;
     private const string ANIM_ATTACK_BOOL = "isAttacking";
-    public string attackStateName = "Sunfairy_Attack"; // nome do state (se for usar Play)
+    public string attackStateName = "Sunfairy_Attack";
 
-    // estado interno
+    // estado
     private float startY;
     private bool canMove = true;
     private bool arrivedAndStopped = false;
@@ -63,16 +65,10 @@ public class EnemyFairy : MonoBehaviour
     {
         startY = transform.position.y;
         if (animator == null) animator = GetComponentInChildren<Animator>();
-
-        if (useStopPoint && stopPoint == null && stopByX && Mathf.Approximately(stopX, 0f))
-            Debug.LogWarning("EnemyFairy: useStopPoint habilitado, mas stopPoint não atribuído e stopX=0.");
-        if (useStopPoint && stopPoint == null && !stopByX && Mathf.Approximately(stopY, 0f))
-            Debug.LogWarning("EnemyFairy: useStopPoint habilitado, mas stopPoint não atribuído e stopY=0.");
     }
 
     void Update()
     {
-        // Se já chegou e parou: trava X e permite oscilação vertical
         if (arrivedAndStopped)
         {
             float y = attackPosition.y + Mathf.Sin(Time.time * verticalSpeed) * verticalRange;
@@ -80,11 +76,8 @@ public class EnemyFairy : MonoBehaviour
             return;
         }
 
-        // Movimento normal: vai para a esquerda enquanto não parou
         if (useStopPoint)
-        {
             MoveTowardsStopPoint();
-        }
         else
         {
             if (canMove)
@@ -103,43 +96,23 @@ public class EnemyFairy : MonoBehaviour
     {
         Vector3 targetPos = Vector3.zero;
         bool haveTarget = false;
-        if (stopPoint != null)
-        {
-            targetPos = stopPoint.position;
-            haveTarget = true;
-        }
+        if (stopPoint != null) { targetPos = stopPoint.position; haveTarget = true; }
         else
         {
-            if (stopByX)
-            {
-                targetPos = new Vector3(stopX, transform.position.y, transform.position.z);
-                haveTarget = true;
-            }
-            else
-            {
-                targetPos = new Vector3(transform.position.x, stopY, transform.position.z);
-                haveTarget = true;
-            }
+            if (stopByX) { targetPos = new Vector3(stopX, transform.position.y, transform.position.z); haveTarget = true; }
+            else { targetPos = new Vector3(transform.position.x, stopY, transform.position.z); haveTarget = true; }
         }
 
-        if (!haveTarget)
-        {
-            Debug.LogWarning("EnemyFairy: useStopPoint ativo mas sem alvo válido (stopPoint/stopX/stopY).");
-            return;
-        }
+        if (!haveTarget) { Debug.LogWarning("EnemyFairy: useStopPoint ativo mas sem alvo válido."); return; }
 
         float step = horizontalSpeed * Time.deltaTime;
         float newX = Mathf.MoveTowards(transform.position.x, targetPos.x, step);
         float newY = startY + Mathf.Sin(Time.time * verticalSpeed) * verticalRange;
         transform.position = new Vector3(newX, newY, transform.position.z);
 
-        bool reached;
-        if (stopPoint != null)
-            reached = Vector2.Distance(new Vector2(transform.position.x, transform.position.y),
-                                       new Vector2(targetPos.x, targetPos.y)) <= stopTolerance;
-        else
-            reached = stopByX ? Mathf.Abs(transform.position.x - targetPos.x) <= stopTolerance
-                              : Mathf.Abs(transform.position.y - targetPos.y) <= stopTolerance;
+        bool reached = stopPoint != null
+            ? Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(targetPos.x, targetPos.y)) <= stopTolerance
+            : (stopByX ? Mathf.Abs(transform.position.x - targetPos.x) <= stopTolerance : Mathf.Abs(transform.position.y - targetPos.y) <= stopTolerance);
 
         if (reached)
         {
@@ -147,7 +120,6 @@ public class EnemyFairy : MonoBehaviour
             attackPosition = transform.position;
             canMove = false;
 
-            // checa player se necessário
             bool playerOk = true;
             if (requirePlayerToAttack)
             {
@@ -157,7 +129,7 @@ public class EnemyFairy : MonoBehaviour
             }
 
             if (playerOk) EnterAttackState();
-            else EnterAttackState(); // mantemos ataque mesmo sem player — ajuste se desejar
+            else EnterAttackState();
         }
     }
 
@@ -165,14 +137,7 @@ public class EnemyFairy : MonoBehaviour
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRadius, detectionLayer);
         Transform detected = null;
-        foreach (var c in hits)
-        {
-            if (c != null && c.CompareTag(playerTag))
-            {
-                detected = c.transform;
-                break;
-            }
-        }
+        foreach (var c in hits) if (c != null && c.CompareTag(playerTag)) { detected = c.transform; break; }
 
         if (detected != null && currentTarget == null)
         {
@@ -183,7 +148,6 @@ public class EnemyFairy : MonoBehaviour
 
     void EnterAttackState()
     {
-        // fallback target
         if (currentTarget == null)
         {
             var p = GameObject.FindGameObjectWithTag(playerTag);
@@ -193,25 +157,15 @@ public class EnemyFairy : MonoBehaviour
         canMove = false;
         ForceStopMovement();
 
-        // animações
         if (animator != null)
         {
             animator.SetBool(ANIM_ATTACK_BOOL, true);
-            Debug.Log("EnterAttackState: isAttacking=true");
-            // opcional: force play (recomendado usar transições baseadas no bool)
-            // animator.Play(attackStateName, 0, 0f);
         }
-        else
-        {
-            Debug.LogWarning("EnterAttackState: animator não atribuído.");
-        }
+        else Debug.LogWarning("EnterAttackState: animator não atribuído.");
 
-        // permitir 1 disparo no início do ataque
         firedThisAttack = false;
-
         IgnoreCollisionsWithTarget(currentTarget, true);
-
-        // Observação: FireFromPrefab() deve ser chamado por Animation Event
+        // NOTE: FireFromPrefab() é chamado por Animation Event no clip de ataque
     }
 
     void ExitAttackState()
@@ -222,11 +176,7 @@ public class EnemyFairy : MonoBehaviour
         arrivedAndStopped = false;
     }
 
-    // -------------------------
-    // Animation Event / Fire
-    // -------------------------
-
-    // Função chamada por Animation Event no frame do tiro
+    // Animation Event: chamado no frame do tiro dentro do clip de ataque
     public void FireFromPrefab()
     {
         if (firedThisAttack)
@@ -243,28 +193,24 @@ public class EnemyFairy : MonoBehaviour
             Debug.LogWarning("FireFromPrefab: particlePrefab NÃO atribuído no Inspector.");
             return;
         }
-        if (muzzle == null)
-        {
-            Debug.LogWarning("FireFromPrefab: muzzle NÃO atribuído no Inspector.");
-            return;
-        }
 
-        // força direção para a esquerda (troque para calcular direção até o player se desejar)
-        Vector2 dir = Vector2.left;
+        Vector3 muzzleWorldPos;
+        if (muzzle != null) muzzleWorldPos = muzzle.position;
+        else { Debug.LogWarning("muzzle não atribuído — usando transform.position como fallback."); muzzleWorldPos = transform.position; }
 
-        // offset para não nascer dentro do muzzle
-        float distanceToPlayer = currentTarget != null ? Vector2.Distance(muzzle.position, currentTarget.position) : Mathf.Infinity;
+        Vector2 dir = Vector2.left; // força esquerda (troque para dinâmica se quiser mirar no player)
+
+        float distanceToPlayer = (currentTarget != null) ? Vector2.Distance(muzzleWorldPos, currentTarget.position) : Mathf.Infinity;
         float extraOffset = 0f;
-        if (distanceToPlayer < minSpawnDistance)
-            extraOffset = (minSpawnDistance - distanceToPlayer) + 0.05f;
+        if (distanceToPlayer < minSpawnDistance) extraOffset = (minSpawnDistance - distanceToPlayer) + 0.05f;
         float desiredOffset = Mathf.Max(spawnOffset + extraOffset, fireDistance);
-        Vector3 spawnPos = muzzle.position + (Vector3)(dir * desiredOffset);
+        Vector3 spawnPos = muzzleWorldPos + (Vector3)(dir * desiredOffset);
 
-        // instancia o prefab
+        Debug.Log($"SpawnPos={spawnPos} muzzlePos={muzzleWorldPos} dir={dir} desiredOffset={desiredOffset} particleSpeed={particleSpeed} instanceAutoDestroy={instanceAutoDestroy}");
+
         GameObject inst = Instantiate(particlePrefab, spawnPos, Quaternion.identity);
         inst.transform.right = dir;
 
-        // seta dados no script EnemyProjectile (se existir)
         var proj = inst.GetComponent<EnemyProjectile>() ?? inst.GetComponentInChildren<EnemyProjectile>();
         var projCol = inst.GetComponent<Collider2D>() ?? inst.GetComponentInChildren<Collider2D>();
 
@@ -274,39 +220,28 @@ public class EnemyFairy : MonoBehaviour
             proj.speed = particleSpeed;
             proj.lifeTime = Mathf.Max(proj.lifeTime, instanceAutoDestroy);
             proj.damage = projectileDamage;
+            Debug.Log("EnemyProjectile configurado: speed=" + proj.speed + " lifeTime=" + proj.lifeTime + " damage=" + proj.damage);
         }
-        else
-        {
-            Debug.LogWarning("FireFromPrefab: prefab instanciado NÃO contém EnemyProjectile (adicione ao prefab se quiser lógica).");
-        }
+        else Debug.LogWarning("FireFromPrefab: prefab instanciado NÃO contém EnemyProjectile.");
 
-        // ignora colisões com a própria inimiga
         if (projCol != null && enemyColliders != null)
         {
-            foreach (var ec in enemyColliders)
-            {
-                if (ec == null) continue;
-                Physics2D.IgnoreCollision(ec, projCol, true);
-            }
+            foreach (var ec in enemyColliders) if (ec != null) Physics2D.IgnoreCollision(ec, projCol, true);
         }
 
-        // toca particle system visuals se houver
         var ps = inst.GetComponent<ParticleSystem>() ?? inst.GetComponentInChildren<ParticleSystem>();
         if (ps != null)
         {
-            var main = ps.main;
-            if (main.simulationSpace != ParticleSystemSimulationSpace.World)
+            if (ps.main.simulationSpace != ParticleSystemSimulationSpace.World)
                 Debug.LogWarning("ParticleSystem.simulationSpace != World. Recomendo definir como World no prefab.");
             ps.Play();
         }
 
-        // destruição segura
         if (Application.isPlaying) Destroy(inst, instanceAutoDestroy);
         else DestroyImmediate(inst);
     }
 
-    // Animation Event/Outro método para resetar a flag para o próximo loop
-    // Chame ResetFireFlag no final do clip de ataque (ou após os frames de dano)
+    // chamado por Animation Event ao fim do ciclo de ataque (para permitir novo tiro)
     public void ResetFireFlag()
     {
         firedThisAttack = false;
@@ -316,15 +251,10 @@ public class EnemyFairy : MonoBehaviour
     [ContextMenu("Test FireFromPrefab")]
     public void TestFireFromPrefab()
     {
-        if (!Application.isPlaying)
-        {
-            Debug.LogWarning("Test FireFromPrefab: execute este teste apenas em Play Mode.");
-            return;
-        }
+        if (!Application.isPlaying) { Debug.LogWarning("Teste apenas em Play Mode."); return; }
         FireFromPrefab();
     }
 
-    // util
     void ForceStopMovement()
     {
         var rb = GetComponent<Rigidbody2D>();
@@ -342,14 +272,10 @@ public class EnemyFairy : MonoBehaviour
         if (targetCols == null || targetCols.Length == 0) return;
 
         foreach (var ec in enemyColliders)
-        {
-            if (ec == null) continue;
-            foreach (var tc in targetCols)
-            {
-                if (tc == null) continue;
-                Physics2D.IgnoreCollision(ec, tc, ignore);
-            }
-        }
+            if (ec != null)
+                foreach (var tc in targetCols)
+                    if (tc != null)
+                        Physics2D.IgnoreCollision(ec, tc, ignore);
     }
 
     void OnDrawGizmosSelected()
@@ -360,12 +286,9 @@ public class EnemyFairy : MonoBehaviour
         if (useStopPoint)
         {
             Gizmos.color = Color.red;
-            if (stopPoint != null)
-                Gizmos.DrawWireSphere(stopPoint.position, stopTolerance);
-            else if (stopByX)
-                Gizmos.DrawLine(new Vector3(stopX, transform.position.y - 5f, 0f), new Vector3(stopX, transform.position.y + 5f, 0f));
-            else
-                Gizmos.DrawLine(new Vector3(transform.position.x - 5f, stopY, 0f), new Vector3(transform.position.x + 5f, stopY, 0f));
+            if (stopPoint != null) Gizmos.DrawWireSphere(stopPoint.position, stopTolerance);
+            else if (stopByX) Gizmos.DrawLine(new Vector3(stopX, transform.position.y - 5f, 0f), new Vector3(stopX, transform.position.y + 5f, 0f));
+            else Gizmos.DrawLine(new Vector3(transform.position.x - 5f, stopY, 0f), new Vector3(transform.position.x + 5f, stopY, 0f));
         }
 
         if (muzzle != null)
@@ -375,3 +298,11 @@ public class EnemyFairy : MonoBehaviour
         }
     }
 }
+
+
+
+
+
+
+
+

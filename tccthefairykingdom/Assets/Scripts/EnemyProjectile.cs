@@ -2,94 +2,81 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
-     [Header("Movimento")]
+    [Header("Movimento")]
     public Vector2 direction = Vector2.left;
-    public float speed = 8f;
-    public float lifeTime = 2f;
+    public float speed = 22f;       // ajuste no Inspector
+    public float lifeTime = 6f;     // ajuste no Inspector
 
     [Header("Dano")]
     public int damage = 1;
     public string targetTag = "Player";
 
-    // componentes
-    private Rigidbody2D rb;
-    private Collider2D col;
+    Rigidbody2D rb;
+    Collider2D col;
+    private Vector2 spawnPos;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
 
-        // configurações seguras por script (pode ajustar no Inspector também)
         if (rb != null)
         {
             rb.gravityScale = 0f;
             rb.angularVelocity = 0f;
-            rb.isKinematic = false; // usando velocity
+            rb.isKinematic = false;
         }
 
         if (col != null)
-        {
             col.isTrigger = true;
-        }
     }
 
     void Start()
     {
-        // aplica velocidade inicial (caso Init não tenha sido chamado)
-        rb.linearVelocity = direction.normalized * speed;
-        Destroy(gameObject, lifeTime);
-    }
+        spawnPos = transform.position;
 
-    // Método público seguro para inicializar o projétil ao instanciar
-    public void Init(Vector2 dir, float spd, float lifeTimeSec, int dmg)
-    {
-        direction = dir.normalized;
-        speed = spd;
-        lifeTime = lifeTimeSec;
-        damage = dmg;
-
-        if (rb == null) rb = GetComponent<Rigidbody2D>();
         if (rb != null)
-        {
-            rb.linearVelocity = direction * speed;
-        }
+            rb.linearVelocity = direction.normalized * speed;
+        else
+            Debug.LogWarning("EnemyProjectile: Rigidbody2D não encontrado — movimento por física não será aplicado.");
 
-        // reinicia timer de destruição
-        CancelInvoke(nameof(DestroySelf));
-        Invoke(nameof(DestroySelf), Mathf.Max(0.01f, lifeTime));
+        // Safety: autodestroy por tempo
+        Destroy(gameObject, lifeTime);
+        Debug.Log($"[Projectile] spawned at {spawnPos} dir={direction} speed={speed} lifeTime={lifeTime}");
     }
 
-    void DestroySelf()
+    void Update()
     {
-        if (Application.isPlaying)
+        // opcional: destrói se exceder certa distância (proteção extra)
+        float maxDist = speed * lifeTime * 1.1f; // margem
+        if (Vector2.Distance(spawnPos, transform.position) > maxDist)
+        {
             Destroy(gameObject);
-        else
-            DestroyImmediate(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other == null) return;
 
+        // se atingir o jogador (por tag)
         if (other.CompareTag(targetTag))
         {
-            var dano = other.GetComponent<FadaDano>();
-            if (dano != null)
+            var fada = other.GetComponent<FadaDano>();
+            if (fada != null)
             {
-                dano.TryTakeDamageFromExternal(damage);
+                fada.TryTakeDamageFromExternal(damage);
             }
             else
             {
-                Debug.LogWarning("EnemyProjectile: jogador atingido mas não encontrou FadaDano no objeto com Tag 'Player'.");
+                Debug.LogWarning("EnemyProjectile: Player atingido mas não encontrou FadaDano no objeto.");
             }
 
-            DestroySelf();
+            Destroy(gameObject);
+            return;
         }
-        else
-        {
-            // opcional: destruir ao colidir com cenário (descomente e ajuste layer)
-            // if (other.gameObject.layer == LayerMask.NameToLayer("Ground")) DestroySelf();
-        }
+
+        // opcional: destruir ao colidir com cenário/obstáculo — se não quiser, comente
+        Destroy(gameObject);
     }
 }

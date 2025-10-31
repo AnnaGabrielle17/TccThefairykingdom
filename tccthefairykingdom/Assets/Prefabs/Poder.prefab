@@ -4992,6 +4992,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: -1, y: 0}
   speed: 20
-  lifeTime: 6
+  lifeTime: 4
   damage: 1
   targetTag: Player

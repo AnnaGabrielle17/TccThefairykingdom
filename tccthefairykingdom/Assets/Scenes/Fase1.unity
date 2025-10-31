@@ -3469,11 +3469,11 @@ MonoBehaviour:
   requirePlayerToAttack: 1
   particlePrefab: {fileID: 5482076319658210262, guid: bbda77734cb0b5642bd135eda9f7ea45, type: 3}
   muzzle: {fileID: 476166810}
-  particleSpeed: 30
-  spawnOffset: 0.3
+  particleSpeed: 20
+  spawnOffset: 0.25
   minSpawnDistance: 1
   fireDistance: 0.6
-  instanceAutoDestroy: 5
+  instanceAutoDestroy: 4
   projectileDamage: 1
   animator: {fileID: 1826654238}
   attackStateName: Sunfairy_Attack
