@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
-    [Header("Movimento")]
+    [Header("Movimento (valores default)")]
     public Vector2 direction = Vector2.left;
-    public float speed = 22f;       // ajuste no Inspector
-    public float lifeTime = 6f;     // ajuste no Inspector
+    public float speed = 8f;
+    public float lifeTime = 2f;
 
     [Header("Dano")]
     public int damage = 1;
@@ -13,42 +13,69 @@ public class EnemyProjectile : MonoBehaviour
 
     Rigidbody2D rb;
     Collider2D col;
-    private Vector2 spawnPos;
+    Vector2 spawnPos;
+    private bool initialized = false;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
 
-        if (rb != null)
+        if (rb == null) Debug.LogWarning("EnemyProjectile: Rigidbody2D faltando!");
+        else
         {
             rb.gravityScale = 0f;
             rb.angularVelocity = 0f;
+            // deixar Dynamic normalmente; se usar Kinematic adapte o movimento.
             rb.isKinematic = false;
+            rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         }
 
-        if (col != null)
-            col.isTrigger = true;
+        if (col != null) col.isTrigger = true;
+    }
+
+    // Init recomendado para garantir valores em runtime (chame de EnemyFairy)
+    public void Init(Vector2 dir, float speedValue, float lifeTimeValue, int damageValue)
+    {
+        direction = dir.normalized;
+        speed = Mathf.Abs(speedValue); // garante positivo
+        lifeTime = Mathf.Max(0.01f, lifeTimeValue);
+        damage = damageValue;
+        initialized = true;
     }
 
     void Start()
     {
         spawnPos = transform.position;
 
-        if (rb != null)
-            rb.linearVelocity = direction.normalized * speed;
-        else
-            Debug.LogWarning("EnemyProjectile: Rigidbody2D não encontrado — movimento por física não será aplicado.");
+        // se não foi inicializado por Init(), usa os valores existentes no prefab
+        if (!initialized)
+        {
+            // nothing: usa direction/speed/lifeTime do prefab
+        }
 
-        // Safety: autodestroy por tempo
+        if (rb != null)
+        {
+            // aplica velocidade física clara
+            rb.linearVelocity = (direction.normalized) * speed;
+        }
+        else
+        {
+            // fallback: movimento por transform
+            Debug.LogWarning("EnemyProjectile: sem Rigidbody2D, movendo por Transform (menos ideal).");
+        }
+
+        // autodestroy por segurança
         Destroy(gameObject, lifeTime);
-        Debug.Log($"[Projectile] spawned at {spawnPos} dir={direction} speed={speed} lifeTime={lifeTime}");
+
+        Debug.Log($"[Projectile] spawned at {transform.position} dir={direction} speed={speed} lifeTime={lifeTime}");
     }
 
     void Update()
     {
-        // opcional: destrói se exceder certa distância (proteção extra)
-        float maxDist = speed * lifeTime * 1.1f; // margem
+        // proteção adicional: se por algum motivo o projétil não sair,
+        // destruímos se passar da distância esperada (evita travar no mundo).
+        float maxDist = speed * lifeTime * 1.2f;
         if (Vector2.Distance(spawnPos, transform.position) > maxDist)
         {
             Destroy(gameObject);
@@ -59,24 +86,26 @@ public class EnemyProjectile : MonoBehaviour
     {
         if (other == null) return;
 
-        // se atingir o jogador (por tag)
+        // acerta jogador
         if (other.CompareTag(targetTag))
         {
             var fada = other.GetComponent<FadaDano>();
             if (fada != null)
             {
                 fada.TryTakeDamageFromExternal(damage);
+                Debug.Log("[Projectile] atingiu Player, damage=" + damage);
             }
             else
             {
-                Debug.LogWarning("EnemyProjectile: Player atingido mas não encontrou FadaDano no objeto.");
+                Debug.LogWarning("[Projectile] atingiu Player mas não encontrou FadaDano.");
             }
 
             Destroy(gameObject);
             return;
         }
 
-        // opcional: destruir ao colidir com cenário/obstáculo — se não quiser, comente
+        // você pode decidir colidir com cenário: exemplo abaixo destrói
+        // mas se quiser que passe por objetos, filtre por Layer/Tag
         Destroy(gameObject);
     }
 }

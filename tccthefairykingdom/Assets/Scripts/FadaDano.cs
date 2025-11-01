@@ -209,20 +209,51 @@ public class FadaDano : MonoBehaviour
     private void Morrer()
     {
         Debug.Log("Fada morreu!");
-        // se quiser: GameOverController.Instance.ShowGameOver();
-         if (currentVisualCoroutine != null)
+
+    // cancelar qualquer animação visual em andamento
+    if (currentVisualCoroutine != null)
     {
         StopCoroutine(currentVisualCoroutine);
         currentVisualCoroutine = null;
     }
 
-    // se quiser tocar uma animação de morte, dispare aqui antes de destruir:
-    // var anim = GetComponent<Animator>();
-    // if (anim != null) anim.SetTrigger("Die");
+    // Desabilita componentes que controlam o jogador (se existirem)
+    var rb = GetComponent<Rigidbody2D>();
+    if (rb != null) rb.linearVelocity = Vector2.zero;
 
-    // destroi o GameObject da fada
-    Destroy(gameObject);
+    // desativa scripts de controle do jogador para evitar inputs pós-morte
+    var behaviors = GetComponents<MonoBehaviour>();
+    foreach (var b in behaviors)
+    {
+        // não desativa este script (FadaDano) para manter lógica, só desativa outros controles
+        if (b != this) b.enabled = false;
+    }
+
+    // opcional: toca trigger de animação de morte
+    var anim = GetComponent<Animator>();
+    if (anim != null)
+    {
+        // crie um trigger "Die" no Animator se quiser animação de morte
+        if (anim.HasState(0, Animator.StringToHash("Die")))
+            anim.SetTrigger("Die");
+    }
+
+    // chama GameOverController (se existir)
+    if (GameOverController.Instance != null)
+    {
+        GameOverController.Instance.ShowGameOver();
+    }
+    else
+    {
+        Debug.LogWarning("GameOverController não encontrado na cena. Crie um GameObject com o script e aponte o painel.");
+        // fallback: destrói o jogador (se realmente desejar)
+        Destroy(gameObject);
+    }
+
+    // Note: não destruímos o gameObject imediatamente para que a UI continue visível e para que você
+    // possa adicionar efeitos de morte. Se quiser destruir, pode chamar Destroy(gameObject, 1f);
 }
+
     
 
     private IEnumerator PiscarDano()

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class EnemyFairy : MonoBehaviour
 {
-     [Header("Movimento")]
+    [Header("Movimento")]
     public float horizontalSpeed = 2f;
     public float verticalSpeed = 2f;
     public float verticalRange = 1f;
@@ -211,16 +211,15 @@ public class EnemyFairy : MonoBehaviour
         GameObject inst = Instantiate(particlePrefab, spawnPos, Quaternion.identity);
         inst.transform.right = dir;
 
+        // tentamos configurar o script do projétil via Init(...) — método recomendado
         var proj = inst.GetComponent<EnemyProjectile>() ?? inst.GetComponentInChildren<EnemyProjectile>();
         var projCol = inst.GetComponent<Collider2D>() ?? inst.GetComponentInChildren<Collider2D>();
 
         if (proj != null)
         {
-            proj.direction = dir;
-            proj.speed = particleSpeed;
-            proj.lifeTime = Mathf.Max(proj.lifeTime, instanceAutoDestroy);
-            proj.damage = projectileDamage;
-            Debug.Log("EnemyProjectile configurado: speed=" + proj.speed + " lifeTime=" + proj.lifeTime + " damage=" + proj.damage);
+            // chama Init para garantir values em runtime
+            proj.Init(dir, particleSpeed, instanceAutoDestroy, projectileDamage);
+            Debug.Log("EnemyProjectile Init chamado: speed=" + particleSpeed + " lifeTime=" + instanceAutoDestroy + " damage=" + projectileDamage);
         }
         else Debug.LogWarning("FireFromPrefab: prefab instanciado NÃO contém EnemyProjectile.");
 
@@ -232,11 +231,13 @@ public class EnemyFairy : MonoBehaviour
         var ps = inst.GetComponent<ParticleSystem>() ?? inst.GetComponentInChildren<ParticleSystem>();
         if (ps != null)
         {
+            // se your visual é ParticleSystem, decida Simulation Space: Local faz visual seguir transform, World faz o efeito persistir independente
             if (ps.main.simulationSpace != ParticleSystemSimulationSpace.World)
-                Debug.LogWarning("ParticleSystem.simulationSpace != World. Recomendo definir como World no prefab.");
+                Debug.LogWarning("ParticleSystem.simulationSpace != World. Recomendo definir como World no prefab se quiser efeito independente.");
             ps.Play();
         }
 
+        // fallback: destruição por segurança (o projectile também pode destruir a si mesmo)
         if (Application.isPlaying) Destroy(inst, instanceAutoDestroy);
         else DestroyImmediate(inst);
     }
@@ -260,7 +261,9 @@ public class EnemyFairy : MonoBehaviour
         var rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            Vector2 v = rb.linearVelocity;
+            v.x = 0f;
+            rb.linearVelocity = v;
             rb.angularVelocity = 0f;
         }
     }
@@ -298,7 +301,6 @@ public class EnemyFairy : MonoBehaviour
         }
     }
 }
-
 
 
 
