@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Mecanica
+  - Enemy
+  - PlayerProjectile
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
@@ -12,10 +15,10 @@ TagManager:
   - Mushroom
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - EnemyProjectile
+  - PlayerProjectile
+  - Enemy
+  - Player
   - 
   - 
   - 
