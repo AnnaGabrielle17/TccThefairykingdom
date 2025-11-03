@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
     public float lifeTime = 3f;
     public int damage = 1;
 
-    // Defina a layer dos inimigos via Inspector (por exemplo: "Enemy")
+    [Tooltip("Marque a layer 'Enemy' aqui no Inspector (LayerMask)")]
     public LayerMask enemyLayer;
 
     int direction = 1;
@@ -23,7 +23,6 @@ public class Projectile : MonoBehaviour
     {
         if (rb != null)
             rb.linearVelocity = new Vector2(direction * speed, 0f);
-
         Destroy(gameObject, lifeTime);
     }
 
@@ -40,36 +39,35 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Ignora colisões com jogador
         if (other.CompareTag("Player")) return;
 
-        // 1) Filtrar por LayerMask: somente prosseguir se 'other' estiver na layer de inimigo
-        if (((1 << other.gameObject.layer) & enemyLayer.value) != 0)
+        // Verifica se 'other' está na layer enemy (se você estiver usando layers)
+        bool isEnemyLayer = ((1 << other.gameObject.layer) & enemyLayer.value) != 0;
+
+        // Se for inimigo (pela layer), tenta aplicar dano
+        if (isEnemyLayer)
         {
-            // tenta pegar EnemyHealth (mais seguro que apenas CompareTag)
-            EnemyHealth eh = other.GetComponent<EnemyHealth>();
+            // procura EnemyHealth no collider ou em um pai (caso o collider esteja em child)
+            EnemyHealth eh = other.GetComponent<EnemyHealth>() ?? other.GetComponentInParent<EnemyHealth>();
+
+            Debug.Log($"Projectile hit '{other.name}'. EnemyHealth found? { (eh != null) }");
+
             if (eh != null)
             {
                 eh.TakeDamage(damage);
+                Destroy(gameObject);
+                return;
             }
             else
             {
-                // se não tem EnemyHealth, mas é a layer de inimigo, você pode considerar percorrer parents:
-                var parentEh = other.GetComponentInParent<EnemyHealth>();
-                if (parentEh != null) parentEh.TakeDamage(damage);
+                Debug.LogWarning($"Projectile: layer é Enemy, mas não encontrou EnemyHealth em '{other.name}' ou pais.");
+                Destroy(gameObject);
+                return;
             }
-
-            Destroy(gameObject);
-            return;
         }
 
-        // 2) Se não for inimigo (por exemplo projétil inimigo), apenas ignoramos/desconsideramos.
-        // (Se chegou aqui, não é enemy — evitar destruir projéteis inimigos)
-        // Você pode opcionalmente destruir o projétil ao bater em paredes:
-        if (!other.isTrigger)
-        {
-            Destroy(gameObject);
-        }
-        // Caso sua parede/use triggers diferentes, ajuste a lógica acima conforme necessário.
+        // Caso não seja inimigo:
+        // - se bateu em parede (não trigger), destrói; senão (ex.: projétil inimigo) ignora
+        if (!other.isTrigger) Destroy(gameObject);
     }
 }
