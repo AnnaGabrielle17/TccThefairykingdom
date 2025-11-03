@@ -388,6 +388,63 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 858695110}
   m_SourcePrefab: {fileID: 100100000, guid: 9792a92437c4ca04084c3130f7875303, type: 3}
+--- !u!1001 &166391048
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2674340732305842393, guid: a3c7bc7e9add6f74e8fdd34d4edc6d8a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.732398
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674340732305842393, guid: a3c7bc7e9add6f74e8fdd34d4edc6d8a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.8813086
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674340732305842393, guid: a3c7bc7e9add6f74e8fdd34d4edc6d8a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674340732305842393, guid: a3c7bc7e9add6f74e8fdd34d4edc6d8a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674340732305842393, guid: a3c7bc7e9add6f74e8fdd34d4edc6d8a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674340732305842393, guid: a3c7bc7e9add6f74e8fdd34d4edc6d8a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674340732305842393, guid: a3c7bc7e9add6f74e8fdd34d4edc6d8a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674340732305842393, guid: a3c7bc7e9add6f74e8fdd34d4edc6d8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674340732305842393, guid: a3c7bc7e9add6f74e8fdd34d4edc6d8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674340732305842393, guid: a3c7bc7e9add6f74e8fdd34d4edc6d8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4340217135545105372, guid: a3c7bc7e9add6f74e8fdd34d4edc6d8a, type: 3}
+      propertyPath: m_Name
+      value: ProjectilePrefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a3c7bc7e9add6f74e8fdd34d4edc6d8a, type: 3}
 --- !u!1 &225998016
 GameObject:
   m_ObjectHideFlags: 0
@@ -4136,16 +4193,15 @@ MonoBehaviour:
     m_Bits: 4294967295
   playerTag: Player
   requirePlayerToAttack: 1
-  particlePrefab: {fileID: 2118842210969643313, guid: 42767afbf4907b8499079bef886a0467, type: 3}
+  particlePrefab: {fileID: 4340217135545105372, guid: a3c7bc7e9add6f74e8fdd34d4edc6d8a, type: 3}
   muzzle: {fileID: 476166810}
   particleSpeed: 3
   spawnOffset: 0.25
-  minSpawnDistance: 1
-  fireDistance: 0.6
   instanceAutoDestroy: 4
   projectileDamage: 1
+  verticalFollowMultiplier: 1
+  maxVerticalSpeed: 4
   animator: {fileID: 1826654238}
-  attackStateName: Sunfairy_Attack
 --- !u!95 &1826654238
 Animator:
   serializedVersion: 7
@@ -4232,7 +4288,7 @@ Transform:
   m_GameObject: {fileID: 1826654236}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.06, y: 0.44, z: 0}
+  m_LocalPosition: {x: 121.2, y: -1, z: 0}
   m_LocalScale: {x: 0.089603, y: 0.089603, z: 0.089603}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4850,3 +4906,4 @@ SceneRoots:
   - {fileID: 120106007}
   - {fileID: 655157214}
   - {fileID: 1817213288}
+  - {fileID: 166391048}
