@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: d837fdfea7bb01e41b1cda5d62806da3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6629739206749711128
+    second: ventoSombrinha_0
+  - first:
+      213: 5629470792316674908
+    second: ventoSombrinha_1
+  - first:
+      213: 8080159806706637510
+    second: ventoSombrinha_2
+  - first:
+      213: -8623833092080237566
+    second: ventoSombrinha_3
+  - first:
+      213: -3254981457022194544
+    second: ventoSombrinha_4
+  - first:
+      213: -7163298219439813857
+    second: ventoSombrinha_5
+  - first:
+      213: -34126901609912584
+    second: ventoSombrinha_6
+  - first:
+      213: 5497294578616257706
+    second: ventoSombrinha_7
+  - first:
+      213: 347794260764970152
+    second: ventoSombrinha_8
+  - first:
+      213: -656596394690977797
+    second: ventoSombrinha_9
+  - first:
+      213: -2164019550051131192
+    second: ventoSombrinha_10
+  - first:
+      213: 3462385410379291228
+    second: ventoSombrinha_11
+  - first:
+      213: -8610684448097254850
+    second: ventoSombrinha_12
+  - first:
+      213: 6263193780460005425
+    second: ventoSombrinha_13
+  - first:
+      213: -8343092584392783027
+    second: ventoSombrinha_14
+  - first:
+      213: -3778152619421379681
+    second: ventoSombrinha_15
+  - first:
+      213: -6760526566334645093
+    second: ventoSombrinha_16
+  - first:
+      213: 1335622496812184747
+    second: ventoSombrinha_17
+  - first:
+      213: 177393230665205005
+    second: ventoSombrinha_18
+  - first:
+      213: -1257888249189261400
+    second: ventoSombrinha_19
+  - first:
+      213: 763122419016796950
+    second: ventoSombrinha_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ventoSombrinha_0
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 3023
+        width: 34
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e4143c315f6ef3a0800000000000000
+      internalID: -6629739206749711128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_1
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 3016
+        width: 111
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c53e8710cd5ef1e40800000000000000
+      internalID: 5629470792316674908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_2
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 3016
+        width: 153
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca532f988e722070800000000000000
+      internalID: 8080159806706637510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_3
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 3006
+        width: 38
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2048c486e7df15880800000000000000
+      internalID: -8623833092080237566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_4
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 2999
+        width: 104
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09c65b74c9bf3d2d0800000000000000
+      internalID: -3254981457022194544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_5
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 2999
+        width: 176
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b0a12e83ad69c90800000000000000
+      internalID: -7163298219439813857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_6
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 2981
+        width: 39
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f6a14883c1c68ff0800000000000000
+      internalID: -34126901609912584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_7
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 2981
+        width: 104
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aac4a181b405a4c40800000000000000
+      internalID: 5497294578616257706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_8
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 2974
+        width: 165
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8acc0d7990d93d400800000000000000
+      internalID: 347794260764970152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_9
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1818
+        width: 208
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bff54adce0d43e6f0800000000000000
+      internalID: -656596394690977797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_10
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 1818
+        width: 151
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c0a3384fabd7f1e0800000000000000
+      internalID: -2164019550051131192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_11
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 1818
+        width: 111
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5a172daf2ddc0030800000000000000
+      internalID: 3462385410379291228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_12
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1798
+        width: 230
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e32ce26ad14b08880800000000000000
+      internalID: -8610684448097254850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_13
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 1798
+        width: 176
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13821cb3f855be650800000000000000
+      internalID: 6263193780460005425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_14
+      rect:
+        serializedVersion: 2
+        x: 2830
+        y: 1798
+        width: 106
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b82138f71673c80800000000000000
+      internalID: -8343092584392783027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_15
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1775
+        width: 218
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f935d2cc53e419bc0800000000000000
+      internalID: -3778152619421379681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_16
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 1775
+        width: 163
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9c380f18e8cd22a0800000000000000
+      internalID: -6760526566334645093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_17
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 1781
+        width: 105
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba4b28c9595198210800000000000000
+      internalID: 1335622496812184747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_18
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 622
+        width: 34
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d05cb53143a367200800000000000000
+      internalID: 177393230665205005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_19
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 605
+        width: 38
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8af9feb4d451b8ee0800000000000000
+      internalID: -1257888249189261400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ventoSombrinha_20
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 582
+        width: 39
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61b02a10cc7279a00800000000000000
+      internalID: 763122419016796950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 55021292e1fe455418354fc5e3c54102
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ventoSombrinha_0: -6629739206749711128
+      ventoSombrinha_1: 5629470792316674908
+      ventoSombrinha_10: -2164019550051131192
+      ventoSombrinha_11: 3462385410379291228
+      ventoSombrinha_12: -8610684448097254850
+      ventoSombrinha_13: 6263193780460005425
+      ventoSombrinha_14: -8343092584392783027
+      ventoSombrinha_15: -3778152619421379681
+      ventoSombrinha_16: -6760526566334645093
+      ventoSombrinha_17: 1335622496812184747
+      ventoSombrinha_18: 177393230665205005
+      ventoSombrinha_19: -1257888249189261400
+      ventoSombrinha_2: 8080159806706637510
+      ventoSombrinha_20: 763122419016796950
+      ventoSombrinha_3: -8623833092080237566
+      ventoSombrinha_4: -3254981457022194544
+      ventoSombrinha_5: -7163298219439813857
+      ventoSombrinha_6: -34126901609912584
+      ventoSombrinha_7: 5497294578616257706
+      ventoSombrinha_8: 347794260764970152
+      ventoSombrinha_9: -656596394690977797
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
