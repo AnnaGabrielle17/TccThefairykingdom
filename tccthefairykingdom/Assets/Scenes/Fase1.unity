@@ -2179,7 +2179,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 91, y: 145}
+  m_AnchoredPosition: {x: 117, y: 145}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &934992179
@@ -3977,59 +3977,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &1870359921 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2253382075748373662, guid: c1162e1044629ea4692473734c47c1d4, type: 3}
-  m_PrefabInstance: {fileID: 5264170519080271166}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &1870359922
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870359921}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &1870359923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870359921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 138a8341f057cce45a32a536d07c06a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  useKinematicMove: 0
-  spriteRendererToFlip: {fileID: 1870359926}
-  flipToLeft: 0
---- !u!212 &1870359926 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 4010052239893344522, guid: c1162e1044629ea4692473734c47c1d4, type: 3}
-  m_PrefabInstance: {fileID: 5264170519080271166}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1898244066 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8712065602216878159, guid: 9792a92437c4ca04084c3130f7875303, type: 3}
@@ -4443,20 +4390,8 @@ PrefabInstance:
       value: GuardaSol
       objectReference: {fileID: 0}
     - target: {fileID: 2393917382485134137, guid: c1162e1044629ea4692473734c47c1d4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5096
-      objectReference: {fileID: 0}
-    - target: {fileID: 2393917382485134137, guid: c1162e1044629ea4692473734c47c1d4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5096
-      objectReference: {fileID: 0}
-    - target: {fileID: 2393917382485134137, guid: c1162e1044629ea4692473734c47c1d4, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5096
-      objectReference: {fileID: 0}
-    - target: {fileID: 2393917382485134137, guid: c1162e1044629ea4692473734c47c1d4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.3063
+      value: 8.96
       objectReference: {fileID: 0}
     - target: {fileID: 2393917382485134137, guid: c1162e1044629ea4692473734c47c1d4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4497,13 +4432,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2253382075748373662, guid: c1162e1044629ea4692473734c47c1d4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1870359923}
-    - targetCorrespondingSourceObject: {fileID: 2253382075748373662, guid: c1162e1044629ea4692473734c47c1d4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1870359922}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1162e1044629ea4692473734c47c1d4, type: 3}
 --- !u!1001 &7207958253102759222
 PrefabInstance:
