@@ -12,7 +12,7 @@ public class MushroomEmitter : MonoBehaviour
     public Transform emitPoint;         // local onde as bolhas nascem (geralmente filho)
     public int bubbleCount = 16;        // quantidade de bolhas na "esfera"
     public float sphereRadius = 0.7f;   // raio da esfera de bolhas (unidades)
-    public float bubbleBaseScale = 0.45f;
+    public float bubbleBaseScale = 1f;
     public float globalSpinSpeed = 40f; // graus/s - velocidade de rotação da esfera
 
     [Header("Fallback (animação)")]
