@@ -31,6 +31,22 @@ public class FadaDano : MonoBehaviour
     private Coroutine currentVisualCoroutine = null;
     private bool isAnimating = false;
 
+    public void ApplyDOT(int damagePerTick, float duration, float tickInterval = 1f)
+{
+    StartCoroutine(ApplyDOTCoroutine(damagePerTick, duration, tickInterval));
+}
+
+private IEnumerator ApplyDOTCoroutine(int dmg, float duration, float tickInterval)
+{
+    float elapsed = 0f;
+    while (elapsed < duration && vida > 0)
+    {
+        TomarDano(dmg); // TomarDano ignora o intervaloDano, então DOT sempre aplica
+        yield return new WaitForSeconds(tickInterval);
+        elapsed += tickInterval;
+    }
+}
+
     private void Awake()
     {
         if (vida < 0) vida = maxVida;
