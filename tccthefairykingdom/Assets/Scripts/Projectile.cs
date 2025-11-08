@@ -39,6 +39,16 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+
+        if (other == null) return;
+
+        // checa por tag e destrói o pássaro
+        if (other.CompareTag("Passaro"))
+        {
+            Destroy(other.gameObject); // destrói o pássaro inteiro
+            Destroy(gameObject);       // destrói o projétil
+            return;
+        }
         if (other.CompareTag("Player")) return;
 
         // Verifica se 'other' está na layer enemy (se você estiver usando layers)

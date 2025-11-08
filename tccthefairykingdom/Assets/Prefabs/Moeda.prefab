@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 7109629027644398016}
   - component: {fileID: 7414217467219449866}
   - component: {fileID: 2614610402445191646}
+  - component: {fileID: 4480049957427391298}
+  - component: {fileID: 969421897354238100}
+  - component: {fileID: 690632130823981192}
   m_Layer: 0
   m_Name: Moeda
   m_TagString: Untagged
@@ -124,3 +127,57 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.46381187, y: -0.4122764}
   m_Radius: 1.0318351
+--- !u!50 &4480049957427391298
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712065602216878159}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &969421897354238100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712065602216878159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7128ade195a7f164b932486ed213cef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
+  collectSound: {fileID: 0}
+--- !u!114 &690632130823981192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712065602216878159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6884a0277780ffd4fa997ec80f29ea48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidade: 2
