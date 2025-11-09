@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: cb8a4d404d26ae641ac240725247ca36
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7731325189047375776
+    second: FadaKiraVoandoo_0
+  - first:
+      213: -2049107246091051455
+    second: FadaKiraVoandoo_1
+  - first:
+      213: 8363287025446157974
+    second: FadaKiraVoandoo_2
+  - first:
+      213: -5843974059661844881
+    second: FadaKiraVoandoo_3
+  - first:
+      213: 4447642058255222205
+    second: FadaKiraVoandoo_4
+  - first:
+      213: 2357300779505530983
+    second: FadaKiraVoandoo_5
+  - first:
+      213: 8372490114716489918
+    second: FadaKiraVoandoo_6
+  - first:
+      213: -1941620202446152691
+    second: FadaKiraVoandoo_7
+  - first:
+      213: -167896623005794662
+    second: FadaKiraVoandoo_8
+  - first:
+      213: -4868979621022143683
+    second: FadaKiraVoandoo_9
+  - first:
+      213: -655555739615227146
+    second: FadaKiraVoandoo_10
+  - first:
+      213: 8230925784434133334
+    second: FadaKiraVoandoo_11
+  - first:
+      213: 1845185621601526833
+    second: FadaKiraVoandoo_12
+  - first:
+      213: 1867671675713785011
+    second: FadaKiraVoandoo_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FadaKiraVoandoo_0
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 5435
+        width: 1182
+        height: 1705
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a7d2301c4f2b4b60800000000000000
+      internalID: 7731325189047375776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaKiraVoandoo_1
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 5435
+        width: 1182
+        height: 1705
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14e501af0db1093e0800000000000000
+      internalID: -2049107246091051455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaKiraVoandoo_2
+      rect:
+        serializedVersion: 2
+        x: 3779
+        y: 5460
+        width: 1192
+        height: 1670
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ef9523d3d501470800000000000000
+      internalID: 8363287025446157974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaKiraVoandoo_3
+      rect:
+        serializedVersion: 2
+        x: 5579
+        y: 5460
+        width: 1192
+        height: 1670
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e12413e8806eea0800000000000000
+      internalID: -5843974059661844881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaKiraVoandoo_4
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 3723
+        width: 1182
+        height: 1589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db5c36a23e239bd30800000000000000
+      internalID: 4447642058255222205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaKiraVoandoo_5
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 3723
+        width: 1182
+        height: 1589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 768bd27c190d6b020800000000000000
+      internalID: 2357300779505530983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaKiraVoandoo_6
+      rect:
+        serializedVersion: 2
+        x: 3758
+        y: 3786
+        width: 1224
+        height: 1509
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb85525666f013470800000000000000
+      internalID: 8372490114716489918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaKiraVoandoo_7
+      rect:
+        serializedVersion: 2
+        x: 5558
+        y: 3786
+        width: 1224
+        height: 1509
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0c997886bafd05e0800000000000000
+      internalID: -1941620202446152691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaKiraVoandoo_8
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 1986
+        width: 1224
+        height: 1509
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e70c239e28badf0800000000000000
+      internalID: -167896623005794662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaKiraVoandoo_9
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 1923
+        width: 1182
+        height: 1589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3beb56e4d8ed6cb0800000000000000
+      internalID: -4868979621022143683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaKiraVoandoo_10
+      rect:
+        serializedVersion: 2
+        x: 3779
+        y: 1923
+        width: 1182
+        height: 1589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f214c1378ff6e6f0800000000000000
+      internalID: -655555739615227146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaKiraVoandoo_11
+      rect:
+        serializedVersion: 2
+        x: 5579
+        y: 1860
+        width: 1192
+        height: 1670
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 659ccc1446f1a3270800000000000000
+      internalID: 8230925784434133334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaKiraVoandoo_12
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 60
+        width: 1192
+        height: 1670
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 134a730fb8a6b9910800000000000000
+      internalID: 1845185621601526833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaKiraVoandoo_13
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 35
+        width: 1182
+        height: 1705
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bc8af36e7d4be910800000000000000
+      internalID: 1867671675713785011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1c058d2b8b71dba4f9d4c1a0f573c4f1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FadaKiraVoandoo_0: 7731325189047375776
+      FadaKiraVoandoo_1: -2049107246091051455
+      FadaKiraVoandoo_10: -655555739615227146
+      FadaKiraVoandoo_11: 8230925784434133334
+      FadaKiraVoandoo_12: 1845185621601526833
+      FadaKiraVoandoo_13: 1867671675713785011
+      FadaKiraVoandoo_2: 8363287025446157974
+      FadaKiraVoandoo_3: -5843974059661844881
+      FadaKiraVoandoo_4: 4447642058255222205
+      FadaKiraVoandoo_5: 2357300779505530983
+      FadaKiraVoandoo_6: 8372490114716489918
+      FadaKiraVoandoo_7: -1941620202446152691
+      FadaKiraVoandoo_8: -167896623005794662
+      FadaKiraVoandoo_9: -4868979621022143683
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

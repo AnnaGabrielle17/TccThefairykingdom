@@ -1,0 +1,539 @@
+fileFormatVersion: 2
+guid: 4f571ef217a6b82439db5c1d8f34e274
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5675769050069211390
+    second: PoderDaKira_0
+  - first:
+      213: -5716069431874915058
+    second: PoderDaKira_1
+  - first:
+      213: -6111180709203971703
+    second: PoderDaKira_2
+  - first:
+      213: -8393707788079772276
+    second: PoderDaKira_3
+  - first:
+      213: -7206638019666505732
+    second: PoderDaKira_4
+  - first:
+      213: -4728412048811920878
+    second: PoderDaKira_5
+  - first:
+      213: -3890770159125615035
+    second: PoderDaKira_6
+  - first:
+      213: -4703743453244084718
+    second: PoderDaKira_7
+  - first:
+      213: 6551209528796463007
+    second: PoderDaKira_8
+  - first:
+      213: -9186409848042775588
+    second: PoderDaKira_9
+  - first:
+      213: 1287450908929712510
+    second: PoderDaKira_10
+  - first:
+      213: -1734460093786333649
+    second: PoderDaKira_11
+  - first:
+      213: -1105724239806250455
+    second: PoderDaKira_12
+  - first:
+      213: -2772380632100933919
+    second: PoderDaKira_13
+  - first:
+      213: -6611086032193329284
+    second: PoderDaKira_14
+  - first:
+      213: -4953550153456505312
+    second: PoderDaKira_15
+  - first:
+      213: -3199356826384542606
+    second: PoderDaKira_16
+  - first:
+      213: -3437724161806013796
+    second: PoderDaKira_17
+  - first:
+      213: -2922854039359321849
+    second: PoderDaKira_18
+  - first:
+      213: 4865748398780986958
+    second: PoderDaKira_19
+  - first:
+      213: 7028852832491902960
+    second: PoderDaKira_20
+  - first:
+      213: 6487369647111474794
+    second: PoderDaKira_21
+  - first:
+      213: 6937641940253880319
+    second: PoderDaKira_22
+  - first:
+      213: 4732539141621821561
+    second: PoderDaKira_23
+  - first:
+      213: -5882947494742361780
+    second: PoderDaKira_24
+  - first:
+      213: -907168866959825831
+    second: PoderDaKira_25
+  - first:
+      213: -6313124646746418651
+    second: PoderDaKira_26
+  - first:
+      213: 5699467067243831995
+    second: PoderDaKira_27
+  - first:
+      213: 7366325404768190311
+    second: PoderDaKira_28
+  - first:
+      213: -1021632932897414646
+    second: PoderDaKira_29
+  - first:
+      213: 8044674649193535910
+    second: PoderDaKira_30
+  - first:
+      213: 7396812207661700566
+    second: PoderDaKira_31
+  - first:
+      213: 3756923925393809920
+    second: PoderDaKira_32
+  - first:
+      213: 3685343986277522123
+    second: PoderDaKira_33
+  - first:
+      213: -6812159373783635675
+    second: PoderDaKira_34
+  - first:
+      213: 6337136960350706276
+    second: PoderDaKira_35
+  - first:
+      213: 7474752484167950803
+    second: PoderDaKira_36
+  - first:
+      213: -2311031606478171813
+    second: PoderDaKira_37
+  - first:
+      213: -2609612529446270215
+    second: PoderDaKira_38
+  - first:
+      213: -6841237749789443695
+    second: PoderDaKira_39
+  - first:
+      213: 73998815485043698
+    second: PoderDaKira_40
+  - first:
+      213: -5042658999268039712
+    second: PoderDaKira_41
+  - first:
+      213: 1717091584307001820
+    second: PoderDaKira_42
+  - first:
+      213: -8408455904252671038
+    second: PoderDaKira_43
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PoderDaKira_0
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 4202
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 207e777de1e9b31b0800000000000000
+      internalID: -5675769050069211390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaKira_1
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 4199
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0570a103217ca0b0800000000000000
+      internalID: -5716069431874915058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaKira_2
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 4193
+        width: 128
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9817dadf589b03ba0800000000000000
+      internalID: -6111180709203971703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaKira_6
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 2993
+        width: 179
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ea0aa8725310ac0800000000000000
+      internalID: -3890770159125615035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaKira_9
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 2993
+        width: 179
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdb92463ae0538080800000000000000
+      internalID: -9186409848042775588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaKira_12
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 2996
+        width: 143
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9224fca89ada7a0f0800000000000000
+      internalID: -1105724239806250455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaKira_34
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1796
+        width: 143
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 529674454295671a0800000000000000
+      internalID: -6812159373783635675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaKira_36
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 1793
+        width: 128
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d1acca08c7abb760800000000000000
+      internalID: 7474752484167950803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaKira_37
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 1799
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b511b2f8ff09defd0800000000000000
+      internalID: -2311031606478171813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoderDaKira_43
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 602
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cbcb7da7e92f4b80800000000000000
+      internalID: -8408455904252671038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 74db7a3cbc4e8024289e61f44f73c2f1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PoderDaKira_0: -5675769050069211390
+      PoderDaKira_1: -5716069431874915058
+      PoderDaKira_10: 1287450908929712510
+      PoderDaKira_11: -1734460093786333649
+      PoderDaKira_12: -1105724239806250455
+      PoderDaKira_13: -2772380632100933919
+      PoderDaKira_14: -6611086032193329284
+      PoderDaKira_15: -4953550153456505312
+      PoderDaKira_16: -3199356826384542606
+      PoderDaKira_17: -3437724161806013796
+      PoderDaKira_18: -2922854039359321849
+      PoderDaKira_19: 4865748398780986958
+      PoderDaKira_2: -6111180709203971703
+      PoderDaKira_20: 7028852832491902960
+      PoderDaKira_21: 6487369647111474794
+      PoderDaKira_22: 6937641940253880319
+      PoderDaKira_23: 4732539141621821561
+      PoderDaKira_24: -5882947494742361780
+      PoderDaKira_25: -907168866959825831
+      PoderDaKira_26: -6313124646746418651
+      PoderDaKira_27: 5699467067243831995
+      PoderDaKira_28: 7366325404768190311
+      PoderDaKira_29: -1021632932897414646
+      PoderDaKira_3: -8393707788079772276
+      PoderDaKira_30: 8044674649193535910
+      PoderDaKira_31: 7396812207661700566
+      PoderDaKira_32: 3756923925393809920
+      PoderDaKira_33: 3685343986277522123
+      PoderDaKira_34: -6812159373783635675
+      PoderDaKira_35: 6337136960350706276
+      PoderDaKira_36: 7474752484167950803
+      PoderDaKira_37: -2311031606478171813
+      PoderDaKira_38: -2609612529446270215
+      PoderDaKira_39: -6841237749789443695
+      PoderDaKira_4: -7206638019666505732
+      PoderDaKira_40: 73998815485043698
+      PoderDaKira_41: -5042658999268039712
+      PoderDaKira_42: 1717091584307001820
+      PoderDaKira_43: -8408455904252671038
+      PoderDaKira_5: -4728412048811920878
+      PoderDaKira_6: -3890770159125615035
+      PoderDaKira_7: -4703743453244084718
+      PoderDaKira_8: 6551209528796463007
+      PoderDaKira_9: -9186409848042775588
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

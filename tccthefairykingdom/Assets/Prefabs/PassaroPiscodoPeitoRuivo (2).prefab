@@ -215,6 +215,6 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8747189195931593778, guid: ca61f59f642f8494f99952f93a82a299, type: 3}
   spawnPoint: {fileID: 3238312996279345363}
   spawnOffset: {x: -0.6, y: -0.15}
-  projectileSpeed: 6
+  projectileSpeed: 3
   projectileDamage: 1
-  fireCooldown: 1.5
+  fireCooldown: 2.5
