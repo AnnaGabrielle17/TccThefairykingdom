@@ -1,0 +1,491 @@
+fileFormatVersion: 2
+guid: e65d70e51dfa7ed4d9d828ae0caf63e4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8995731192287974655
+    second: AspiralCongelante_0
+  - first:
+      213: 7269911773864822240
+    second: AspiralCongelante_1
+  - first:
+      213: 3953802432526309413
+    second: AspiralCongelante_2
+  - first:
+      213: 4614764659933132394
+    second: AspiralCongelante_3
+  - first:
+      213: -1694492021524580320
+    second: AspiralCongelante_4
+  - first:
+      213: -7375644070952112884
+    second: AspiralCongelante_5
+  - first:
+      213: 1916979946784546353
+    second: AspiralCongelante_6
+  - first:
+      213: -3900009413558402153
+    second: AspiralCongelante_7
+  - first:
+      213: 2228369478926820473
+    second: AspiralCongelante_8
+  - first:
+      213: -7029334227834194716
+    second: AspiralCongelante_9
+  - first:
+      213: 1733701985937987553
+    second: AspiralCongelante_10
+  - first:
+      213: 3813639999746236621
+    second: AspiralCongelante_11
+  - first:
+      213: 6131822135711270323
+    second: AspiralCongelante_12
+  - first:
+      213: 4010040636167942796
+    second: AspiralCongelante_13
+  - first:
+      213: -1924066041101447451
+    second: AspiralCongelante_14
+  - first:
+      213: 211362390803358094
+    second: AspiralCongelante_15
+  - first:
+      213: -2005314249879273204
+    second: AspiralCongelante_16
+  - first:
+      213: -2453664902879254158
+    second: AspiralCongelante_17
+  - first:
+      213: 6111309800398942367
+    second: AspiralCongelante_18
+  - first:
+      213: 2845881373138511088
+    second: AspiralCongelante_19
+  - first:
+      213: 1120491820119323188
+    second: AspiralCongelante_20
+  - first:
+      213: 4272653825159006426
+    second: AspiralCongelante_21
+  - first:
+      213: -8815016021424012712
+    second: AspiralCongelante_22
+  - first:
+      213: -3358966972506959701
+    second: AspiralCongelante_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AspiralCongelante_0
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 6812
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff4d933abd147dc70800000000000000
+      internalID: 8995731192287974655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AspiralCongelante_1
+      rect:
+        serializedVersion: 2
+        x: 2934
+        y: 6812
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e584ad9d3ae3e460800000000000000
+      internalID: 7269911773864822240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AspiralCongelante_2
+      rect:
+        serializedVersion: 2
+        x: 4934
+        y: 6812
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5285ece3d5abed630800000000000000
+      internalID: 3953802432526309413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AspiralCongelante_3
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 4824
+        width: 199
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6637551200fa0040800000000000000
+      internalID: 4614764659933132394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AspiralCongelante_4
+      rect:
+        serializedVersion: 2
+        x: 2914
+        y: 4824
+        width: 199
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0283b46fb74fb78e0800000000000000
+      internalID: -1694492021524580320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AspiralCongelante_5
+      rect:
+        serializedVersion: 2
+        x: 4914
+        y: 4824
+        width: 199
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0dee299bc274a990800000000000000
+      internalID: -7375644070952112884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AspiralCongelante_6
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 2809
+        width: 164
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ed3a1ea1b7a9a10800000000000000
+      internalID: 1916979946784546353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AspiralCongelante_7
+      rect:
+        serializedVersion: 2
+        x: 2922
+        y: 2809
+        width: 164
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7930c2cf91260e9c0800000000000000
+      internalID: -3900009413558402153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AspiralCongelante_8
+      rect:
+        serializedVersion: 2
+        x: 4922
+        y: 2809
+        width: 164
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97461c31c32ccee10800000000000000
+      internalID: 2228369478926820473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AspiralCongelante_9
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 801
+        width: 207
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e4b27643c9c27e90800000000000000
+      internalID: -7029334227834194716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AspiralCongelante_10
+      rect:
+        serializedVersion: 2
+        x: 2879
+        y: 801
+        width: 207
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e7193a45c85f0810800000000000000
+      internalID: 1733701985937987553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AspiralCongelante_11
+      rect:
+        serializedVersion: 2
+        x: 4879
+        y: 801
+        width: 207
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc0681ecf55cce430800000000000000
+      internalID: 3813639999746236621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 15159514362c3e04ab23971b8975ff49
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AspiralCongelante_0: 8995731192287974655
+      AspiralCongelante_1: 7269911773864822240
+      AspiralCongelante_10: 1733701985937987553
+      AspiralCongelante_11: 3813639999746236621
+      AspiralCongelante_2: 3953802432526309413
+      AspiralCongelante_3: 4614764659933132394
+      AspiralCongelante_4: -1694492021524580320
+      AspiralCongelante_5: -7375644070952112884
+      AspiralCongelante_6: 1916979946784546353
+      AspiralCongelante_7: -3900009413558402153
+      AspiralCongelante_8: 2228369478926820473
+      AspiralCongelante_9: -7029334227834194716
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

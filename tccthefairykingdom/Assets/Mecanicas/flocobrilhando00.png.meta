@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: d5b070ad0f8a89248a9bf7e729cca506
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1618715708987574682
+    second: flocobrilhando00_0
+  - first:
+      213: 2583535440051153138
+    second: flocobrilhando00_1
+  - first:
+      213: -4553974740011674356
+    second: flocobrilhando00_2
+  - first:
+      213: 4675742425202076404
+    second: flocobrilhando00_3
+  - first:
+      213: -7723832652840960911
+    second: flocobrilhando00_4
+  - first:
+      213: 6888718272174458669
+    second: flocobrilhando00_5
+  - first:
+      213: 6307259915295708920
+    second: flocobrilhando00_6
+  - first:
+      213: 8844912883470739837
+    second: flocobrilhando00_7
+  - first:
+      213: -6554669233443992713
+    second: flocobrilhando00_8
+  - first:
+      213: -3058981095102387000
+    second: flocobrilhando00_9
+  - first:
+      213: -7780590853401427809
+    second: flocobrilhando00_10
+  - first:
+      213: -8147657727503240284
+    second: flocobrilhando00_11
+  - first:
+      213: -3193599857796029132
+    second: flocobrilhando00_12
+  - first:
+      213: 184719356205948524
+    second: flocobrilhando00_13
+  - first:
+      213: 2234752614746229105
+    second: flocobrilhando00_14
+  - first:
+      213: 6039058657814743621
+    second: flocobrilhando00_15
+  - first:
+      213: 6728638907699545190
+    second: flocobrilhando00_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flocobrilhando00_0
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 4463
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a998c8a6c55d67610800000000000000
+      internalID: 1618715708987574682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_1
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 4463
+        width: 98
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f8a1e86bcf8ad320800000000000000
+      internalID: 2583535440051153138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_2
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 4463
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0590891a180dc0c0800000000000000
+      internalID: -4553974740011674356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_3
+      rect:
+        serializedVersion: 2
+        x: 3443
+        y: 4463
+        width: 98
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4faa46b66f293e040800000000000000
+      internalID: 4675742425202076404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_4
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 3462
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17cf9d6ff1f6fc490800000000000000
+      internalID: -7723832652840960911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_5
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 3462
+        width: 98
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2783b245c4a99f50800000000000000
+      internalID: 6888718272174458669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_6
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 3462
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f6d245c973e78750800000000000000
+      internalID: 6307259915295708920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_7
+      rect:
+        serializedVersion: 2
+        x: 3443
+        y: 3462
+        width: 98
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d79ac88b7617fba70800000000000000
+      internalID: 8844912883470739837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_8
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 2463
+        width: 100
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77b83607f032905a0800000000000000
+      internalID: -6554669233443992713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_9
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 2463
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cc69c3b6e05c85d0800000000000000
+      internalID: -3058981095102387000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_10
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 2463
+        width: 100
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f90ca5897d9c50490800000000000000
+      internalID: -7780590853401427809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_11
+      rect:
+        serializedVersion: 2
+        x: 3443
+        y: 2463
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a3f3b80774bdee80800000000000000
+      internalID: -8147657727503240284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_12
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 1462
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 435645989dd0ea3d0800000000000000
+      internalID: -3193599857796029132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_13
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 1462
+        width: 98
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6e5bc99641409200800000000000000
+      internalID: 184719356205948524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_14
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 1462
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17903d2b9af630f10800000000000000
+      internalID: 2234752614746229105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_15
+      rect:
+        serializedVersion: 2
+        x: 3443
+        y: 1462
+        width: 98
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54a8bcc5adb0fc350800000000000000
+      internalID: 6039058657814743621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flocobrilhando00_16
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 464
+        width: 100
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 664cd4bcf6de06d50800000000000000
+      internalID: 6728638907699545190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 229d58642bb23dd429c2cb3028ae2e7c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      flocobrilhando00_0: 1618715708987574682
+      flocobrilhando00_1: 2583535440051153138
+      flocobrilhando00_10: -7780590853401427809
+      flocobrilhando00_11: -8147657727503240284
+      flocobrilhando00_12: -3193599857796029132
+      flocobrilhando00_13: 184719356205948524
+      flocobrilhando00_14: 2234752614746229105
+      flocobrilhando00_15: 6039058657814743621
+      flocobrilhando00_16: 6728638907699545190
+      flocobrilhando00_2: -4553974740011674356
+      flocobrilhando00_3: 4675742425202076404
+      flocobrilhando00_4: -7723832652840960911
+      flocobrilhando00_5: 6888718272174458669
+      flocobrilhando00_6: 6307259915295708920
+      flocobrilhando00_7: 8844912883470739837
+      flocobrilhando00_8: -6554669233443992713
+      flocobrilhando00_9: -3058981095102387000
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
