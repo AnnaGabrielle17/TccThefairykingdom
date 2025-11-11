@@ -1,0 +1,594 @@
+fileFormatVersion: 2
+guid: 4051a9ff1f873104ba0c50a5565d058a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6454960751294570851
+    second: RaioAzul_0
+  - first:
+      213: -6101518061575556769
+    second: RaioAzul_1
+  - first:
+      213: 5625375390711056524
+    second: RaioAzul_2
+  - first:
+      213: -2248634086208014831
+    second: RaioAzul_3
+  - first:
+      213: 9134799110767204983
+    second: RaioAzul_4
+  - first:
+      213: 1660943326608330534
+    second: RaioAzul_5
+  - first:
+      213: -9132465305723741482
+    second: RaioAzul_6
+  - first:
+      213: -5738615076624217388
+    second: RaioAzul_7
+  - first:
+      213: -8304449583717329662
+    second: RaioAzul_8
+  - first:
+      213: 1544496503264332854
+    second: RaioAzul_9
+  - first:
+      213: 8722656106970427237
+    second: RaioAzul_10
+  - first:
+      213: 5419860758050888465
+    second: RaioAzul_11
+  - first:
+      213: 2577609175481281604
+    second: RaioAzul_12
+  - first:
+      213: 6695298131975387296
+    second: RaioAzul_13
+  - first:
+      213: 1573584109547878284
+    second: RaioAzul_14
+  - first:
+      213: 731368405481329400
+    second: RaioAzul_15
+  - first:
+      213: -494838846456384543
+    second: RaioAzul_16
+  - first:
+      213: -3687950969909811242
+    second: RaioAzul_17
+  - first:
+      213: -8111905632999475165
+    second: RaioAzul_18
+  - first:
+      213: 8828877717443753770
+    second: RaioAzul_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RaioAzul_0
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 2932
+        width: 134
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 361600c7a90a49950800000000000000
+      internalID: 6454960751294570851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_1
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 2914
+        width: 288
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f51b82576ad035ba0800000000000000
+      internalID: -6101518061575556769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_2
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 1684
+        width: 447
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c888e830d19511e40800000000000000
+      internalID: 5625375390711056524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_3
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 1663
+        width: 484
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1167cbd563f3bc0e0800000000000000
+      internalID: -2248634086208014831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_4
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 550
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77a55db946355ce70800000000000000
+      internalID: 9134799110767204983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_5
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 559
+        width: 50
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62f8b8ec72bdc0710800000000000000
+      internalID: 1660943326608330534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_6
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 554
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dad1c8b037f24180800000000000000
+      internalID: -9132465305723741482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_7
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 536
+        width: 90
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dacc170ef75c50b0800000000000000
+      internalID: -5738615076624217388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_8
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 550
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 205536b3a1ba0cc80800000000000000
+      internalID: -8304449583717329662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_9
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 545
+        width: 69
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63c47e9f2672f6510800000000000000
+      internalID: 1544496503264332854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_10
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 545
+        width: 27
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f2dd1c3891d0970800000000000000
+      internalID: 8722656106970427237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_11
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 527
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11bd3bfc4a6373b40800000000000000
+      internalID: 5419860758050888465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_12
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 482
+        width: 65
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44c695a63e185c320800000000000000
+      internalID: 2577609175481281604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_13
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 485
+        width: 108
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a8bab58d2a7aec50800000000000000
+      internalID: 6695298131975387296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_14
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 515
+        width: 65
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c87fcc1196e76d510800000000000000
+      internalID: 1573584109547878284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_15
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 517
+        width: 48
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f298a890b7562a00800000000000000
+      internalID: 731368405481329400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaioAzul_16
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 464
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e337efd0baf129f0800000000000000
+      internalID: -494838846456384543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 72a4a5e717b912c419caf2a97440a2bc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RaioAzul_0: 6454960751294570851
+      RaioAzul_1: -6101518061575556769
+      RaioAzul_10: 8722656106970427237
+      RaioAzul_11: 5419860758050888465
+      RaioAzul_12: 2577609175481281604
+      RaioAzul_13: 6695298131975387296
+      RaioAzul_14: 1573584109547878284
+      RaioAzul_15: 731368405481329400
+      RaioAzul_16: -494838846456384543
+      RaioAzul_2: 5625375390711056524
+      RaioAzul_3: -2248634086208014831
+      RaioAzul_4: 9134799110767204983
+      RaioAzul_5: 1660943326608330534
+      RaioAzul_6: -9132465305723741482
+      RaioAzul_7: -5738615076624217388
+      RaioAzul_8: -8304449583717329662
+      RaioAzul_9: 1544496503264332854
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
