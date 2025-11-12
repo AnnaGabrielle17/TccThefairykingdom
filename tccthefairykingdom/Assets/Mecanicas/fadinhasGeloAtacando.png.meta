@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 218c77f273454b842be0bbccd51b0749
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3838528905115054866
+    second: fadinhasGeloAtacando_0
+  - first:
+      213: -6787914936454420339
+    second: fadinhasGeloAtacando_1
+  - first:
+      213: -5919164201244168917
+    second: fadinhasGeloAtacando_2
+  - first:
+      213: 4664673125271677469
+    second: fadinhasGeloAtacando_3
+  - first:
+      213: -5582452588489992074
+    second: fadinhasGeloAtacando_4
+  - first:
+      213: 7142634107395284762
+    second: fadinhasGeloAtacando_5
+  - first:
+      213: 6487429114950909186
+    second: fadinhasGeloAtacando_6
+  - first:
+      213: -7248856321859918364
+    second: fadinhasGeloAtacando_7
+  - first:
+      213: 6735648315684924317
+    second: fadinhasGeloAtacando_8
+  - first:
+      213: 1285988317935055857
+    second: fadinhasGeloAtacando_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fadinhasGeloAtacando_0
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 3363
+        width: 254
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eec4c865c4ecabac0800000000000000
+      internalID: -3838528905115054866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fadinhasGeloAtacando_1
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 3354
+        width: 258
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d88e017445b7cc1a0800000000000000
+      internalID: -6787914936454420339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fadinhasGeloAtacando_2
+      rect:
+        serializedVersion: 2
+        x: 2369
+        y: 3354
+        width: 258
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2de1a12587eadda0800000000000000
+      internalID: -5919164201244168917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fadinhasGeloAtacando_3
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 2369
+        width: 264
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1a21213e7f3cb040800000000000000
+      internalID: 4664673125271677469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fadinhasGeloAtacando_4
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 2369
+        width: 264
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6781897a2f42782b0800000000000000
+      internalID: -5582452588489992074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fadinhasGeloAtacando_5
+      rect:
+        serializedVersion: 2
+        x: 2363
+        y: 2369
+        width: 264
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f92eb90ebbf1360800000000000000
+      internalID: 7142634107395284762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fadinhasGeloAtacando_6
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1354
+        width: 258
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20dfc2e786af70a50800000000000000
+      internalID: 6487429114950909186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fadinhasGeloAtacando_7
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 1354
+        width: 258
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e5e1b3d493e66b90800000000000000
+      internalID: -7248856321859918364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fadinhasGeloAtacando_8
+      rect:
+        serializedVersion: 2
+        x: 2373
+        y: 1363
+        width: 254
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9bab54c474d97d50800000000000000
+      internalID: 6735648315684924317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fadinhasGeloAtacando_9
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 363
+        width: 254
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f332dbcf8fb8d110800000000000000
+      internalID: 1285988317935055857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 087cd43640598e64e86c45c4c85edf79
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fadinhasGeloAtacando_0: -3838528905115054866
+      fadinhasGeloAtacando_1: -6787914936454420339
+      fadinhasGeloAtacando_2: -5919164201244168917
+      fadinhasGeloAtacando_3: 4664673125271677469
+      fadinhasGeloAtacando_4: -5582452588489992074
+      fadinhasGeloAtacando_5: 7142634107395284762
+      fadinhasGeloAtacando_6: 6487429114950909186
+      fadinhasGeloAtacando_7: -7248856321859918364
+      fadinhasGeloAtacando_8: 6735648315684924317
+      fadinhasGeloAtacando_9: 1285988317935055857
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
