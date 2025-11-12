@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class IceProjectile : MonoBehaviour
 {
     [Header("Movimento")]
@@ -9,13 +10,13 @@ public class IceProjectile : MonoBehaviour
     [Header("Dano")]
     public int damage = 1;
 
-    [Tooltip("Marque a layer 'Enemy' aqui no Inspector (LayerMask)")]
+    [Tooltip("Se quiser que o projétil também acerte inimigos por layer")]
     public LayerMask enemyLayer;
 
     [Header("Opções")]
-    public bool rotateToVelocity = true; // rotaciona o sprite na direção do movimento
+    public bool rotateToVelocity = true;            // rotaciona o sprite para a direção do movimento
+    public bool destroyOnNonTriggerCollision = true; // destrói ao colidir com colisor não-trigger (paredes)
 
-    int direction = 1; // 1 = direita, -1 = esquerda
     Rigidbody2D rb;
     Collider2D col;
 
@@ -30,35 +31,16 @@ public class IceProjectile : MonoBehaviour
         Destroy(gameObject, lifeTime);
     }
 
-    // Disparo horizontal compatível com implementações antigas
-    public void SetDirection(int dir)
-    {
-        direction = dir >= 0 ? 1 : -1;
-        if (rb != null)
-            rb.linearVelocity = new Vector2(direction * speed, 0f);
-
-        Vector3 s = transform.localScale;
-        s.x = Mathf.Abs(s.x) * direction;
-        transform.localScale = s;
-
-        if (rotateToVelocity)
-        {
-            float angle = Mathf.Atan2(rb.linearVelocity.y, rb.linearVelocity.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, 0f, angle);
-        }
-    }
-
-    // Disparo com direção 2D (usado pelo FadinhaController)
     public void Launch(Vector2 directionVector)
     {
         if (rb == null) return;
         Vector2 dir = directionVector.normalized;
         rb.linearVelocity = dir * speed;
 
-        if (dir.x != 0f)
+        if (Mathf.Abs(dir.x) > 0.001f)
         {
             Vector3 s = transform.localScale;
-            s.x = Mathf.Abs(s.x) * (dir.x > 0 ? 1 : -1);
+            s.x = Mathf.Abs(s.x) * (dir.x > 0 ? 1f : -1f);
             transform.localScale = s;
         }
 
@@ -69,46 +51,58 @@ public class IceProjectile : MonoBehaviour
         }
     }
 
+    // Compatibilidade: disparo horizontal simples
+    public void SetDirection(int dir)
+    {
+        Launch(new Vector2(dir >= 0 ? 1f : -1f, 0f));
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other == null) return;
 
-        // checa por tag "Passaro"
-        if (other.CompareTag("Passaro"))
+        // 1) Prioridade: acertar o player que usa FadaDano (se existir)
+        FadaDano fadaDano = other.GetComponent<FadaDano>();
+        if (fadaDano == null) fadaDano = other.GetComponentInParent<FadaDano>();
+        if (fadaDano != null)
         {
-            Destroy(other.gameObject); // destrói o pássaro
+            fadaDano.TryTakeDamageFromExternal(damage);
             Destroy(gameObject);
             return;
         }
 
-        // ignora jogador (ajuste conforme design)
-        if (other.CompareTag("Player")) return;
-
-        // Verifica se 'other' está na layer enemy (quando você usa LayerMask)
-        bool isEnemyLayer = ((1 << other.gameObject.layer) & enemyLayer.value) != 0;
-
-        if (isEnemyLayer)
+        // 2) Se for o Player: tenta SendMessage para métodos comuns (TomarDano / TakeDamage)
+        if (other.CompareTag("Player"))
         {
-            EnemyHealth eh = other.GetComponent<EnemyHealth>() ?? other.GetComponentInParent<EnemyHealth>();
+            // tenta chamar métodos comuns sem depender de tipos concretos
+            // primeiro tenta "TomarDano" (nome PT-BR usado no seu projeto)
+            other.SendMessage("TomarDano", damage, SendMessageOptions.DontRequireReceiver);
+            // também tenta "TryTakeDamageFromExternal" caso algum outro script implemente
+            other.SendMessage("TryTakeDamageFromExternal", damage, SendMessageOptions.DontRequireReceiver);
+            // e "TakeDamage" por compatibilidade com projetos em inglês
+            other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
 
-            Debug.Log($"IceProjectile hit '{other.name}'. EnemyHealth found? { (eh != null) }");
-
-            if (eh != null)
-            {
-                eh.TakeDamage(damage);
-                Destroy(gameObject);
-                return;
-            }
-            else
-            {
-                Debug.LogWarning($"IceProjectile: layer é Enemy, mas não encontrou EnemyHealth em '{other.name}' ou pais.");
-                Destroy(gameObject);
-                return;
-            }
+            Destroy(gameObject);
+            return;
         }
 
-        if (!other.isTrigger)
-            Destroy(gameObject);
-    }
+        // 3) Acertar inimigos por layer (se configurado) — usa SendMessage para compatibilidade
+        bool isEnemyLayer = ((1 << other.gameObject.layer) & enemyLayer.value) != 0;
+        if (isEnemyLayer)
+        {
+            // tenta alguns métodos comuns (TakeDamage, TomarDano, Damage)
+            other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+            other.SendMessage("TomarDano", damage, SendMessageOptions.DontRequireReceiver);
+            other.SendMessage("ApplyDamage", damage, SendMessageOptions.DontRequireReceiver);
 
+            Destroy(gameObject);
+            return;
+        }
+
+        // 4) Caso não seja nada dos acima: se colidiu com um colisor "solido" (não trigger), destrói
+        if (!other.isTrigger && destroyOnNonTriggerCollision)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

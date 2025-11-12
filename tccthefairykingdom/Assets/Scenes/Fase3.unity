@@ -573,6 +573,7 @@ GameObject:
   - component: {fileID: 547517523}
   - component: {fileID: 547517522}
   - component: {fileID: 547517521}
+  - component: {fileID: 547517526}
   m_Layer: 0
   m_Name: Fadinha
   m_TagString: Untagged
@@ -739,12 +740,49 @@ Transform:
   m_GameObject: {fileID: 547517520}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.13833992, y: -3.1225297, z: 0}
+  m_LocalPosition: {x: 13.7, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1419204663}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &547517526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547517520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fca20f29e51141e47904ce28c8d9cebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalSpeed: 2
+  verticalSpeed: 2
+  verticalRange: 1
+  useStopPoint: 0
+  stopByX: 1
+  stopX: -3
+  stopY: 0
+  stopPoint: {fileID: 0}
+  stopTolerance: 0.05
+  detectionRadius: 3
+  detectionLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  playerTag: Player
+  requirePlayerToAttack: 1
+  particlePrefab: {fileID: 6300590228920778825, guid: dc5f3a565417b1041a59aae7fabe4c1d, type: 3}
+  muzzle: {fileID: 1419204663}
+  particleSpeed: 12
+  spawnOffset: 0.12
+  instanceAutoDestroy: 4
+  projectileDamage: 1
+  verticalFollowMultiplier: 1
+  maxVerticalSpeed: 4
+  animator: {fileID: 547517523}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,6 +1710,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418256348}
   m_CullTransparentMesh: 1
+--- !u!1 &1419204662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1419204663}
+  m_Layer: 0
+  m_Name: Attack Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1419204663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419204662}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.52, y: 0.14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 547517525}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1484998225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,7 +2103,7 @@ GameObject:
   - component: {fileID: 1780187295}
   - component: {fileID: 1780187297}
   - component: {fileID: 1780187298}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2655,7 +2724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8820213332290415247, guid: 9fc6a40252a19614c90d2b7b5554a437, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.2
+      value: 79.2
       objectReference: {fileID: 0}
     - target: {fileID: 8820213332290415247, guid: 9fc6a40252a19614c90d2b7b5554a437, type: 3}
       propertyPath: m_LocalPosition.y
