@@ -1,0 +1,563 @@
+fileFormatVersion: 2
+guid: 551c6fe5b238ecd4e8e2f3ffd53d19a9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7359617694637053009
+    second: FadaHeraAtacandoo0_0
+  - first:
+      213: -3189143470960946950
+    second: FadaHeraAtacandoo0_1
+  - first:
+      213: 524055779422514741
+    second: FadaHeraAtacandoo0_2
+  - first:
+      213: 1223297975270653503
+    second: FadaHeraAtacandoo0_3
+  - first:
+      213: 1266392352860854407
+    second: FadaHeraAtacandoo0_4
+  - first:
+      213: -5337834562049742295
+    second: FadaHeraAtacandoo0_5
+  - first:
+      213: 1928973890085560363
+    second: FadaHeraAtacandoo0_6
+  - first:
+      213: -1882441775538479944
+    second: FadaHeraAtacandoo0_7
+  - first:
+      213: 4929619880869281286
+    second: FadaHeraAtacandoo0_8
+  - first:
+      213: -6981245063024413095
+    second: FadaHeraAtacandoo0_9
+  - first:
+      213: -5706400342854105202
+    second: FadaHeraAtacandoo0_10
+  - first:
+      213: 138825333823690483
+    second: FadaHeraAtacandoo0_11
+  - first:
+      213: 6149331446042384507
+    second: FadaHeraAtacandoo0_12
+  - first:
+      213: -4855971391440776325
+    second: FadaHeraAtacandoo0_13
+  - first:
+      213: -522496645280930016
+    second: FadaHeraAtacandoo0_14
+  - first:
+      213: -1064579454145793872
+    second: FadaHeraAtacandoo0_15
+  - first:
+      213: 648934085433520610
+    second: FadaHeraAtacandoo0_16
+  - first:
+      213: -3668713867180895894
+    second: FadaHeraAtacandoo0_17
+  - first:
+      213: -3683857859235430810
+    second: FadaHeraAtacandoo0_18
+  - first:
+      213: -8059818360858789228
+    second: FadaHeraAtacandoo0_19
+  - first:
+      213: -2039244509126291949
+    second: FadaHeraAtacandoo0_20
+  - first:
+      213: 4325518271479602706
+    second: FadaHeraAtacandoo0_21
+  - first:
+      213: -147432266676187078
+    second: FadaHeraAtacandoo0_22
+  - first:
+      213: -5184812027272823585
+    second: FadaHeraAtacandoo0_23
+  - first:
+      213: -652551048844504823
+    second: FadaHeraAtacandoo0_24
+  - first:
+      213: -8794721076727945795
+    second: FadaHeraAtacandoo0_25
+  - first:
+      213: 7722823584406320907
+    second: FadaHeraAtacandoo0_26
+  - first:
+      213: -480755018410099203
+    second: FadaHeraAtacandoo0_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FadaHeraAtacandoo0_1
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 5523
+        width: 1220
+        height: 1554
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af0dd93f8e2edb3d0800000000000000
+      internalID: -3189143470960946950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaHeraAtacandoo0_3
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 5523
+        width: 1220
+        height: 1554
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3e3676f6070af010800000000000000
+      internalID: 1223297975270653503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaHeraAtacandoo0_5
+      rect:
+        serializedVersion: 2
+        x: 3895
+        y: 5551
+        width: 1273
+        height: 1544
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92ae8333fb33ce5b0800000000000000
+      internalID: -5337834562049742295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaHeraAtacandoo0_7
+      rect:
+        serializedVersion: 2
+        x: 5660
+        y: 5586
+        width: 1319
+        height: 1509
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bc5ca2cd2930e5e0800000000000000
+      internalID: -1882441775538479944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaHeraAtacandoo0_9
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 3786
+        width: 1319
+        height: 1509
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 956fa787a92ad1f90800000000000000
+      internalID: -6981245063024413095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaHeraAtacandoo0_11
+      rect:
+        serializedVersion: 2
+        x: 2014
+        y: 3821
+        width: 1382
+        height: 1474
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f6d264d7e43de100800000000000000
+      internalID: 138825333823690483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaHeraAtacandoo0_13
+      rect:
+        serializedVersion: 2
+        x: 3814
+        y: 3821
+        width: 1382
+        height: 1474
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7396bd5fbf1c9cb0800000000000000
+      internalID: -4855971391440776325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaHeraAtacandoo0_15
+      rect:
+        serializedVersion: 2
+        x: 5614
+        y: 3821
+        width: 1382
+        height: 1474
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b0f57870aad931f0800000000000000
+      internalID: -1064579454145793872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaHeraAtacandoo0_17
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 2021
+        width: 1382
+        height: 1474
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a61122cec2c161dc0800000000000000
+      internalID: -3668713867180895894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaHeraAtacandoo0_19
+      rect:
+        serializedVersion: 2
+        x: 2060
+        y: 1986
+        width: 1319
+        height: 1509
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49a37de47e5c52090800000000000000
+      internalID: -8059818360858789228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaHeraAtacandoo0_21
+      rect:
+        serializedVersion: 2
+        x: 3895
+        y: 1951
+        width: 1273
+        height: 1544
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21ed00943f3570c30800000000000000
+      internalID: 4325518271479602706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaHeraAtacandoo0_23
+      rect:
+        serializedVersion: 2
+        x: 5695
+        y: 1951
+        width: 1273
+        height: 1544
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdcfa377ee8db08b0800000000000000
+      internalID: -5184812027272823585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaHeraAtacandoo0_25
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 123
+        width: 1220
+        height: 1554
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db56df2f6cfd2f580800000000000000
+      internalID: -8794721076727945795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FadaHeraAtacandoo0_27
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 123
+        width: 1220
+        height: 1554
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfdfdaf9bd30459f0800000000000000
+      internalID: -480755018410099203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f3fa22381fa78fd4290b8a5b6295b903
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FadaHeraAtacandoo0_0: -7359617694637053009
+      FadaHeraAtacandoo0_1: -3189143470960946950
+      FadaHeraAtacandoo0_10: -5706400342854105202
+      FadaHeraAtacandoo0_11: 138825333823690483
+      FadaHeraAtacandoo0_12: 6149331446042384507
+      FadaHeraAtacandoo0_13: -4855971391440776325
+      FadaHeraAtacandoo0_14: -522496645280930016
+      FadaHeraAtacandoo0_15: -1064579454145793872
+      FadaHeraAtacandoo0_16: 648934085433520610
+      FadaHeraAtacandoo0_17: -3668713867180895894
+      FadaHeraAtacandoo0_18: -3683857859235430810
+      FadaHeraAtacandoo0_19: -8059818360858789228
+      FadaHeraAtacandoo0_2: 524055779422514741
+      FadaHeraAtacandoo0_20: -2039244509126291949
+      FadaHeraAtacandoo0_21: 4325518271479602706
+      FadaHeraAtacandoo0_22: -147432266676187078
+      FadaHeraAtacandoo0_23: -5184812027272823585
+      FadaHeraAtacandoo0_24: -652551048844504823
+      FadaHeraAtacandoo0_25: -8794721076727945795
+      FadaHeraAtacandoo0_26: 7722823584406320907
+      FadaHeraAtacandoo0_27: -480755018410099203
+      FadaHeraAtacandoo0_3: 1223297975270653503
+      FadaHeraAtacandoo0_4: 1266392352860854407
+      FadaHeraAtacandoo0_5: -5337834562049742295
+      FadaHeraAtacandoo0_6: 1928973890085560363
+      FadaHeraAtacandoo0_7: -1882441775538479944
+      FadaHeraAtacandoo0_8: 4929619880869281286
+      FadaHeraAtacandoo0_9: -6981245063024413095
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
