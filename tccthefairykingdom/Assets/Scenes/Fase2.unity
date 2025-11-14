@@ -754,37 +754,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 641669222}
   m_CullTransparentMesh: 1
---- !u!1 &648581622 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5545248655741914073, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-  m_PrefabInstance: {fileID: 1818313282}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &648581630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648581622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03b70c40891ed3a4384958b750d037bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  animator: {fileID: 0}
-  bodyCollider: {fileID: 0}
-  leftSpeed: 2
-  verticalSpeed: 3
-  stopX: 2
-  stopTolerance: 0.02
-  followVerticalWhileMoving: 1
-  maxPowers: 3
-  destroyDelay: 1.2
-  deathVFX: {fileID: 0}
-  shootWhenStopped: 1
-  shootPollInterval: 0.12
-  shootImmediatelyOnStop: 1
 --- !u!1 &712828406
 GameObject:
   m_ObjectHideFlags: 0
@@ -2721,7 +2690,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.8
+      value: 177.5
       objectReference: {fileID: 0}
     - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2766,10 +2735,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5545248655741914073, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 648581630}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
 --- !u!1 &1840517308
 GameObject:
@@ -2971,7 +2937,7 @@ Transform:
   m_GameObject: {fileID: 1926903693}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 163.8, y: 0.94, z: 0}
+  m_LocalPosition: {x: 12.6, y: 0.94, z: 0}
   m_LocalScale: {x: 0.32102928, y: 0.32102928, z: 0.32102928}
   m_ConstrainProportionsScale: 0
   m_Children:

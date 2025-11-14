@@ -249,4 +249,36 @@ public class EnemyFairy : MonoBehaviour
             Gizmos.DrawWireSphere(muzzle.position, 0.08f);
         }
     }
+    [Header("Vida")]
+public float health = 30f;
+public GameObject deathVFX; // opcional: prefab de efeito de morte
+public AudioClip hitSfx;    // opcional: som ao receber dano
+public AudioClip deathSfx;  // opcional: som de morte
+
+// chama isso quando receber dano
+public void TakeDamage(float amount)
+{
+    health -= amount;
+    // som/efeito de hit
+    if (hitSfx != null) AudioSource.PlayClipAtPoint(hitSfx, transform.position);
+    // opcional: flash de sprite, knockback, animação, etc.
+    if (animator != null)
+    {
+        animator.SetTrigger("Hit"); // se tiver trigger Hit no Animator
+    }
+
+    if (health <= 0f)
+    {
+        Die();
+    }
+}
+
+void Die()
+{
+    // spawn VFX
+    if (deathVFX != null) Instantiate(deathVFX, transform.position, Quaternion.identity);
+    if (deathSfx != null) AudioSource.PlayClipAtPoint(deathSfx, transform.position);
+    // aqui você pode desativar/animar em vez de destruir imediatamente
+    Destroy(gameObject);
+}
 }

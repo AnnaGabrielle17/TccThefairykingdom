@@ -9,6 +9,7 @@ TagManager:
   - PlayerProjectile
   - EnemyProjectile
   - Passaro
+  - PlayerPower
   layers:
   - Default
   - TransparentFX

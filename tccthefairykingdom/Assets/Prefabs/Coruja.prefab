@@ -43,9 +43,8 @@ GameObject:
   - component: {fileID: 1411120594940940677}
   - component: {fileID: 2565743031011876511}
   - component: {fileID: 7294876234468541202}
-  - component: {fileID: 8268684846614822062}
   - component: {fileID: 5235643711735152845}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Coruja
   m_TagString: Passaro
   m_Icon: {fileID: 0}
@@ -172,23 +171,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8268684846614822062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 970982147724879373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7ad53ba0fbda949a04c2218251673a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  walkLeft: 1
-  projectilePrefab: {fileID: 815676099574726342, guid: d67decc97ca50164789e62433537ae24, type: 3}
-  firePoint: {fileID: 494541307916058122}
-  fireCooldown: 2
 --- !u!61 &5235643711735152845
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -219,7 +201,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

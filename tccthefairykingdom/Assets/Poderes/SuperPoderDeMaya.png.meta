@@ -1,0 +1,529 @@
+fileFormatVersion: 2
+guid: 3e1a410fea913ea4ca58e31e283dc579
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6040031080031162298
+    second: SuperPoderDeMaya_0
+  - first:
+      213: 4498755148534870162
+    second: SuperPoderDeMaya_1
+  - first:
+      213: 1304945875297161664
+    second: SuperPoderDeMaya_2
+  - first:
+      213: 8162242175748498793
+    second: SuperPoderDeMaya_3
+  - first:
+      213: 5098054611319166741
+    second: SuperPoderDeMaya_4
+  - first:
+      213: -7478363047809126226
+    second: SuperPoderDeMaya_5
+  - first:
+      213: -761357325469600240
+    second: SuperPoderDeMaya_6
+  - first:
+      213: -2812768348360462976
+    second: SuperPoderDeMaya_7
+  - first:
+      213: 4126380956765288709
+    second: SuperPoderDeMaya_8
+  - first:
+      213: -1850378877245565186
+    second: SuperPoderDeMaya_9
+  - first:
+      213: -3475912195418587537
+    second: SuperPoderDeMaya_10
+  - first:
+      213: -8902510239288040678
+    second: SuperPoderDeMaya_11
+  - first:
+      213: 843163581877668146
+    second: SuperPoderDeMaya_12
+  - first:
+      213: -7900148253222983932
+    second: SuperPoderDeMaya_13
+  - first:
+      213: -5282079970568190705
+    second: SuperPoderDeMaya_14
+  - first:
+      213: 6512788563713398289
+    second: SuperPoderDeMaya_15
+  - first:
+      213: 205234140107251103
+    second: SuperPoderDeMaya_16
+  - first:
+      213: 1682868727099539193
+    second: SuperPoderDeMaya_17
+  - first:
+      213: 5996915051100194488
+    second: SuperPoderDeMaya_18
+  - first:
+      213: -2164881270619386882
+    second: SuperPoderDeMaya_19
+  - first:
+      213: -2951243211265671443
+    second: SuperPoderDeMaya_20
+  - first:
+      213: 1873595576013365734
+    second: SuperPoderDeMaya_21
+  - first:
+      213: -6726874888394194407
+    second: SuperPoderDeMaya_22
+  - first:
+      213: 2680251578010807291
+    second: SuperPoderDeMaya_23
+  - first:
+      213: -1436929226007592723
+    second: SuperPoderDeMaya_24
+  - first:
+      213: -4881733262183434669
+    second: SuperPoderDeMaya_25
+  - first:
+      213: -506265051042618164
+    second: SuperPoderDeMaya_26
+  - first:
+      213: -7306195255035660507
+    second: SuperPoderDeMaya_27
+  - first:
+      213: -1924143929617080799
+    second: SuperPoderDeMaya_28
+  - first:
+      213: -7372025306213243681
+    second: SuperPoderDeMaya_29
+  - first:
+      213: -6991012762542372180
+    second: SuperPoderDeMaya_30
+  - first:
+      213: 6233436525941376256
+    second: SuperPoderDeMaya_31
+  - first:
+      213: -5591094767808446447
+    second: SuperPoderDeMaya_32
+  - first:
+      213: -9006719966034117517
+    second: SuperPoderDeMaya_33
+  - first:
+      213: 8659896971862031628
+    second: SuperPoderDeMaya_34
+  - first:
+      213: -5154407849470599775
+    second: SuperPoderDeMaya_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SuperPoderDeMaya_0
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 4202
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6407c62fbbf7d2ca0800000000000000
+      internalID: -6040031080031162298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperPoderDeMaya_1
+      rect:
+        serializedVersion: 2
+        x: 1547
+        y: 4193
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29071efd8f9ce6e30800000000000000
+      internalID: 4498755148534870162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperPoderDeMaya_2
+      rect:
+        serializedVersion: 2
+        x: 2711
+        y: 4193
+        width: 113
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c1d2341c591c1210800000000000000
+      internalID: 1304945875297161664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperPoderDeMaya_3
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 2978
+        width: 170
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9656330730c164170800000000000000
+      internalID: 8162242175748498793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperPoderDeMaya_5
+      rect:
+        serializedVersion: 2
+        x: 2618
+        y: 2975
+        width: 206
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea0fde91e64873890800000000000000
+      internalID: -7478363047809126226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperPoderDeMaya_11
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 2984
+        width: 134
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1365f9da1ee37480800000000000000
+      internalID: -8902510239288040678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperPoderDeMaya_23
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 1778
+        width: 170
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfba3001c9a223520800000000000000
+      internalID: 2680251578010807291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperPoderDeMaya_27
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 1784
+        width: 134
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52774fb102e2b9a90800000000000000
+      internalID: -7306195255035660507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperPoderDeMaya_28
+      rect:
+        serializedVersion: 2
+        x: 2711
+        y: 1793
+        width: 113
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12e13726a411c45e0800000000000000
+      internalID: -1924143929617080799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperPoderDeMaya_34
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 593
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0d315fe9622e2870800000000000000
+      internalID: 8659896971862031628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperPoderDeMaya_35
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 602
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1add1d0ce5dd778b0800000000000000
+      internalID: -5154407849470599775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 0f4605e9e68639b4ba17bd6ae5a917b4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SuperPoderDeMaya_0: -6040031080031162298
+      SuperPoderDeMaya_1: 4498755148534870162
+      SuperPoderDeMaya_10: -3475912195418587537
+      SuperPoderDeMaya_11: -8902510239288040678
+      SuperPoderDeMaya_12: 843163581877668146
+      SuperPoderDeMaya_13: -7900148253222983932
+      SuperPoderDeMaya_14: -5282079970568190705
+      SuperPoderDeMaya_15: 6512788563713398289
+      SuperPoderDeMaya_16: 205234140107251103
+      SuperPoderDeMaya_17: 1682868727099539193
+      SuperPoderDeMaya_18: 5996915051100194488
+      SuperPoderDeMaya_19: -2164881270619386882
+      SuperPoderDeMaya_2: 1304945875297161664
+      SuperPoderDeMaya_20: -2951243211265671443
+      SuperPoderDeMaya_21: 1873595576013365734
+      SuperPoderDeMaya_22: -6726874888394194407
+      SuperPoderDeMaya_23: 2680251578010807291
+      SuperPoderDeMaya_24: -1436929226007592723
+      SuperPoderDeMaya_25: -4881733262183434669
+      SuperPoderDeMaya_26: -506265051042618164
+      SuperPoderDeMaya_27: -7306195255035660507
+      SuperPoderDeMaya_28: -1924143929617080799
+      SuperPoderDeMaya_29: -7372025306213243681
+      SuperPoderDeMaya_3: 8162242175748498793
+      SuperPoderDeMaya_30: -6991012762542372180
+      SuperPoderDeMaya_31: 6233436525941376256
+      SuperPoderDeMaya_32: -5591094767808446447
+      SuperPoderDeMaya_33: -9006719966034117517
+      SuperPoderDeMaya_34: 8659896971862031628
+      SuperPoderDeMaya_35: -5154407849470599775
+      SuperPoderDeMaya_4: 5098054611319166741
+      SuperPoderDeMaya_5: -7478363047809126226
+      SuperPoderDeMaya_6: -761357325469600240
+      SuperPoderDeMaya_7: -2812768348360462976
+      SuperPoderDeMaya_8: 4126380956765288709
+      SuperPoderDeMaya_9: -1850378877245565186
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

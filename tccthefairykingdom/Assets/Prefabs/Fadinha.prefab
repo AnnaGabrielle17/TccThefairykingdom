@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 3921844680253483666}
   - component: {fileID: 5937888750489259951}
   - component: {fileID: 7459696924086143884}
-  m_Layer: 0
+  - component: {fileID: 2826878400145601339}
+  m_Layer: 8
   m_Name: Fadinha
-  m_TagString: Passaro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,13 +217,32 @@ MonoBehaviour:
   requirePlayerToAttack: 1
   particlePrefab: {fileID: 6300590228920778825, guid: dc5f3a565417b1041a59aae7fabe4c1d, type: 3}
   muzzle: {fileID: 6209327598033789231}
-  particleSpeed: 12
+  particleSpeed: 5
   spawnOffset: 0.12
   instanceAutoDestroy: 4
   projectileDamage: 1
   verticalFollowMultiplier: 1
   maxVerticalSpeed: 4
   animator: {fileID: 9156779444739775949}
+--- !u!114 &2826878400145601339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608378452564909881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f25e497368d51f4999c08bcc00b55ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 5
+  crystalPrefab: {fileID: 0}
+  deathDelay: 0.4
+  destroyOnDie: 1
+  invulnerableDuration: 0.6
+  flashCount: 6
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2468343227865742534
 GameObject:
   m_ObjectHideFlags: 0
