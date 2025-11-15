@@ -2,11 +2,16 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-
-
-public class EnemyFairy : MonoBehaviour
+// Se você não quer usar IDamageable, remov a interface abaixo e o arquivo IDamageable do projeto.
+public class EnemyFairy : MonoBehaviour /*, IDamageable - opcional se criar IDamageable.cs*/ 
 {
-   [Header("Movimento")]
+    [Header("Vida")]
+    public float health = 30f;
+    public GameObject deathVFX; // opcional: prefab de efeito de morte
+    public AudioClip hitSfx;    // opcional: som ao receber dano
+    public AudioClip deathSfx;  // opcional: som de morte
+
+    [Header("Movimento")]
     public float horizontalSpeed = 2f;
     public float verticalSpeed = 2f;
     public float verticalRange = 1f;
@@ -50,7 +55,6 @@ public class EnemyFairy : MonoBehaviour
     private Transform currentTarget = null;
     private Vector3 attackPosition;
     private Collider2D[] enemyColliders;
-
     private bool firedThisAttack = false;
 
     void Awake()
@@ -249,36 +253,28 @@ public class EnemyFairy : MonoBehaviour
             Gizmos.DrawWireSphere(muzzle.position, 0.08f);
         }
     }
-    [Header("Vida")]
-public float health = 30f;
-public GameObject deathVFX; // opcional: prefab de efeito de morte
-public AudioClip hitSfx;    // opcional: som ao receber dano
-public AudioClip deathSfx;  // opcional: som de morte
 
-// chama isso quando receber dano
-public void TakeDamage(float amount)
-{
-    health -= amount;
-    // som/efeito de hit
-    if (hitSfx != null) AudioSource.PlayClipAtPoint(hitSfx, transform.position);
-    // opcional: flash de sprite, knockback, animação, etc.
-    if (animator != null)
+    // =================== Dano / Morte ===================
+    // implementa TakeDamage(float) usado pelos projéteis
+    public void TakeDamage(float amount)
     {
-        animator.SetTrigger("Hit"); // se tiver trigger Hit no Animator
+        health -= amount;
+
+        // som/efeito de hit
+        if (hitSfx != null) AudioSource.PlayClipAtPoint(hitSfx, transform.position);
+        if (animator != null) animator.SetTrigger("Hit");
+
+        if (health <= 0f)
+        {
+            Die();
+        }
     }
 
-    if (health <= 0f)
+    void Die()
     {
-        Die();
-    }
-}
+        if (deathVFX != null) Instantiate(deathVFX, transform.position, Quaternion.identity);
+        if (deathSfx != null) AudioSource.PlayClipAtPoint(deathSfx, transform.position);
 
-void Die()
-{
-    // spawn VFX
-    if (deathVFX != null) Instantiate(deathVFX, transform.position, Quaternion.identity);
-    if (deathSfx != null) AudioSource.PlayClipAtPoint(deathSfx, transform.position);
-    // aqui você pode desativar/animar em vez de destruir imediatamente
-    Destroy(gameObject);
-}
+        Destroy(gameObject);
+    }
 }

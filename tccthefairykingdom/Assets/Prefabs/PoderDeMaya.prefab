@@ -201,6 +201,11 @@ MonoBehaviour:
   speed: 8
   lifeTime: 3
   damage: 1
+  isSuper: 0
+  superSpeedMultiplier: 1.25
+  areaRadius: 1
+  hitVfx: {fileID: 0}
+  superParticles: {fileID: 0}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256

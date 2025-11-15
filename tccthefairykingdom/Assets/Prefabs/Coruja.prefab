@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 272055943616015689}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.6, y: 0, z: 0}
+  m_LocalPosition: {x: -16, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,9 +44,11 @@ GameObject:
   - component: {fileID: 2565743031011876511}
   - component: {fileID: 7294876234468541202}
   - component: {fileID: 5235643711735152845}
+  - component: {fileID: 4608809941250530832}
+  - component: {fileID: 946283210836274921}
   m_Layer: 8
   m_Name: Coruja
-  m_TagString: Passaro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,7 +203,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -217,3 +219,50 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9.837593, y: 10.112469}
   m_EdgeRadius: 0
+--- !u!114 &4608809941250530832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970982147724879373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7ad53ba0fbda949a04c2218251673a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
+  walkLeft: 1
+  stopPoint: {fileID: 0}
+  stopX: 3
+  stopTolerance: 0.05
+  verticalSpeed: 1
+  maxVerticalOffset: 4
+  invertVerticalWithPlayer: 0
+  invertMultiplier: 1
+  verticalSmooth: 8
+  projectilePrefab: {fileID: 815676099574726342, guid: d67decc97ca50164789e62433537ae24, type: 3}
+  firePoint: {fileID: 494541307916058122}
+  fireCooldown: 2
+  useAutoFireLoop: 0
+  playerTransform: {fileID: 0}
+  animator: {fileID: 0}
+--- !u!114 &946283210836274921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970982147724879373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f25e497368d51f4999c08bcc00b55ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 3
+  crystalPrefab: {fileID: 0}
+  deathDelay: 0.4
+  destroyOnDie: 1
+  invulnerableDuration: 0.6
+  flashCount: 6
+  flashColor: {r: 1, g: 1, b: 1, a: 1}

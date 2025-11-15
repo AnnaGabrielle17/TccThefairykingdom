@@ -69,7 +69,7 @@ private IEnumerator ApplyDOTCoroutine(int dmg, float duration, float tickInterva
     {
         if (!enableDebugKeys) return;
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             TomarDano(1);
         }

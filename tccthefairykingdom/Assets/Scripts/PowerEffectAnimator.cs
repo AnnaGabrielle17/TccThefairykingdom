@@ -4,29 +4,34 @@ using System.Collections;
 public class PowerEffectAnimator : MonoBehaviour
 {
     public Animator animator;
-    public string parameterName = "Active"; // se usar bool para controlar; se não, usaremos Animator.Play
+    public string parameterName = "Active";
     public bool useBoolParameter = true;
 
     Coroutine lifeCoroutine;
 
     void Awake()
     {
-        if (animator == null) animator = GetComponent<Animator>();
+        if (animator == null) animator = GetComponent<Animator>() ?? GetComponentInChildren<Animator>();
+        Debug.Log($"PowerEffectAnimator.Awake on '{gameObject.name}': animator={(animator!=null? animator.runtimeAnimatorController?.name : "NULL")}, useBoolParameter={useBoolParameter}, parameterName='{parameterName}'");
     }
 
-    // Ativa o efeito por 'seconds' segundos. Se seconds <= 0 => ativa indefinidamente.
     public void Activate(float seconds)
     {
-        // Se já existe rotina, reinicia
         if (lifeCoroutine != null) StopCoroutine(lifeCoroutine);
 
-        if (useBoolParameter && !string.IsNullOrEmpty(parameterName))
+        Debug.Log($"PowerEffectAnimator.Activate on '{gameObject.name}' seconds={seconds}");
+
+        if (animator == null)
+        {
+            Debug.LogWarning("PowerEffectAnimator: Animator não encontrado no prefab.");
+        }
+
+        if (useBoolParameter && !string.IsNullOrEmpty(parameterName) && animator != null)
         {
             animator.SetBool(parameterName, true);
         }
-        else
+        else if (animator != null)
         {
-            // garante que a clip seja reproduzida
             animator.Play(animator.GetCurrentAnimatorStateInfo(0).shortNameHash, 0, 0f);
         }
 
@@ -38,28 +43,21 @@ public class PowerEffectAnimator : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
 
-        if (useBoolParameter && !string.IsNullOrEmpty(parameterName))
+        if (useBoolParameter && !string.IsNullOrEmpty(parameterName) && animator != null)
         {
             animator.SetBool(parameterName, false);
         }
-        else
-        {
-            // opcional: fade out ou parar partículas antes de destruir
-        }
 
-        // destruir o objeto / ou desativar
         Destroy(gameObject, 0.2f);
     }
 
-    // força desativação imediata
     public void DeactivateImmediate()
     {
         if (lifeCoroutine != null) StopCoroutine(lifeCoroutine);
-        if (useBoolParameter && !string.IsNullOrEmpty(parameterName))
+        if (useBoolParameter && !string.IsNullOrEmpty(parameterName) && animator != null)
         {
             animator.SetBool(parameterName, false);
         }
         Destroy(gameObject, 0.1f);
     }
-
 }
