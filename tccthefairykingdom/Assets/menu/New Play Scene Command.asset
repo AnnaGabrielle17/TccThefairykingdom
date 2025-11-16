@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fdba55b431096c4f9012def40a72013, type: 3}
   m_Name: New Play Scene Command
   m_EditorClassIdentifier: 
-  sceneName: Fase1
+  sceneName: Cutscene

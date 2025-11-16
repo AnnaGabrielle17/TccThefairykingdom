@@ -2,36 +2,33 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-
 public class CrystalPickup : MonoBehaviour
 {
     [Tooltip("Nome da cena a carregar. Se vazio, carrega buildIndex + 1")]
     public string nextSceneName = "";
-    public float delayBeforeLoad = 0.2f;
-
+    public float delayBeforeLoad = 1.2f; // tempo em segundos mostrado antes de trocar (realtime)
+    
     [Header("Movimento")]
-    [Tooltip("Velocidade de movimento (unidades por segundo)")]
     public float speed = 2f;
-    [Tooltip("Se verdadeiro, o cristal persegue o Player. Se falso, anda só para a esquerda.")]
     public bool homingToPlayer = true;
-    [Tooltip("Tempo máximo em segundos antes do cristal se autodestruir (fallback)")]
     public float maxLifetime = 10f;
 
+    [Header("Victory UI")]
+    public VictoryScreen victoryScreen; // arraste aqui seu VictoryScreen (opcional)
+
     private Transform player;
+    private bool picked = false;
 
     void Start()
     {
-        // tenta achar o Player pela Tag (garanta que o Player tem Tag = \"Player\")
         var go = GameObject.FindGameObjectWithTag("Player");
         if (go != null) player = go.transform;
 
-        // fallback: destrói sozinho pra não acumular objetos
         Destroy(gameObject, maxLifetime);
     }
 
     void Update()
     {
-        // Se não tem player e homing está ligado, apenas anda para a esquerda
         if (player == null)
         {
             if (!homingToPlayer)
@@ -40,22 +37,18 @@ public class CrystalPickup : MonoBehaviour
         }
 
         if (homingToPlayer)
-        {
-            // movimento suave em direção à posição atual do player
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-        }
         else
-        {
-            // movimento fixo para a esquerda
             transform.position += Vector3.left * speed * Time.deltaTime;
-        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (picked) return;
         if (!other.CompareTag("Player")) return;
 
-        // desativa visual e collider para evitar múltiplas ativações
+        picked = true;
+
         var sr = GetComponent<SpriteRenderer>();
         if (sr != null) sr.enabled = false;
 
@@ -65,11 +58,40 @@ public class CrystalPickup : MonoBehaviour
         var rb = GetComponent<Rigidbody2D>();
         if (rb != null) rb.linearVelocity = Vector2.zero;
 
-        // load scene
-        if (!string.IsNullOrEmpty(nextSceneName))
-            StartCoroutine(LoadSceneAfterDelay(nextSceneName));
+        // Se VictoryScreen definido, mostra a tela e depois avança (usando tempo real)
+        if (victoryScreen != null)
+        {
+            victoryScreen.ShowVictory("Você pegou o cristal!");
+            StartCoroutine(LoadSceneAfterRealtimeDelay());
+        }
         else
-            StartCoroutine(LoadSceneAfterDelay(SceneManager.GetActiveScene().buildIndex + 1));
+        {
+            // fallback para o comportamento antigo (sem UI)
+            if (!string.IsNullOrEmpty(nextSceneName))
+                StartCoroutine(LoadSceneAfterDelay(nextSceneName));
+            else
+                StartCoroutine(LoadSceneAfterDelay(SceneManager.GetActiveScene().buildIndex + 1));
+        }
+    }
+
+    IEnumerator LoadSceneAfterRealtimeDelay()
+    {
+        // espera em tempo real (ignora Time.timeScale = 0)
+        yield return new WaitForSecondsRealtime(delayBeforeLoad);
+
+        // restaura tempo antes de carregar
+        Time.timeScale = 1f;
+
+        if (!string.IsNullOrEmpty(nextSceneName))
+            SceneManager.LoadScene(nextSceneName);
+        else
+        {
+            int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            if (nextIndex < SceneManager.sceneCountInBuildSettings)
+                SceneManager.LoadScene(nextIndex);
+            else
+                Debug.Log("CrystalPickup: próxima cena não encontrada no Build Settings.");
+        }
     }
 
     IEnumerator LoadSceneAfterDelay(string sceneName)
