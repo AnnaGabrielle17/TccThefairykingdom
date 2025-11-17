@@ -148,7 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: Fase3
-  delayBeforeLoad: 0.2
+  delayBeforeLoad: 5
   speed: 2
-  homingToPlayer: 1
+  homingToPlayer: 0
   maxLifetime: 10
+  victoryScreen: {fileID: 0}

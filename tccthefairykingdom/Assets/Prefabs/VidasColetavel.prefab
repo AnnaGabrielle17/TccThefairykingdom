@@ -192,5 +192,5 @@ MonoBehaviour:
   curaAmount: 1
   playerTag: Player
   delayEntrePassos: 0.06
-  somColeta: {fileID: 0}
+  somColeta: {fileID: 8300000, guid: 183b66af73fde9c4c9f90a70d2c6c38d, type: 3}
   vfxColeta: {fileID: 0}

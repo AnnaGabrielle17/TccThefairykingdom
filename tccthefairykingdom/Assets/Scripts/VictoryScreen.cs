@@ -1,22 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-#if TXT_MESH_PRO_EXISTS
-using TMPro;
-#endif
 
 public class VictoryScreen : MonoBehaviour
 {
     [Header("UI Elements")]
-    public GameObject panel; // VictoryPanel (desativado no Start/Awake)
-    public Text titleText;   // usar se não usar TMP
+    public GameObject panel; // atribua o painel que contém UI (pode começar desativado)
+    public Text titleText;
     public Button btnNext;
     public Button btnRetry;
     public Button btnMenu;
-
-#if TMP_PRESENT
-    public TMPro.TextMeshProUGUI titleTMP; // opcional se usar TextMeshPro
-#endif
 
     void Awake()
     {
@@ -27,36 +20,24 @@ public class VictoryScreen : MonoBehaviour
         if (btnMenu != null) btnMenu.onClick.AddListener(OnMenu);
     }
 
-    /// <summary>
-    /// Mostra a tela de vitória com a mensagem e pausa o jogo.
-    /// </summary>
+    void Start()
+    {
+        Debug.Log("VictoryScreen: Start() - panel assigned? " + (panel != null));
+    }
+
     public void ShowVictory(string message = "Você venceu!")
     {
+        Debug.Log("VictoryScreen: ShowVictory called with message: " + message);
+
         if (panel != null) panel.SetActive(true);
 
-        if (!string.IsNullOrEmpty(message))
-        {
-#if TMP_PRESENT
-            if (titleTMP != null) titleTMP.text = message;
-            else
-#endif
-            if (titleText != null) titleText.text = message;
-        }
+        if (titleText != null) titleText.text = message;
 
-        // desativa o botão Next se estiver na última cena do Build Settings
         int buildIndex = SceneManager.GetActiveScene().buildIndex;
         int lastIndex = SceneManager.sceneCountInBuildSettings - 1;
-        if (btnNext != null)
-        {
-            btnNext.interactable = (buildIndex < lastIndex);
-            if (!btnNext.interactable)
-            {
-                // Se desejar, troque o texto para "Menu" manualmente no Inspector
-            }
-        }
+        if (btnNext != null) btnNext.interactable = (buildIndex < lastIndex);
 
-        // Pausa o jogo; usaremos WaitForSecondsRealtime ao aguardar avanço automático.
-        Time.timeScale = 0f;
+        Time.timeScale = 0f; // pausa o jogo
     }
 
     public void Hide()
@@ -84,7 +65,6 @@ public class VictoryScreen : MonoBehaviour
     void OnMenu()
     {
         Time.timeScale = 1f;
-        // substitua "MainMenu" pelo nome exato da sua cena de menu
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Menu");
     }
 }

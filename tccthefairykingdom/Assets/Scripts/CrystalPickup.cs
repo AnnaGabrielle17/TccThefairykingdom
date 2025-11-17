@@ -4,17 +4,14 @@ using System.Collections;
 
 public class CrystalPickup : MonoBehaviour
 {
-    [Tooltip("Nome da cena a carregar. Se vazio, carrega buildIndex + 1")]
     public string nextSceneName = "";
-    public float delayBeforeLoad = 1.2f; // tempo em segundos mostrado antes de trocar (realtime)
-    
-    [Header("Movimento")]
+    public float delayBeforeLoad = 1.2f;
     public float speed = 2f;
     public bool homingToPlayer = true;
     public float maxLifetime = 10f;
 
-    [Header("Victory UI")]
-    public VictoryScreen victoryScreen; // arraste aqui seu VictoryScreen (opcional)
+    [Header("Victory UI (auto-bind)")]
+    public VictoryScreen victoryScreen; // será auto-encontrado se vazio
 
     private Transform player;
     private bool picked = false;
@@ -25,6 +22,16 @@ public class CrystalPickup : MonoBehaviour
         if (go != null) player = go.transform;
 
         Destroy(gameObject, maxLifetime);
+
+        if (victoryScreen == null)
+        {
+            victoryScreen = FindObjectOfType<VictoryScreen>();
+            Debug.Log("CrystalPickup: auto-bind VictoryScreen -> " + (victoryScreen != null));
+        }
+        else
+        {
+            Debug.Log("CrystalPickup: VictoryScreen já atribuído no Inspector.");
+        }
     }
 
     void Update()
@@ -44,10 +51,13 @@ public class CrystalPickup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (picked) return;
-        if (!other.CompareTag("Player")) return;
+        Debug.Log("CrystalPickup: OnTriggerEnter2D with " + other.name + " tag=" + other.tag);
+
+        if (picked) { Debug.Log("CrystalPickup: já pego, ignorando."); return; }
+        if (!other.CompareTag("Player")) { Debug.Log("CrystalPickup: colisão não é Player, ignorando."); return; }
 
         picked = true;
+        Debug.Log("CrystalPickup: player coletou cristal!");
 
         var sr = GetComponent<SpriteRenderer>();
         if (sr != null) sr.enabled = false;
@@ -58,15 +68,15 @@ public class CrystalPickup : MonoBehaviour
         var rb = GetComponent<Rigidbody2D>();
         if (rb != null) rb.linearVelocity = Vector2.zero;
 
-        // Se VictoryScreen definido, mostra a tela e depois avança (usando tempo real)
         if (victoryScreen != null)
         {
+            Debug.Log("CrystalPickup: chamando VictoryScreen.ShowVictory()");
             victoryScreen.ShowVictory("Você pegou o cristal!");
             StartCoroutine(LoadSceneAfterRealtimeDelay());
         }
         else
         {
-            // fallback para o comportamento antigo (sem UI)
+            Debug.LogWarning("CrystalPickup: victoryScreen é null, carregando cena direto.");
             if (!string.IsNullOrEmpty(nextSceneName))
                 StartCoroutine(LoadSceneAfterDelay(nextSceneName));
             else
@@ -76,10 +86,8 @@ public class CrystalPickup : MonoBehaviour
 
     IEnumerator LoadSceneAfterRealtimeDelay()
     {
-        // espera em tempo real (ignora Time.timeScale = 0)
+        Debug.Log("CrystalPickup: esperando " + delayBeforeLoad + "s (Realtime) antes de carregar próxima cena.");
         yield return new WaitForSecondsRealtime(delayBeforeLoad);
-
-        // restaura tempo antes de carregar
         Time.timeScale = 1f;
 
         if (!string.IsNullOrEmpty(nextSceneName))
