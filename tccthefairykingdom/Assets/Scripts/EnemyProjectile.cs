@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Reflection;
 
 public class EnemyProjectile : MonoBehaviour
 {
@@ -81,23 +82,85 @@ public class EnemyProjectile : MonoBehaviour
         if (other == null) return;
         if (other.CompareTag("Enemy")) return;
 
+        // Caso: atingiu o player (ou objeto com componentes de player)
         if (other.CompareTag("Player"))
         {
+            // 1) Tenta FadaDano (preferência)
             var fada = other.GetComponent<FadaDano>();
             if (fada != null)
             {
+                // se estiver com escudo, consome escudo e destrói o projétil
+                if (fada.IsShielded())
+                {
+                    fada.ShieldHit();
+                    if (destroyOnHit) Destroy(gameObject);
+                    return;
+                }
+
+                // sem escudo, aplica dano via API existente
                 fada.TryTakeDamageFromExternal(damage);
-            }
-            else
-            {
-                var ph = other.GetComponent<PlayerHealth>();
-                if (ph != null) ph.TakeDamage(damage);
+                if (destroyOnHit) Destroy(gameObject);
+                return;
             }
 
+            // 2) Fallback: PlayerHealth (pode não existir ou não ter métodos de escudo)
+            var ph = other.GetComponent<PlayerHealth>();
+            if (ph != null)
+            {
+                // usa reflexão para checar IsShielded() (se existir) sem causar erro de compilação
+                MethodInfo isShieldMI = ph.GetType().GetMethod("IsShielded", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                bool phIsShielded = false;
+                if (isShieldMI != null)
+                {
+                    try
+                    {
+                        phIsShielded = (bool)isShieldMI.Invoke(ph, null);
+                    }
+                    catch
+                    {
+                        phIsShielded = false;
+                    }
+                }
+
+                if (phIsShielded)
+                {
+                    // tenta invocar ShieldHit() via reflexão (se existir)
+                    MethodInfo shieldHitMI = ph.GetType().GetMethod("ShieldHit", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                    if (shieldHitMI != null)
+                    {
+                        shieldHitMI.Invoke(ph, null);
+                    }
+                    else
+                    {
+                        Debug.LogWarning("[EnemyProjectile] PlayerHealth detectado como protegido, mas não possui ShieldHit().");
+                    }
+
+                    if (destroyOnHit) Destroy(gameObject);
+                    return;
+                }
+
+                // se não está protegido, tenta invocar TakeDamage(int) (se existir)
+                MethodInfo takeDamageMI = ph.GetType().GetMethod("TakeDamage", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                if (takeDamageMI != null)
+                {
+                    // chama TakeDamage(damage)
+                    takeDamageMI.Invoke(ph, new object[] { damage });
+                }
+                else
+                {
+                    Debug.LogWarning("[EnemyProjectile] PlayerHealth encontrado, mas não possui TakeDamage(int). Nenhuma ação aplicada.");
+                }
+
+                if (destroyOnHit) Destroy(gameObject);
+                return;
+            }
+
+            // 3) Se for Player sem componentes conhecidos, destrói o projétil para evitar passagem
             if (destroyOnHit) Destroy(gameObject);
             return;
         }
 
+        // Se bateu em qualquer outra coisa (cenário, parede, etc.)
         if (destroyOnHit) Destroy(gameObject);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FadaDano : MonoBehaviour
 {
- [Header("Vida")]
+    [Header("Vida")]
     public int maxVida = 6;
     [Tooltip("-1 = inicializar automaticamente com maxVida")]
     public int vida = -1;
@@ -31,27 +31,49 @@ public class FadaDano : MonoBehaviour
     private Coroutine currentVisualCoroutine = null;
     private bool isAnimating = false;
 
-    public void ApplyDOT(int damagePerTick, float duration, float tickInterval = 1f)
-{
-    StartCoroutine(ApplyDOTCoroutine(damagePerTick, duration, tickInterval));
-}
+    // ----------------- ESCUDO -----------------
+    [Header("Escudo (opcional)")]
+    [Tooltip("GameObject filho que representa a 'frame' visual do escudo. Se vazio, o escudo ainda funciona sem visual.")]
+    public GameObject shieldFrame;
 
-private IEnumerator ApplyDOTCoroutine(int dmg, float duration, float tickInterval)
-{
-    float elapsed = 0f;
-    while (elapsed < duration && vida > 0)
+    [Tooltip("Duração padrão do escudo em segundos. Use 0 para não expirar por tempo.")]
+    public float defaultShieldDuration = 5f;
+
+    [Tooltip("Número de hits que o escudo aguenta. Use int.MaxValue para 'infinito' (apenas duração).")]
+    public int defaultShieldHits = int.MaxValue;
+
+    [Tooltip("Prefab de efeito quando o escudo bloqueia (opcional).")]
+    public GameObject shieldBlockEffectPrefab;
+
+    private bool shieldActive = false;
+    private int shieldHitsRemaining = 0;
+    private Coroutine shieldCoroutine = null;
+    // -------------------------------------------
+
+    public void ApplyDOT(int damagePerTick, float duration, float tickInterval = 1f)
     {
-        TomarDano(dmg); // TomarDano ignora o intervaloDano, então DOT sempre aplica
-        yield return new WaitForSeconds(tickInterval);
-        elapsed += tickInterval;
+        StartCoroutine(ApplyDOTCoroutine(damagePerTick, duration, tickInterval));
     }
-}
+
+    private IEnumerator ApplyDOTCoroutine(int dmg, float duration, float tickInterval)
+    {
+        float elapsed = 0f;
+        while (elapsed < duration && vida > 0)
+        {
+            TomarDano(dmg); // TomarDano ignora o intervaloDano, então DOT sempre aplica
+            yield return new WaitForSeconds(tickInterval);
+            elapsed += tickInterval;
+        }
+    }
 
     private void Awake()
     {
         if (vida < 0) vida = maxVida;
         vida = Mathf.Clamp(vida, 0, maxVida);
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // se houver shieldFrame, garanta que esteja inativo no início
+        if (shieldFrame != null) shieldFrame.SetActive(false);
     }
 
     private void Start()
@@ -85,6 +107,13 @@ private IEnumerator ApplyDOTCoroutine(int dmg, float duration, float tickInterva
         {
             if (frameCycler != null) frameCycler.IncreaseOne();
         }
+
+        // debug: pressionando K ativa um escudo de teste
+        if (enableDebugKeys && Input.GetKeyDown(KeyCode.K))
+        {
+            AddShield(4f, 3); // exemplo: 4s ou 3 hits, o que ocorrer primeiro (aqui ambos setados)
+            Debug.Log("[DEBUG] Escudo adicionado via tecla K");
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -96,8 +125,17 @@ private IEnumerator ApplyDOTCoroutine(int dmg, float duration, float tickInterva
     }
 
     // Método público centralizado para aplicar dano de fontes externas (mecânicas, partículas, triggers)
+    // Agora respeita o escudo: se houver escudo, consome o hit e retorna sem aplicar dano.
     public void TryTakeDamageFromExternal(int quantidade)
     {
+        // se estiver com escudo, bloqueia e consome hit (independente do intervalo)
+        if (shieldActive)
+        {
+            ShieldHit();
+            return;
+        }
+
+        // Sem escudo: respeitar intervalo de dano
         if (Time.time < tempoUltimoDano + intervaloDano) return;
 
         tempoUltimoDano = Time.time;
@@ -226,51 +264,46 @@ private IEnumerator ApplyDOTCoroutine(int dmg, float duration, float tickInterva
     {
         Debug.Log("Fada morreu!");
 
-    // cancelar qualquer animação visual em andamento
-    if (currentVisualCoroutine != null)
-    {
-        StopCoroutine(currentVisualCoroutine);
-        currentVisualCoroutine = null;
+        // cancelar qualquer animação visual em andamento
+        if (currentVisualCoroutine != null)
+        {
+            StopCoroutine(currentVisualCoroutine);
+            currentVisualCoroutine = null;
+        }
+
+        // Desabilita componentes que controlam o jogador (se existirem)
+        var rb = GetComponent<Rigidbody2D>();
+        if (rb != null) rb.linearVelocity = Vector2.zero;
+
+        // desativa scripts de controle do jogador para evitar inputs pós-morte
+        var behaviors = GetComponents<MonoBehaviour>();
+        foreach (var b in behaviors)
+        {
+            // não desativa este script (FadaDano) para manter lógica, só desativa outros controles
+            if (b != this) b.enabled = false;
+        }
+
+        // opcional: toca trigger de animação de morte
+        var anim = GetComponent<Animator>();
+        if (anim != null)
+        {
+            // crie um trigger "Die" no Animator se quiser animação de morte
+            if (anim.HasState(0, Animator.StringToHash("Die")))
+                anim.SetTrigger("Die");
+        }
+
+        // chama GameOverController (se existir)
+        if (GameOverController.Instance != null)
+        {
+            GameOverController.Instance.ShowGameOver();
+        }
+        else
+        {
+            Debug.LogWarning("GameOverController não encontrado na cena. Crie um GameObject com o script e aponte o painel.");
+            // fallback: destrói o jogador (se realmente desejar)
+            Destroy(gameObject);
+        }
     }
-
-    // Desabilita componentes que controlam o jogador (se existirem)
-    var rb = GetComponent<Rigidbody2D>();
-    if (rb != null) rb.linearVelocity = Vector2.zero;
-
-    // desativa scripts de controle do jogador para evitar inputs pós-morte
-    var behaviors = GetComponents<MonoBehaviour>();
-    foreach (var b in behaviors)
-    {
-        // não desativa este script (FadaDano) para manter lógica, só desativa outros controles
-        if (b != this) b.enabled = false;
-    }
-
-    // opcional: toca trigger de animação de morte
-    var anim = GetComponent<Animator>();
-    if (anim != null)
-    {
-        // crie um trigger "Die" no Animator se quiser animação de morte
-        if (anim.HasState(0, Animator.StringToHash("Die")))
-            anim.SetTrigger("Die");
-    }
-
-    // chama GameOverController (se existir)
-    if (GameOverController.Instance != null)
-    {
-        GameOverController.Instance.ShowGameOver();
-    }
-    else
-    {
-        Debug.LogWarning("GameOverController não encontrado na cena. Crie um GameObject com o script e aponte o painel.");
-        // fallback: destrói o jogador (se realmente desejar)
-        Destroy(gameObject);
-    }
-
-    // Note: não destruímos o gameObject imediatamente para que a UI continue visível e para que você
-    // possa adicionar efeitos de morte. Se quiser destruir, pode chamar Destroy(gameObject, 1f);
-}
-
-    
 
     private IEnumerator PiscarDano()
     {
@@ -284,6 +317,98 @@ private IEnumerator ApplyDOTCoroutine(int dmg, float duration, float tickInterva
             yield return new WaitForSeconds(0.1f);
         }
     }
+
+    // ----------------- MÉTODOS DO ESCUDO -----------------
+    /// <summary>
+    /// Aplica um escudo ao jogador.
+    /// duration = 0 => não expira por tempo (usa somente hits)
+    /// maxHits = int.MaxValue => não decrementa por hits (usa só duração)
+    /// </summary>
+    public void AddShield(float duration = -1f, int maxHits = -1)
+    {
+        float useDuration = (duration < 0f) ? defaultShieldDuration : duration;
+        int useHits = (maxHits < 0) ? defaultShieldHits : maxHits;
+
+        shieldActive = true;
+        shieldHitsRemaining = useHits;
+
+        if (shieldFrame != null)
+        {
+            shieldFrame.SetActive(true);
+            Collider2D c = shieldFrame.GetComponent<Collider2D>();
+            if (c != null) c.enabled = true;
+        }
+
+        // Reinicia coroutine de duração se houver
+        if (shieldCoroutine != null) StopCoroutine(shieldCoroutine);
+        if (useDuration > 0f)
+        {
+            shieldCoroutine = StartCoroutine(ShieldTimer(useDuration));
+        }
+    }
+
+    private IEnumerator ShieldTimer(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        RemoveShield();
+    }
+
+    /// <summary>
+    /// Consumir um hit do escudo (chamado quando um projétil bate)
+    /// </summary>
+    public void ShieldHit()
+    {
+        if (!shieldActive) return;
+
+        // spawn de efeito de bloqueio
+        if (shieldBlockEffectPrefab != null)
+        {
+            Instantiate(shieldBlockEffectPrefab, transform.position, Quaternion.identity);
+        }
+
+        // feedback curto: piscar (opcional)
+        StartCoroutine(PiscarDano());
+
+        if (shieldHitsRemaining > 0 && shieldHitsRemaining < int.MaxValue)
+        {
+            shieldHitsRemaining--;
+            Debug.Log($"Escudo bloqueou um projétil. Hits restantes: {shieldHitsRemaining}");
+            if (shieldHitsRemaining <= 0)
+            {
+                RemoveShield();
+            }
+        }
+        else
+        {
+            // int.MaxValue ou 0 trata como 'não decrementar'
+            Debug.Log("Escudo bloqueou um projétil (hits infinitos).");
+        }
+    }
+
+    public void RemoveShield()
+    {
+        shieldActive = false;
+        shieldHitsRemaining = 0;
+
+        if (shieldFrame != null)
+        {
+            Collider2D c = shieldFrame.GetComponent<Collider2D>();
+            if (c != null) c.enabled = false;
+            shieldFrame.SetActive(false);
+        }
+
+        if (shieldCoroutine != null)
+        {
+            StopCoroutine(shieldCoroutine);
+            shieldCoroutine = null;
+        }
+    }
+
+    public bool IsShielded()
+    {
+        return shieldActive;
+    }
+    // ----------------- FIM ESCUDO -----------------
 
     // Métodos públicos úteis (p.ex. curar)
     public void Curar(int quantidade)
@@ -345,4 +470,3 @@ private IEnumerator ApplyDOTCoroutine(int dmg, float duration, float tickInterva
         currentVisualCoroutine = null;
     }
 }
-   
