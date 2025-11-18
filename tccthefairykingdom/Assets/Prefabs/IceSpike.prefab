@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a05c9f7deea4740bd539cd20a68e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 3780850388838399205}
 --- !u!1 &1619611514228761084
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,10 +363,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e20a60a04490840a70eecdbb88f18c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftSpeed: 1
-  extendDistance: 1
-  extendSpeed: 4
+  leftSpeed: 3
+  extendDistance: 6
+  extendSpeed: 6
   waitTime: 0.5
-  onlyActivateOnPlayer: 1
+  onlyActivateOnPlayer: 0
   startGoingUp: 1
   detectionZone: {fileID: 601690512505791552}

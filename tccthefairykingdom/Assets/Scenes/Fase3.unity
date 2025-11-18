@@ -490,11 +490,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2236848491936478348, guid: 4bad527ccc08b524eb75c7c22b3e634e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 146.51999
+      value: 14.819992
       objectReference: {fileID: 0}
     - target: {fileID: 2236848491936478348, guid: 4bad527ccc08b524eb75c7c22b3e634e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9301746
+      value: 5.23
       objectReference: {fileID: 0}
     - target: {fileID: 2236848491936478348, guid: 4bad527ccc08b524eb75c7c22b3e634e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1524,17 +1524,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fc6a40252a19614c90d2b7b5554a437, type: 3}
---- !u!114 &860091904 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3780850388838399205, guid: 4bad527ccc08b524eb75c7c22b3e634e, type: 3}
-  m_PrefabInstance: {fileID: 3624433934725239867}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6e20a60a04490840a70eecdbb88f18c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &904603304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2853,7 +2842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eece7b0f526c5d240bf94423447be36d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
 --- !u!114 &1780187294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3570,11 +3559,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2236848491936478348, guid: 4bad527ccc08b524eb75c7c22b3e634e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 146.7
+      value: 13.11
       objectReference: {fileID: 0}
     - target: {fileID: 2236848491936478348, guid: 4bad527ccc08b524eb75c7c22b3e634e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -6.36
       objectReference: {fileID: 0}
     - target: {fileID: 2236848491936478348, guid: 4bad527ccc08b524eb75c7c22b3e634e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3608,22 +3597,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3780850388838399205, guid: 4bad527ccc08b524eb75c7c22b3e634e, type: 3}
-      propertyPath: leftSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3780850388838399205, guid: 4bad527ccc08b524eb75c7c22b3e634e, type: 3}
-      propertyPath: extendSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3780850388838399205, guid: 4bad527ccc08b524eb75c7c22b3e634e, type: 3}
-      propertyPath: onlyActivateOnPlayer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314018997909344038, guid: 4bad527ccc08b524eb75c7c22b3e634e, type: 3}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 860091904}
     - target: {fileID: 9208687849837888693, guid: 4bad527ccc08b524eb75c7c22b3e634e, type: 3}
       propertyPath: m_Name
       value: IceSpike
@@ -3814,7 +3787,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 418619929971898872, guid: 709b6770ad6bf6045870f894114ae41d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.7
+      value: 101.7
       objectReference: {fileID: 0}
     - target: {fileID: 418619929971898872, guid: 709b6770ad6bf6045870f894114ae41d, type: 3}
       propertyPath: m_LocalPosition.y
