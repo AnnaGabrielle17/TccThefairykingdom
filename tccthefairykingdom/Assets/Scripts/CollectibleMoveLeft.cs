@@ -4,6 +4,10 @@ public class CollectibleMoveLeft : MonoBehaviour
 {
     public float speed = 2f;
 
+    // Arraste aqui o som do coletável no Inspector
+    public AudioClip pickupSfx;
+    [Range(0f, 1f)] public float sfxVolume = 1f;
+
     private void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
@@ -18,6 +22,12 @@ public class CollectibleMoveLeft : MonoBehaviour
             if (pc != null)
             {
                 pc.AddOrRefreshPower();
+            }
+
+            // Toca o efeito sonoro (se atribuído) na posição do coletável
+            if (pickupSfx != null)
+            {
+                AudioSource.PlayClipAtPoint(pickupSfx, transform.position, sfxVolume);
             }
 
             Destroy(gameObject);
