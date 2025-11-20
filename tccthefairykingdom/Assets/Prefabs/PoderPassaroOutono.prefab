@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8126236350524065149}
   - component: {fileID: 6661509148180943875}
   - component: {fileID: 7806787947802118620}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PoderPassaroOutono
   m_TagString: Mecanica
   m_Icon: {fileID: 0}

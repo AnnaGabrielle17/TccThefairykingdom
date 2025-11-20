@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSceneName: Fase2
   delayBeforeLoad: 5
-  speed: 2
+  speed: 4
   homingToPlayer: 0
   maxLifetime: 10
   victoryScreen: {fileID: 0}
