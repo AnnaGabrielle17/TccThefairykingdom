@@ -11,11 +11,10 @@ public class BirdShooter : MonoBehaviour
     public float projectileSpeed = 6f;
     public int projectileDamage = 1;
     public float fireCooldown = 1.5f;
-    private float lastFireTime = -999f;
+    [HideInInspector] public float lastFireTime = -999f;
 
     private void Reset()
     {
-        // tenta facilitar a configuração no inspector
         spawnPoint = transform;
     }
 
@@ -23,17 +22,40 @@ public class BirdShooter : MonoBehaviour
     {
         if (projectilePrefab == null)
         {
-            Debug.LogWarning("Projectile prefab não atribuído em BirdShooter.");
+            Debug.LogWarning($"[BirdShooter:{name}] Projectile prefab NÃO atribuído.");
             return;
         }
 
-        if (Time.time < lastFireTime + fireCooldown) return;
+        if (Time.time < lastFireTime + fireCooldown)
+        {
+            return;
+        }
+
         lastFireTime = Time.time;
 
         Vector3 pos = (spawnPoint != null ? spawnPoint.position : transform.position) + (Vector3)spawnOffset;
+
+        // small safety offset in Y to avoid spawning inside the bird collider
+        pos.y += 0.05f;
+
         GameObject go = Instantiate(projectilePrefab, pos, Quaternion.identity);
 
-        // inicializa direção/velocidade/dano
+        if (go == null)
+        {
+            Debug.LogError($"[BirdShooter:{name}] Instantiate do projectile retornou null.");
+            return;
+        }
+
+        Debug.Log($"[BirdShooter:{name}] disparou projétil em {Time.time:F2} pos={pos}");
+
+        // prevent projectile from colliding with the emitter
+        Collider2D emitterCol = GetComponent<Collider2D>();
+        Collider2D projCol = go.GetComponent<Collider2D>();
+        if (emitterCol != null && projCol != null)
+        {
+            Physics2D.IgnoreCollision(emitterCol, projCol, true);
+        }
+
         var proj = go.GetComponent<PoderPassaroProjectile>();
         if (proj != null)
         {
@@ -43,19 +65,18 @@ public class BirdShooter : MonoBehaviour
         {
             proj = go.GetComponentInChildren<PoderPassaroProjectile>();
             if (proj != null) proj.Initialize(Vector2.left, projectileSpeed, projectileDamage);
-            // ...fallbacks...
-        }
-
-        // Exemplo de uso automático (descomente se desejar que o pássaro dispare periodicamente sem animação)
-        /*
-        private void Update()
-        {
-            if (Time.time > lastFireTime + fireCooldown)
+            else
             {
-                ShootLeft();
+                var rb = go.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.linearVelocity = Vector2.left * projectileSpeed;
+                }
+                else
+                {
+                    Debug.LogWarning($"[BirdShooter:{name}] prefab instanciado não tem PoderPassaroProjectile nem Rigidbody2D.");
+                }
             }
         }
-        */
-
     }
 }

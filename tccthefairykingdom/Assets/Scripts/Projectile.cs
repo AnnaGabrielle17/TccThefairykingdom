@@ -27,11 +27,15 @@ public class Projectile : MonoBehaviour
     int direction = 1; // 1 direita, -1 esquerda
 
     Coroutine lifeRoutine;
+    bool isReturning = false; // evita double-return/destroy
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
+
+        // garante tag para compatibilidade com quem usa tags
+        try { gameObject.tag = "PlayerPower"; } catch { /* ignore se Tag não existir */ }
     }
 
     void ApplyInitialVelocity()
@@ -120,6 +124,7 @@ public class Projectile : MonoBehaviour
             return;
         }
 
+        // se atingiu algo que não é inimigo e não é trigger, spawn VFX e remove
         if (!other.isTrigger)
         {
             SpawnHitVFX();
@@ -165,17 +170,24 @@ public class Projectile : MonoBehaviour
     void SpawnHitVFX()
     {
         if (hitVfx == null) return;
-        // use pool if exists, else instantiate
-        if (PoolManager.HasPoolFor(hitVfx))
+        try
         {
-            var go = PoolManager.Get(hitVfx, transform.position, Quaternion.identity);
-            // optionally play particle (if it's a particle prefab)
-            var ps = go.GetComponent<ParticleSystem>() ?? go.GetComponentInChildren<ParticleSystem>();
-            if (ps != null) ps.Play();
+            if (PoolManager.HasPoolFor(hitVfx))
+            {
+                var go = PoolManager.Get(hitVfx, transform.position, Quaternion.identity);
+                var ps = go.GetComponent<ParticleSystem>() ?? go.GetComponentInChildren<ParticleSystem>();
+                if (ps != null) ps.Play();
+            }
+            else
+            {
+                Instantiate(hitVfx, transform.position, Quaternion.identity);
+            }
         }
-        else
+        catch (System.Exception e)
         {
-            Instantiate(hitVfx, transform.position, Quaternion.identity);
+            Debug.LogWarning("[Projectile] SpawnHitVFX failed: " + e);
+            // fallback to simple instantiate
+            if (hitVfx != null) Instantiate(hitVfx, transform.position, Quaternion.identity);
         }
     }
 
@@ -235,19 +247,39 @@ public class Projectile : MonoBehaviour
         comp.gameObject.SendMessage("TakeDamage", (float)amount, SendMessageOptions.DontRequireReceiver);
     }
 
-    void ReturnToPool()
+    // PUBLIC safe ReturnToPool - previne double-call e exceptions
+    public void ReturnToPool()
     {
+        if (isReturning) return;
+        isReturning = true;
+
         // stop particles
         if (superParticles != null) superParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-        // reset velocity and collider handled by pool return
+
+        // try to return via pooled component if present
         var pooled = GetComponent<PooledObject>();
         if (pooled != null)
         {
-            pooled.ReturnToPool();
+            try
+            {
+                pooled.ReturnToPool();
+                return;
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("[Projectile] pooled.ReturnToPool() falhou: " + e);
+                // fallback to destroy
+            }
         }
-        else
+
+        // fallback: destroy safely
+        try
         {
             Destroy(gameObject);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning("[Projectile] Destroy failed: " + e);
         }
     }
 }

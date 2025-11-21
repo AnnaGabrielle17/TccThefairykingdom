@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4477392427249006425}
   - component: {fileID: 7875997480820620394}
   - component: {fileID: 3186654640496553055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PowerEffectPreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}

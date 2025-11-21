@@ -15,7 +15,11 @@ public class PoderPassaroProjectile : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        // configuração segura se foi adicionado via código
+        if (rb == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody2D>();
+            rb.bodyType = RigidbodyType2D.Kinematic;
+        }
         rb.gravityScale = 0f;
         rb.freezeRotation = true;
     }
@@ -23,6 +27,7 @@ public class PoderPassaroProjectile : MonoBehaviour
     private void Start()
     {
         rb.linearVelocity = direction.normalized * speed;
+        Debug.Log($"[PoderPassaroProjectile] Start: {name} pos={transform.position} vel={rb.linearVelocity}");
         Destroy(gameObject, lifeTime);
     }
 
@@ -30,31 +35,25 @@ public class PoderPassaroProjectile : MonoBehaviour
     public void Initialize(Vector2 dir, float speedOverride = -1f, int damageOverride = -1)
     {
         direction = dir.normalized;
+        if (speedOverride > 0) speed = speedOverride;
         rb.linearVelocity = direction * speed;
-        if (speedOverride > 0) { speed = speedOverride; rb.linearVelocity = direction * speed; }
         if (damageOverride >= 0) damage = damageOverride;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log($"[PoderPassaroProjectile] OnTriggerEnter2D: {name} hit {other.name} tag={other.tag}");
+
         if (other == null) return;
 
         // tenta aplicar dano no componente FadaDano (se existir)
         var fada = other.GetComponent<FadaDano>();
         if (fada != null)
         {
-            // Use o método público que já lida com intervalos e efeitos visuais
             fada.TryTakeDamageFromExternal(damage);
-
-            // se quiser aplicar DOT em vez de dano imediato:
-            // fada.ApplyDOT(1, 3f, 1f); // exemplo
         }
 
-        // opcional: evitar destruir se colidir com objetos que não devem destruir
-        // se quiser só atravessar plataforma, checar tag/layer aqui
-
-        // destruir projétil ao colidir com qualquer coisa (ou filtrar por tags)
+        // destruir projétil ao colidir com qualquer coisa (se quiser filtrar, mude aqui)
         Destroy(gameObject);
     }
-
 }

@@ -192,5 +192,5 @@ MonoBehaviour:
   multiplicador: 2
   duracao: 5
   playerTag: Player
-  somColeta: {fileID: 8300000, guid: 183b66af73fde9c4c9f90a70d2c6c38d, type: 3}
+  somColeta: {fileID: 8300000, guid: 3dca31d784bd23c4abb9a79bce4e4a5c, type: 3}
   vfxColeta: {fileID: 0}

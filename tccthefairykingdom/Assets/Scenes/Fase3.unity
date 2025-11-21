@@ -9125,7 +9125,7 @@ MonoBehaviour:
   vfxPoolSize: 6
   attackKey: 107
   attackCooldown: 0.45
-  attackSfx: {fileID: 8300000, guid: bf0c7f9e01103684fa7c42950f244e58, type: 3}
+  attackSfx: {fileID: 8300000, guid: 7c1b31041f6086a4c98e9a3cf225e441, type: 3}
   attackSfxVolume: 1
   onAttackEvent:
     m_PersistentCalls:

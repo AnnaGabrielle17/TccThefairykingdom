@@ -1031,7 +1031,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3616417051188022372, guid: c7300b514f3a69d4082b95a88f250d45, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.299992
+      value: 400.59998
       objectReference: {fileID: 0}
     - target: {fileID: 3616417051188022372, guid: c7300b514f3a69d4082b95a88f250d45, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1821,7 +1821,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3616417051188022372, guid: c7300b514f3a69d4082b95a88f250d45, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.919987
+      value: 407.21997
       objectReference: {fileID: 0}
     - target: {fileID: 3616417051188022372, guid: c7300b514f3a69d4082b95a88f250d45, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4830,7 +4830,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 869328080}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &869328080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10034,7 +10046,7 @@ Transform:
   m_GameObject: {fileID: 1780187289}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.1591, y: -0.7281, z: 0}
+  m_LocalPosition: {x: -10.9, y: -0.7281, z: 0}
   m_LocalScale: {x: 0.03371032, y: 0.03371032, z: 0.06742064}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10075,7 +10087,7 @@ MonoBehaviour:
   vfxPoolSize: 6
   attackKey: 107
   attackCooldown: 0.45
-  attackSfx: {fileID: 8300000, guid: bf0c7f9e01103684fa7c42950f244e58, type: 3}
+  attackSfx: {fileID: 8300000, guid: 7c1b31041f6086a4c98e9a3cf225e441, type: 3}
   attackSfxVolume: 1
   onAttackEvent:
     m_PersistentCalls:
@@ -10225,7 +10237,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3616417051188022372, guid: c7300b514f3a69d4082b95a88f250d45, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.399998
+      value: 414.69998
       objectReference: {fileID: 0}
     - target: {fileID: 3616417051188022372, guid: c7300b514f3a69d4082b95a88f250d45, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10834,7 +10846,7 @@ Transform:
   m_GameObject: {fileID: 1826654236}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 402.3, y: 8.7, z: 0}
+  m_LocalPosition: {x: 23.4, y: 0.18, z: 0}
   m_LocalScale: {x: 0.15110463, y: 0.14367557, z: 0.1047011}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12000,6 +12012,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 844d412b9b9240c4ea7618dad00c59d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 169470216}
+  playOnAwakeIfMissing: 1
+  defaultVolume: 1
 --- !u!4 &2128347394
 Transform:
   m_ObjectHideFlags: 0
@@ -12026,7 +12041,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3616417051188022372, guid: c7300b514f3a69d4082b95a88f250d45, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.7
+      value: 394
       objectReference: {fileID: 0}
     - target: {fileID: 3616417051188022372, guid: c7300b514f3a69d4082b95a88f250d45, type: 3}
       propertyPath: m_LocalPosition.y
