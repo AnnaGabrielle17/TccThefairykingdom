@@ -140,7 +140,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Constraints: 0
 --- !u!61 &6669068399210496014
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -205,6 +205,7 @@ MonoBehaviour:
   projectileSpeed: 3
   projectileDamage: 1
   fireCooldown: 2.5
+  lastFireTime: -999
 --- !u!114 &9025527514673924586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,12 +223,20 @@ MonoBehaviour:
   bodyCollider: {fileID: 0}
   leftSpeed: 2
   verticalSpeed: 3
-  stopX: 2
+  stopPoint: {fileID: 0}
+  stopX: 0
   stopTolerance: 0.02
   followVerticalWhileMoving: 1
-  maxPowers: 3
-  destroyDelay: 1.2
-  deathVFX: {fileID: 0}
+  useAutoSpacing: 1
+  baseStopX: -2.5
+  stopSpacing: 0.8
+  baseStopY: 0
+  stopYSpacing: 0.7
+  myIndex: -1
+  startXVariation: 0.25
+  startYVariation: 0.2
+  initialStartDelayMax: 0.25
   shootWhenStopped: 1
-  shootPollInterval: 0.12
   shootImmediatelyOnStop: 1
+  initialShootingDelayMax: 0.3
+  maxPowers: 6

@@ -537,63 +537,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9792a92437c4ca04084c3130f7875303, type: 3}
---- !u!1001 &45673076
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 367.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 24.54553
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545248655741914073, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_Name
-      value: PassaroPiscodoPeitoRuivo (15)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
 --- !u!1001 &48634121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -765,63 +708,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9792a92437c4ca04084c3130f7875303, type: 3}
---- !u!1001 &86045304
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.0555797
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.667573
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545248655741914073, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_Name
-      value: PassaroPiscodoPeitoRuivo (5)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
 --- !u!1001 &95492912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2894,6 +2780,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9792a92437c4ca04084c3130f7875303, type: 3}
+--- !u!1001 &494843162
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 78
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545248655741914073, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
+      propertyPath: m_Name
+      value: PassaroPiscodoPeitoRuivo (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
 --- !u!1001 &503526722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3897,8 +3840,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 201, y: 140}
-  m_SizeDelta: {x: 196.9058, y: 60.0381}
+  m_AnchoredPosition: {x: 788, y: 464.26}
+  m_SizeDelta: {x: 310.13, y: 94.562}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &641669224
 MonoBehaviour:
@@ -6344,7 +6287,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4544556924502281768, guid: 5b7444b59979c52419733238f82e8ca0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.127924
+      value: 575.01
       objectReference: {fileID: 0}
     - target: {fileID: 4544556924502281768, guid: 5b7444b59979c52419733238f82e8ca0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7545,11 +7488,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4544556924502281768, guid: 5b7444b59979c52419733238f82e8ca0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.088549
+      value: 570
       objectReference: {fileID: 0}
     - target: {fileID: 4544556924502281768, guid: 5b7444b59979c52419733238f82e8ca0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.471207
+      value: -3.32
       objectReference: {fileID: 0}
     - target: {fileID: 4544556924502281768, guid: 5b7444b59979c52419733238f82e8ca0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7602,11 +7545,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4544556924502281768, guid: 5b7444b59979c52419733238f82e8ca0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.003727
+      value: 575.43
       objectReference: {fileID: 0}
     - target: {fileID: 4544556924502281768, guid: 5b7444b59979c52419733238f82e8ca0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.2758543
+      value: 4.61
       objectReference: {fileID: 0}
     - target: {fileID: 4544556924502281768, guid: 5b7444b59979c52419733238f82e8ca0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8347,7 +8290,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 141.838, y: 141.838}
+  m_SizeDelta: {x: 350.2147, y: 350.2147}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1280077872
 MonoBehaviour:
@@ -8444,63 +8387,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90517f648c11dc94cb3ed45470deb3dc, type: 3}
---- !u!1001 &1309654300
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 182.52002
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.317954
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545248655741914073, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_Name
-      value: PassaroPiscodoPeitoRuivo (9)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
 --- !u!1001 &1323718354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8511,11 +8397,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.346832
+      value: 53.9
       objectReference: {fileID: 0}
     - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5616949
+      value: -2.73
       objectReference: {fileID: 0}
     - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8764,8 +8650,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 87, y: 140}
-  m_SizeDelta: {x: 141.838, y: 141.838}
+  m_AnchoredPosition: {x: 929, y: 472}
+  m_SizeDelta: {x: 352.3197, y: 352.3197}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1408484659
 MonoBehaviour:
@@ -9304,8 +9190,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 132, y: 136}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 711, y: 463}
+  m_SizeDelta: {x: 524.8846, y: 131.2212}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1487267081
 PrefabInstance:
@@ -9760,7 +9646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -329.6357, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1537044822
@@ -10803,15 +10689,18 @@ MonoBehaviour:
   firePoint: {fileID: 1008001687}
   powerSpeed: 8
   prefabIsSuper: 0
+  projectilePoolSize: 8
+  vfxPoolSize: 6
   attackKey: 107
   attackCooldown: 0.45
-  attackSfx: {fileID: 8300000, guid: bf0c7f9e01103684fa7c42950f244e58, type: 3}
+  attackSfx: {fileID: 8300000, guid: 7c1b31041f6086a4c98e9a3cf225e441, type: 3}
   attackSfxVolume: 1
   onAttackEvent:
     m_PersistentCalls:
       m_Calls: []
   debugForceSortingOrder: 50
   requirePlayerActiveSuper: 1
+  duplicateGuardTime: 0.15
 --- !u!50 &1780187295
 Rigidbody2D:
   serializedVersion: 5
@@ -11001,63 +10890,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9792a92437c4ca04084c3130f7875303, type: 3}
---- !u!1001 &1797029665
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.5291083
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.0831869
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545248655741914073, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_Name
-      value: PassaroPiscodoPeitoRuivo (4)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
 --- !u!1001 &1798037208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11331,11 +11163,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0440865
+      value: 38.11
       objectReference: {fileID: 0}
     - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7080766
+      value: 4.88
       objectReference: {fileID: 0}
     - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11373,62 +11205,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PassaroPiscodoPeitoRuivo (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
---- !u!1001 &1881738539
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 193.55775
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 13.217424
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545248655741914073, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_Name
-      value: PassaroPiscodoPeitoRuivo (12)
+    - target: {fileID: 9025527514673924586, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
+      propertyPath: maxPowers
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11502,7 +11281,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 58.97164
+      value: 57.524826
       objectReference: {fileID: 0}
     - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11885,7 +11664,7 @@ Transform:
   m_GameObject: {fileID: 1926903693}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 570, y: 8.8, z: 0}
+  m_LocalPosition: {x: 14.2, y: -0.5, z: 0}
   m_LocalScale: {x: 0.32102928, y: 0.32102928, z: 0.32102928}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12014,63 +11793,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1001 &1928745561
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 389.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.5773854
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545248655741914073, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_Name
-      value: PassaroPiscodoPeitoRuivo (17)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
 --- !u!1001 &1944241844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12195,7 +11917,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7109629027644398016, guid: 9792a92437c4ca04084c3130f7875303, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5118814
+      value: 9.86
       objectReference: {fileID: 0}
     - target: {fileID: 7109629027644398016, guid: 9792a92437c4ca04084c3130f7875303, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12242,63 +11964,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9792a92437c4ca04084c3130f7875303, type: 3}
---- !u!1001 &1987555747
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 173.38538
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 13.598036
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545248655741914073, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_Name
-      value: PassaroPiscodoPeitoRuivo (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
 --- !u!1 &2004007364
 GameObject:
   m_ObjectHideFlags: 0
@@ -12758,63 +12423,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2039180125
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 58.082535
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.747032
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545248655741914073, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_Name
-      value: PassaroPiscodoPeitoRuivo (7)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
 --- !u!1001 &2039886854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13232,63 +12840,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9792a92437c4ca04084c3130f7875303, type: 3}
---- !u!1001 &2088668096
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 379
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 19.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3238312996279345363, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5545248655741914073, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
-      propertyPath: m_Name
-      value: PassaroPiscodoPeitoRuivo (16)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2bebb88fdcf52544ea73b3ccc20d88c3, type: 3}
 --- !u!1 &2092891410
 GameObject:
   m_ObjectHideFlags: 0
@@ -13549,17 +13100,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -5240015591462514962, guid: f1afa7930b185e342b5e4449ce3fcad6, type: 3}
-      propertyPath: velocidade
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5989605924193557711, guid: f1afa7930b185e342b5e4449ce3fcad6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.05
+      value: -5.91
       objectReference: {fileID: 0}
     - target: {fileID: 5989605924193557711, guid: f1afa7930b185e342b5e4449ce3fcad6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.04
+      value: 1.61
       objectReference: {fileID: 0}
     - target: {fileID: 5989605924193557711, guid: f1afa7930b185e342b5e4449ce3fcad6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13840,8 +13387,6 @@ SceneRoots:
   - {fileID: 2072806448}
   - {fileID: 7888445154660538775}
   - {fileID: 1881317990}
-  - {fileID: 1797029665}
-  - {fileID: 86045304}
   - {fileID: 1135036784}
   - {fileID: 1145826753}
   - {fileID: 883646258}
@@ -13864,7 +13409,6 @@ SceneRoots:
   - {fileID: 742437651}
   - {fileID: 336198460}
   - {fileID: 1323718354}
-  - {fileID: 2039180125}
   - {fileID: 1885934357}
   - {fileID: 989595939}
   - {fileID: 1905838150}
@@ -13897,11 +13441,8 @@ SceneRoots:
   - {fileID: 715041723}
   - {fileID: 432669379}
   - {fileID: 248475534}
-  - {fileID: 1987555747}
-  - {fileID: 1309654300}
   - {fileID: 988135162}
   - {fileID: 1074206947}
-  - {fileID: 1881738539}
   - {fileID: 751508128}
   - {fileID: 820596271}
   - {fileID: 842024392}
@@ -13941,9 +13482,6 @@ SceneRoots:
   - {fileID: 1908310143}
   - {fileID: 2039886854}
   - {fileID: 968023539}
-  - {fileID: 45673076}
-  - {fileID: 2088668096}
-  - {fileID: 1928745561}
   - {fileID: 570635862}
   - {fileID: 592162429}
   - {fileID: 1560965510}
@@ -13981,3 +13519,4 @@ SceneRoots:
   - {fileID: 1755135914}
   - {fileID: 1674086268}
   - {fileID: 778609160}
+  - {fileID: 494843162}

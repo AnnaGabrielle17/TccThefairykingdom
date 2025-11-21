@@ -1,11 +1,10 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameOverController : MonoBehaviour
 {
-     public static GameOverController Instance { get; private set; }
+    public static GameOverController Instance { get; private set; }
 
     [Header("UI")]
     public GameObject gameOverPanel;     // arraste aqui o GameOverPanel (o painel que contém título + botões)
@@ -28,6 +27,7 @@ public class GameOverController : MonoBehaviour
         if (fadeCanvasGroup != null) fadeCanvasGroup.alpha = 0f;
     }
 
+    // Chame GameOverController.Instance.ShowGameOver() quando o jogador morrer
     public void ShowGameOver()
     {
         StartCoroutine(DoShowGameOver());
@@ -35,9 +35,15 @@ public class GameOverController : MonoBehaviour
 
     IEnumerator DoShowGameOver()
     {
+        // Use WaitForSecondsRealtime pois Time.timeScale pode ser 0
         yield return new WaitForSecondsRealtime(delayBeforeShow);
 
         if (pauseTime) Time.timeScale = 0f;
+
+        // Pausar a música (mantendo posição) — ideal para Game Over
+        if (ManterAMusica.instance != null)
+            ManterAMusica.instance.PauseMusic();
+        // Se preferir fade out: ManterAMusica.instance.FadeOutAndStop(0.4f);
 
         if (gameOverPanel != null) gameOverPanel.SetActive(true);
 
@@ -57,23 +63,41 @@ public class GameOverController : MonoBehaviour
     // BOTÕES: ligar no Inspector -> OnClick()
     public void OnRetryButton()
     {
+        // Antes de recarregar, resetar timeScale e decidir o que fazer com a música
         Time.timeScale = 1f;
+
+        // Se quiser que a música recomece do início:
+        if (ManterAMusica.instance != null)
+        {
+            ManterAMusica.instance.StopMusic();   // zera e para
+            ManterAMusica.instance.FadeIn(0.25f, 1f); // opcional: iniciar com fade (se desejar)
+            // Ou usar ResumeMusic() se preferir voltar do ponto pausado
+        }
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void OnQuitToMenuButton()
     {
         Time.timeScale = 1f;
-        // Certifique-se de ter a cena do menu no Build Settings com o mesmo nome
+
+        // Normalmente queremos parar a música ao ir para o menu (caso o menu tenha sua própria música)
+        if (ManterAMusica.instance != null)
+            ManterAMusica.instance.StopMusic();
+
         SceneManager.LoadScene(menuSceneName);
     }
 
-    // caso queira esconder o painel e voltar ao jogo
+    // caso queira esconder o painel e voltar ao jogo (útil em alguns fluxos)
     public void HideGameOverImmediate()
     {
         if (gameOverPanel != null) gameOverPanel.SetActive(false);
         if (fadeCanvasGroup != null) fadeCanvasGroup.alpha = 0f;
+
         Time.timeScale = 1f;
+
+        // Retomar música (se preferir retomar)
+        if (ManterAMusica.instance != null)
+            ManterAMusica.instance.ResumeMusic();
     }
 }
-

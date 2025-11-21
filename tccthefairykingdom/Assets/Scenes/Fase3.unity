@@ -4825,6 +4825,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904820497}
   m_CullTransparentMesh: 1
+--- !u!1 &939566029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 939566030}
+  m_Layer: 0
+  m_Name: MusicaDeFundo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &939566030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939566029}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 41.995693, y: 5.9213405, z: -0.23931642}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &960898232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9090,9 +9121,11 @@ MonoBehaviour:
   firePoint: {fileID: 1008001687}
   powerSpeed: 8
   prefabIsSuper: 0
+  projectilePoolSize: 8
+  vfxPoolSize: 6
   attackKey: 107
   attackCooldown: 0.45
-  attackSfx: {fileID: 8300000, guid: bf0c7f9e01103684fa7c42950f244e58, type: 3}
+  attackSfx: {fileID: 8300000, guid: 7c1b31041f6086a4c98e9a3cf225e441, type: 3}
   attackSfxVolume: 1
   onAttackEvent:
     m_PersistentCalls:
@@ -9111,6 +9144,7 @@ MonoBehaviour:
         m_CallState: 2
   debugForceSortingOrder: 50
   requirePlayerActiveSuper: 1
+  duplicateGuardTime: 0.15
 --- !u!50 &1780187295
 Rigidbody2D:
   serializedVersion: 5
@@ -11237,3 +11271,4 @@ SceneRoots:
   - {fileID: 1904019240}
   - {fileID: 17739342}
   - {fileID: 735666542}
+  - {fileID: 939566030}

@@ -106,7 +106,7 @@ MonoBehaviour:
   shieldDuration: 15
   shieldHits: 2147483647
   pickupEffectPrefab: {fileID: 0}
-  pickupSound: {fileID: 8300000, guid: 183b66af73fde9c4c9f90a70d2c6c38d, type: 3}
+  pickupSound: {fileID: 8300000, guid: 3dca31d784bd23c4abb9a79bce4e4a5c, type: 3}
   pickupSoundVolume: 1
 --- !u!114 &-5240015591462514962
 MonoBehaviour:

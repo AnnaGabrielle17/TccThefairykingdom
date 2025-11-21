@@ -108,11 +108,11 @@ public class FadaDano : MonoBehaviour
             if (frameCycler != null) frameCycler.IncreaseOne();
         }
 
-        // debug: pressionando K ativa um escudo de teste
-        if (enableDebugKeys && Input.GetKeyDown(KeyCode.K))
+        // debug: pressionando P ativa um escudo de teste
+        if (enableDebugKeys && Input.GetKeyDown(KeyCode.P))
         {
             AddShield(4f, 3); // exemplo: 4s ou 3 hits, o que ocorrer primeiro (aqui ambos setados)
-            Debug.Log("[DEBUG] Escudo adicionado via tecla K");
+            Debug.Log("[DEBUG] Escudo adicionado via tecla P");
         }
     }
 

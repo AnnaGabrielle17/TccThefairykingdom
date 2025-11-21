@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // só se for usar Quit->Menu
 using UnityEngine.EventSystems;   // para selecionar botão quando pausar
+using UnityEngine.SceneManagement; // caso use Quit -> Menu
 
 public class PauseController : MonoBehaviour
 {
@@ -36,14 +36,19 @@ public class PauseController : MonoBehaviour
         // Pausa do tempo do jogo
         Time.timeScale = 0f;
 
-        // Pausa dos áudios (opcional)
-        AudioListener.pause = true;
+        // Pausa apenas da música controlada por ManterAMusica (recomendado)
+        if (ManterAMusica.instance != null)
+            ManterAMusica.instance.PauseMusic();
+
+        // Se quiser pausar todos os áudios (SFX também), poderia usar:
+        // AudioListener.pause = true;
+        // (mas normalmente preferimos apenas pausar a música)
 
         // Mostrar UI
         if (pausePanel != null) pausePanel.SetActive(true);
 
-        // Selecionar botão (útil para controle por teclado/controle)
-        if (firstSelectedOnPause != null)
+        // Selecionar botão (útil para teclado/controle)
+        if (firstSelectedOnPause != null && EventSystem.current != null)
         {
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(firstSelectedOnPause);
@@ -61,8 +66,12 @@ public class PauseController : MonoBehaviour
         // Retoma do tempo
         Time.timeScale = 1f;
 
-        // Retoma dos áudios
-        AudioListener.pause = false;
+        // Retoma apenas da música controlada por ManterAMusica
+        if (ManterAMusica.instance != null)
+            ManterAMusica.instance.ResumeMusic();
+
+        // Se você usou AudioListener.pause = true; então precisa:
+        // AudioListener.pause = false;
 
         // Esconder UI
         if (pausePanel != null) pausePanel.SetActive(false);
@@ -81,7 +90,10 @@ public class PauseController : MonoBehaviour
     {
         // Certifique-se de setar timeScale antes de trocar de cena
         Time.timeScale = 1f;
-        AudioListener.pause = false;
+
+        // Garantir música adequada ao mudar para o menu
+        if (ManterAMusica.instance != null)
+            ManterAMusica.instance.StopMusic(); // ou ResumeMusic() se o menu usa a mesma música
 
         // Carrega a cena de menu (pode usar um nome ou build index)
         SceneManager.LoadScene(menuSceneName);
@@ -90,6 +102,8 @@ public class PauseController : MonoBehaviour
     // Método que você pode ligar ao botão "Sair do Jogo" para fechar o jogo
     public void QuitGame()
     {
+        Time.timeScale = 1f;
+
         // Em build:
         Application.Quit();
 

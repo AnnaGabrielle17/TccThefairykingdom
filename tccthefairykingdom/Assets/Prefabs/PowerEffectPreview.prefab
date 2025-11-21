@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 1899357936284581012}
   - component: {fileID: 1052425621131004503}
   - component: {fileID: -968695909688221431}
+  - component: {fileID: 6138099921190741482}
   - component: {fileID: -4477392427249006425}
   - component: {fileID: 7875997480820620394}
   - component: {fileID: 3186654640496553055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PowerEffectPreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,6 +130,20 @@ MonoBehaviour:
   animator: {fileID: 1899357936284581012}
   parameterName: Active
   useBoolParameter: 0
+--- !u!114 &6138099921190741482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4472287472222571358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c7e7b99e1409c4ebeed46722c1f972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  originPool: {fileID: 0}
 --- !u!50 &-4477392427249006425
 Rigidbody2D:
   serializedVersion: 5

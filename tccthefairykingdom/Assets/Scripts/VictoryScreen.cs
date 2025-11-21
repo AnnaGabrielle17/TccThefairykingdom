@@ -25,6 +25,7 @@ public class VictoryScreen : MonoBehaviour
         Debug.Log("VictoryScreen: Start() - panel assigned? " + (panel != null));
     }
 
+    // Chame ShowVictory() ao completar o nível
     public void ShowVictory(string message = "Você venceu!")
     {
         Debug.Log("VictoryScreen: ShowVictory called with message: " + message);
@@ -37,18 +38,33 @@ public class VictoryScreen : MonoBehaviour
         int lastIndex = SceneManager.sceneCountInBuildSettings - 1;
         if (btnNext != null) btnNext.interactable = (buildIndex < lastIndex);
 
-        Time.timeScale = 0f; // pausa o jogo
+        // Pausar o jogo
+        Time.timeScale = 0f;
+
+        // Pausar (ou dar fade) na música
+        if (ManterAMusica.instance != null)
+            ManterAMusica.instance.PauseMusic();
+        // ou: ManterAMusica.instance.FadeOutAndStop(0.4f);
     }
 
     public void Hide()
     {
         if (panel != null) panel.SetActive(false);
         Time.timeScale = 1f;
+
+        // Retomar música se desejar
+        if (ManterAMusica.instance != null)
+            ManterAMusica.instance.ResumeMusic();
     }
 
     void OnNext()
     {
         Time.timeScale = 1f;
+
+        // Decida se quer manter a música (resume) ou reiniciar (stop then start)
+        if (ManterAMusica.instance != null)
+            ManterAMusica.instance.ResumeMusic();
+
         int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
         if (nextIndex < SceneManager.sceneCountInBuildSettings)
             SceneManager.LoadScene(nextIndex);
@@ -59,12 +75,25 @@ public class VictoryScreen : MonoBehaviour
     void OnRetry()
     {
         Time.timeScale = 1f;
+
+        if (ManterAMusica.instance != null)
+        {
+            // reinicia a música ao tentar novamente
+            ManterAMusica.instance.StopMusic();
+            ManterAMusica.instance.FadeIn(0.25f, 1f); // opcional
+        }
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void OnMenu()
     {
         Time.timeScale = 1f;
+
+        // Parar a música ao voltar para o menu (normalmente o menu usa outra trilha)
+        if (ManterAMusica.instance != null)
+            ManterAMusica.instance.StopMusic();
+
         SceneManager.LoadScene("Menu");
     }
 }
