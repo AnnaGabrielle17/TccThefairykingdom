@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e20a60a04490840a70eecdbb88f18c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftSpeed: 3
+  leftSpeed: 2
   extendDistance: 6
   extendSpeed: 6
   waitTime: 0.5

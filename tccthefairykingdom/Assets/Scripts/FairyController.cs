@@ -39,6 +39,9 @@ public class FairyController : MonoBehaviour
     [Tooltip("Se true, o projétil só será super se o PlayerCombat.hasSuperPower for true.")]
     public bool requirePlayerActiveSuper = true;
 
+    [Tooltip("Tempo em segundos até o projétil se autodestruir (ou voltar ao pool).")]
+    public float projectileLifeTime = 3f; // <-- nova variável pública para controlar o tempo de vida
+
     // Guard para evitar chamadas quase simultâneas (animação com >1 AnimationEvent)
     [Header("Protection")]
     [Tooltip("Tempo mínimo entre dois spawns aceitos (segundos) — defesa extra contra double-spawn)")]
@@ -200,6 +203,9 @@ public class FairyController : MonoBehaviour
             {
                 damageToSet = shouldBeSuper ? pc.superDamage : pc.normalDamage;
             }
+
+            // #### ALTERAÇÃO PRINCIPAL: define o lifeTime do projétil antes do Launch()
+            proj.lifeTime = projectileLifeTime;
 
             proj.SetAsSuper(shouldBeSuper);
             proj.SetDamage(damageToSet);

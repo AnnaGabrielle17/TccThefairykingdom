@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 3238041884458648054}
   - component: {fileID: 7583746998301513444}
   - component: {fileID: 4476682240143100356}
-  - component: {fileID: 8514871083643509620}
   - component: {fileID: 3799818520421096501}
   - component: {fileID: 4727836211674483712}
-  m_Layer: 0
+  - component: {fileID: -8009884492814693257}
+  m_Layer: 8
   m_Name: "Lib\xE9lula 1"
   m_TagString: Mecanica
   m_Icon: {fileID: 0}
@@ -113,19 +113,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8514871083643509620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5508165611770287062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6884a0277780ffd4fa997ec80f29ea48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidade: 2
 --- !u!50 &3799818520421096501
 Rigidbody2D:
   serializedVersion: 5
@@ -199,3 +186,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.877427, y: 5.3728776}
   m_EdgeRadius: 0
+--- !u!114 &-8009884492814693257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5508165611770287062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e256f27bfdfb60243974f26e99a19ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  useFixedUpdate: 1
+  maxHealth: 3
+  currentHealth: 0
+  deathVfx: {fileID: 0}
+  destroyDelay: 0

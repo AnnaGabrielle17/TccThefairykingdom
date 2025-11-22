@@ -165,6 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca93858085358f4c9ba3434ea460943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
   pickupSfx: {fileID: 8300000, guid: 3dca31d784bd23c4abb9a79bce4e4a5c, type: 3}
   sfxVolume: 1

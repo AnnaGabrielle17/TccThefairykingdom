@@ -564,7 +564,7 @@ MonoBehaviour:
   - title: 
     lines:
     - "A rainha Hort\xEAncia convocou Maya: \" leve a luz de Kamala e impe\xE7a que
-      o gelo e a ambi\xE7\xE3o de Hera domine Estellar\". "
+      o gelo e a ambi\xE7\xE3o de Hera domine Estellara\". "
     background: {fileID: -5224102670607497231, guid: f48f26355c9ca1b408a1022bf7262036, type: 3}
     music: {fileID: 0}
     typingSfx: {fileID: 8300000, guid: 4434a1fccd748d04a8984893e38db906, type: 3}
@@ -602,7 +602,7 @@ MonoBehaviour:
   startCutsceneIndex: 0
   useSceneName: 1
   sceneNameToLoad: Fase1
-  buildIndexToLoad: 3
+  buildIndexToLoad: 2
 --- !u!82 &705564230
 AudioSource:
   m_ObjectHideFlags: 0

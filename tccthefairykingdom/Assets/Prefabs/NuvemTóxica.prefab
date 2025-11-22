@@ -5048,7 +5048,7 @@ GameObject:
   - component: {fileID: 4017527440459522109}
   m_Layer: 0
   m_Name: "NuvemT\xF3xica"
-  m_TagString: Untagged
+  m_TagString: Mecanica
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5063,7 +5063,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.205, y: 1.24, z: 0}
-  m_LocalScale: {x: 0.2723925, y: 0.2723925, z: 0.2723925}
+  m_LocalScale: {x: 0.23570123, y: 0.23570123, z: 0.23570123}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 837278358415273469}
