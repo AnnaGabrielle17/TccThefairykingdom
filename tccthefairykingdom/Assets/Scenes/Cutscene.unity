@@ -527,8 +527,8 @@ MonoBehaviour:
   cutscenes:
   - title: 
     lines:
-    - "No cora\xE7\xE3o do cosmo floresce Estellara, o planeta das fadas. Quatro
-      reinos , quatro esta\xE7\xF5es, unidos pela harmonia da vida."
+    - "No cora\xE7\xE3o do cosmo floresce Estellar, o planeta das fadas. Quatro reinos
+      , quatro esta\xE7\xF5es, unidos pela harmonia da vida."
     background: {fileID: 4390408445234368116, guid: 233abd277910dd04e8a7a12493e95a6d, type: 3}
     music: {fileID: 0}
     typingSfx: {fileID: 8300000, guid: 4434a1fccd748d04a8984893e38db906, type: 3}
@@ -546,7 +546,7 @@ MonoBehaviour:
   - title: 
     lines:
     - "Sob a \xC1rvore da Vida, o cristal repousa em seguran\xE7a, alimentando cada
-      reino de Estellara. "
+      reino de Estellar. "
     background: {fileID: 8666676425307665257, guid: a58a60b8cf133594091738286676fac8, type: 3}
     music: {fileID: 0}
     typingSfx: {fileID: 8300000, guid: 4434a1fccd748d04a8984893e38db906, type: 3}
@@ -564,7 +564,7 @@ MonoBehaviour:
   - title: 
     lines:
     - "A rainha Hort\xEAncia convocou Maya: \" leve a luz de Kamala e impe\xE7a que
-      o gelo e a ambi\xE7\xE3o de Hera domine Estellara\". "
+      o gelo e a ambi\xE7\xE3o de Hera domine Estellar\". "
     background: {fileID: -5224102670607497231, guid: f48f26355c9ca1b408a1022bf7262036, type: 3}
     music: {fileID: 0}
     typingSfx: {fileID: 8300000, guid: 4434a1fccd748d04a8984893e38db906, type: 3}

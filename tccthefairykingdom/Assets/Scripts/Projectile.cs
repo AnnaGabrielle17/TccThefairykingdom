@@ -28,6 +28,7 @@ public class Projectile : MonoBehaviour
 
     Coroutine lifeRoutine;
     bool isReturning = false; // evita double-return/destroy
+    bool hasExploded = false; // evita que após o impacto o proj continue afetando algo
 
     void Awake()
     {
@@ -36,6 +37,21 @@ public class Projectile : MonoBehaviour
 
         // garante tag para compatibilidade com quem usa tags
         try { gameObject.tag = "PlayerPower"; } catch { /* ignore se Tag não existir */ }
+    }
+
+    void OnEnable()
+    {
+        // reset do estado quando ativado (importante para pooling)
+        isReturning = false;
+        hasExploded = false;
+        if (col != null) col.enabled = true;
+    }
+
+    void OnDisable()
+    {
+        // garantir que corrotinas/partículas não fiquem ativas quando desativado
+        if (lifeRoutine != null) { StopCoroutine(lifeRoutine); lifeRoutine = null; }
+        if (superParticles != null) superParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 
     void ApplyInitialVelocity()
@@ -84,6 +100,8 @@ public class Projectile : MonoBehaviour
     public void Launch()
     {
         ApplyInitialVelocity();
+
+        // garantir que não existam corrotinas antigas ativas
         if (lifeRoutine != null) StopCoroutine(lifeRoutine);
         lifeRoutine = StartCoroutine(LifeRoutine());
     }
@@ -91,18 +109,46 @@ public class Projectile : MonoBehaviour
     IEnumerator LifeRoutine()
     {
         yield return new WaitForSeconds(lifeTime);
-        ReturnToPool();
+
+        // se chegar aqui sem já estar retornando/explodido, garante retorno
+        if (!isReturning && !hasExploded)
+        {
+            // opcional: spawn VFX se quiser mostrar desaparecimento
+            SpawnHitVFX();
+            ReturnToPool();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other == null) return;
+
+// colisão com barreira invisível — apenas retira o projétil
+if (other.CompareTag("Boundary"))
+{
+    // evita duplicar lógica
+    hasExploded = true;
+    if (col != null) col.enabled = false;
+    if (rb != null) rb.linearVelocity = Vector2.zero;
+
+    SpawnHitVFX(); // opcional
+    ReturnToPool(); // ou Destroy(gameObject) se não usar pool
+    return;
+}
+
+        if (other == null) return;
+        if (isReturning || hasExploded) return; // proteção extra
+
         if (other.CompareTag("Player")) return;
 
         bool isEnemy = ((1 << other.gameObject.layer) & enemyLayer.value) != 0;
 
         if (isEnemy)
         {
+            hasExploded = true;            // marca que já explodiu / aplicou dano
+            if (col != null) col.enabled = false; // desliga colisão imediatamente
+            if (rb != null) rb.linearVelocity = Vector2.zero; // impede que vá "voando" após impacto
+
             var eh = other.GetComponent<EnemyHealth>() ?? other.GetComponentInParent<EnemyHealth>();
             if (eh != null)
             {
@@ -127,6 +173,10 @@ public class Projectile : MonoBehaviour
         // se atingiu algo que não é inimigo e não é trigger, spawn VFX e remove
         if (!other.isTrigger)
         {
+            hasExploded = true;
+            if (col != null) col.enabled = false;
+            if (rb != null) rb.linearVelocity = Vector2.zero;
+
             SpawnHitVFX();
             ReturnToPool();
         }
@@ -134,17 +184,17 @@ public class Projectile : MonoBehaviour
 
     void HandleAOEAndDestroy()
     {
+        // já garantimos hasExploded = true e col/vel desligados antes de chegar aqui
         if (isSuper && areaRadius > 0f)
         {
-            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, areaRadius);
+            // usar a sobrecarga que recebe um layerMask para garantir que só bata em inimigos
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, areaRadius, enemyLayer);
             foreach (var h in hits)
             {
                 if (h == null) continue;
                 if (h.gameObject == this.gameObject) continue;
 
-                bool hIsEnemy = ((1 << h.gameObject.layer) & enemyLayer.value) != 0;
-                if (!hIsEnemy) continue;
-
+                // aplicar dano reduzido (0.6f) para cada alvo detectado
                 var eh2 = h.GetComponent<EnemyHealth>() ?? h.GetComponentInParent<EnemyHealth>();
                 if (eh2 != null)
                 {
@@ -252,9 +302,13 @@ public class Projectile : MonoBehaviour
     {
         if (isReturning) return;
         isReturning = true;
+        hasExploded = true;
 
         // stop particles
         if (superParticles != null) superParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+
+        // stop life coroutine
+        if (lifeRoutine != null) { StopCoroutine(lifeRoutine); lifeRoutine = null; }
 
         // try to return via pooled component if present
         var pooled = GetComponent<PooledObject>();
@@ -262,6 +316,7 @@ public class Projectile : MonoBehaviour
         {
             try
             {
+                // garantir que o objeto fique inativo no pool o mais rápido possível
                 pooled.ReturnToPool();
                 return;
             }

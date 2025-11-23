@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplicador: 2
-  duracao: 5
+  duracao: 15
   playerTag: Player
   somColeta: {fileID: 8300000, guid: 3dca31d784bd23c4abb9a79bce4e4a5c, type: 3}
   vfxColeta: {fileID: 0}

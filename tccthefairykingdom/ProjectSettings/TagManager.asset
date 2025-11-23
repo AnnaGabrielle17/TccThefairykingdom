@@ -10,6 +10,7 @@ TagManager:
   - EnemyProjectile
   - Passaro
   - PlayerPower
+  - Boundary
   layers:
   - Default
   - TransparentFX

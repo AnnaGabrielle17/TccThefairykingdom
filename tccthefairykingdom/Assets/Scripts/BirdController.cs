@@ -157,8 +157,6 @@ public class BirdController : MonoBehaviour
         }
 
         // Vertical behaviour:
-        // - While moving (not reachedStopX) and followVerticalWhileMoving=true -> follow player.y
-        // - After reachedStopX -> move toward stopY (so each bird can have different Y)
         if (!reachedStopX)
         {
             if (player != null && followVerticalWhileMoving)
@@ -169,7 +167,6 @@ public class BirdController : MonoBehaviour
         }
         else
         {
-            // move towards its assigned stopY instead of player Y
             pos.y = Mathf.MoveTowards(pos.y, stopY, verticalSpeed * Time.deltaTime);
         }
 
@@ -187,7 +184,6 @@ public class BirdController : MonoBehaviour
 
         while (!isDead && shooter != null && reachedStopX)
         {
-            // usa cooldown do shooter quando disponível
             float wait = 0.5f;
             if (shooter != null) wait = Mathf.Max(0.01f, shooter.fireCooldown);
             yield return new WaitForSeconds(wait);
@@ -226,9 +222,17 @@ public class BirdController : MonoBehaviour
 
         Debug.Log($"[Bird:{name}] Die() called.");
 
-        // stop shooting
+        // 1) destruir/retornar projéteis que esse pássaro criou (muito importante)
+        if (shooter != null)
+        {
+            shooter.DestroyAllProjectiles();
+        }
+
+        // 2) stop shooting coroutine
         if (shootingCoroutine != null) StopCoroutine(shootingCoroutine);
         shootingCoroutine = null;
+
+        // 3) desabilitar shooter (impede futuros shoots enquanto o GO ainda existir)
         if (shooter != null) shooter.enabled = false;
 
         // play animation/vfx
@@ -237,7 +241,7 @@ public class BirdController : MonoBehaviour
         // disable collider so further hits are ignored
         if (bodyCollider != null) bodyCollider.enabled = false;
 
-        // optional: destroy after delay
+        // optional: destroy after delay (mantive 1s como antes)
         Destroy(gameObject, 1.0f);
     }
 
@@ -332,4 +336,7 @@ public class BirdController : MonoBehaviour
         try { Destroy(go); }
         catch (System.Exception e) { Debug.LogWarning($"[Bird:{name}] DestroySafe falhou: {e}"); }
     }
+
+    // expõe se está morto (usado pelo projétil como checagem de segurança)
+    public bool IsDead => isDead;
 }

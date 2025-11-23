@@ -50,6 +50,9 @@ public class FadaDano : MonoBehaviour
     private Coroutine shieldCoroutine = null;
     // -------------------------------------------
 
+    // coroutine de piscar (guardamos para poder parar se necessário)
+    private Coroutine piscarCoroutine = null;
+
     public void ApplyDOT(int damagePerTick, float duration, float tickInterval = 1f)
     {
         StartCoroutine(ApplyDOTCoroutine(damagePerTick, duration, tickInterval));
@@ -140,7 +143,14 @@ public class FadaDano : MonoBehaviour
 
         tempoUltimoDano = Time.time;
         TomarDano(quantidade);
-        StartCoroutine(PiscarDano());
+
+        // inicia piscar salvando a coroutine para poder parar depois
+        if (piscarCoroutine != null)
+        {
+            StopCoroutine(piscarCoroutine);
+            piscarCoroutine = null;
+        }
+        piscarCoroutine = StartCoroutine(PiscarDano());
     }
 
     public void TomarDano(int quantidade)
@@ -307,15 +317,56 @@ public class FadaDano : MonoBehaviour
 
     private IEnumerator PiscarDano()
     {
-        if (spriteRenderer == null) yield break;
+        // se já tiver escudo, não piscar
+        if (shieldActive) 
+        {
+            piscarCoroutine = null;
+            yield break;
+        }
+        if (spriteRenderer == null)
+        {
+            piscarCoroutine = null;
+            yield break;
+        }
 
+        // executo o piscar: dois ciclos (como você tinha)
         for (int i = 0; i < 2; i++)
         {
+            // se entre um ciclo e outro o escudo for ativado, para imediatamente
+            if (shieldActive)
+            {
+                spriteRenderer.enabled = true;
+                piscarCoroutine = null;
+                yield break;
+            }
+
             spriteRenderer.enabled = false;
             yield return new WaitForSeconds(0.1f);
+
+            if (shieldActive)
+            {
+                spriteRenderer.enabled = true;
+                piscarCoroutine = null;
+                yield break;
+            }
+
             spriteRenderer.enabled = true;
             yield return new WaitForSeconds(0.1f);
         }
+
+        piscarCoroutine = null;
+    }
+
+    // Para garantir que possamos forçar o fim do piscar (p.ex. quando aplica escudo)
+    private void StopPiscar()
+    {
+        if (piscarCoroutine != null)
+        {
+            StopCoroutine(piscarCoroutine);
+            piscarCoroutine = null;
+        }
+        if (spriteRenderer != null)
+            spriteRenderer.enabled = true;
     }
 
     // ----------------- MÉTODOS DO ESCUDO -----------------
@@ -330,6 +381,8 @@ public class FadaDano : MonoBehaviour
         int useHits = (maxHits < 0) ? defaultShieldHits : maxHits;
 
         shieldActive = true;
+        // interrompe qualquer piscar em andamento assim que escudo é aplicado
+        StopPiscar();
         shieldHitsRemaining = useHits;
 
         if (shieldFrame != null)
@@ -366,8 +419,8 @@ public class FadaDano : MonoBehaviour
             Instantiate(shieldBlockEffectPrefab, transform.position, Quaternion.identity);
         }
 
-        // feedback curto: piscar (opcional)
-        StartCoroutine(PiscarDano());
+        // NÃO iniciar piscar quando o escudo bloqueia (removido)
+        // Se quiser feedback visual no shield, faça no shieldFrame/Animator ou prefab de efeito.
 
         if (shieldHitsRemaining > 0 && shieldHitsRemaining < int.MaxValue)
         {

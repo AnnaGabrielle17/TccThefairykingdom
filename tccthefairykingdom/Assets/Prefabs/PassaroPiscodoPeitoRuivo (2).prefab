@@ -239,4 +239,4 @@ MonoBehaviour:
   shootWhenStopped: 1
   shootImmediatelyOnStop: 1
   initialShootingDelayMax: 0.3
-  maxPowers: 6
+  maxPowers: 2
