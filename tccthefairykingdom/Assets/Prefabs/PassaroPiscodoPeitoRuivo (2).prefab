@@ -128,7 +128,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -140,7 +140,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &6669068399210496014
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -221,8 +221,8 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   bodyCollider: {fileID: 0}
-  leftSpeed: 2
-  verticalSpeed: 3
+  leftSpeed: 3
+  verticalSpeed: 0
   stopPoint: {fileID: 0}
   stopX: 0
   stopTolerance: 0.02
