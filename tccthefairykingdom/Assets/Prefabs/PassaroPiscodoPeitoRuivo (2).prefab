@@ -221,15 +221,15 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   bodyCollider: {fileID: 0}
-  leftSpeed: 3
+  leftSpeed: 2
   verticalSpeed: 2
   stopPoint: {fileID: 0}
   stopX: 0
   stopTolerance: 0
   followVerticalWhileMoving: 1
   useAutoSpacing: 1
-  baseStopX: -8
-  stopSpacing: 0.7
+  baseStopX: -2
+  stopSpacing: 3
   baseStopY: 0
   stopYSpacing: 0
   myIndex: -1
@@ -239,4 +239,4 @@ MonoBehaviour:
   shootWhenStopped: 1
   shootImmediatelyOnStop: 1
   initialShootingDelayMax: 0.3
-  maxPowers: 2
+  maxPowers: 3

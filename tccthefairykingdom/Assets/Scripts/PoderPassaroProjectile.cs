@@ -26,7 +26,7 @@ public class PoderPassaroProjectile : MonoBehaviour
         if (rb == null)
         {
             rb = gameObject.AddComponent<Rigidbody2D>();
-            rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.bodyType = RigidbodyType2D.Dynamic;
         }
         rb.gravityScale = 0f;
         rb.freezeRotation = true;
@@ -89,6 +89,7 @@ public class PoderPassaroProjectile : MonoBehaviour
         if (rb != null)
         {
             rb.linearVelocity = direction * speed;
+            rb.gravityScale = 0f;
         }
 
         initialized = true;

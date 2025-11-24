@@ -66,9 +66,9 @@ public class BirdController : MonoBehaviour
         if (animator == null) animator = GetComponent<Animator>();
         if (bodyCollider == null) bodyCollider = GetComponent<Collider2D>();
 
-        // registro
+        // registro — atribui índice determinístico baseado em Count
         allInstances.Add(this);
-        myIndex = allInstances.IndexOf(this);
+        myIndex = allInstances.Count - 1;
     }
 
     void Start()
@@ -79,22 +79,24 @@ public class BirdController : MonoBehaviour
         transform.position = new Vector3(transform.position.x + rx, transform.position.y + ry, transform.position.z);
         Debug.Log($"[Bird:{name}] Start pos offset rx={rx:F2}, ry={ry:F2}");
 
-        // compute stopX if using auto spacing and no stopPoint assigned
-        if (stopPoint == null && useAutoSpacing)
+        // compute stopX if using auto spacing
+        if (useAutoSpacing)
         {
-            float baseX = (baseStopX != 0f) ? baseStopX : stopX;
+            float baseX = (baseStopX != 0f) ? baseStopX : (stopPoint != null ? stopPoint.position.x : stopX);
             myIndex = allInstances.IndexOf(this);
             stopX = baseX + myIndex * stopSpacing;
             Debug.Log($"[Bird:{name}] Auto spaced stopX assigned index={myIndex} stopX={stopX:F2}");
         }
         else if (stopPoint != null)
         {
-            Debug.Log($"[Bird:{name}] Using stopPoint {stopPoint.name} at x={stopPoint.position.x:F2}");
+            // se não usar auto spacing, usa exatamente stopPoint.x
+            stopX = stopPoint.position.x;
+            Debug.Log($"[Bird:{name}] Using stopPoint {stopPoint.name} at x={stopX:F2}");
         }
 
-        // compute stopY automatically to avoid vertical stacking when stopped
+        // compute stopY automatically: se baseStopY == 0 usamos a Y atual como baseline para manter alturas relativas
         {
-            float baseY = baseStopY; // if 0 user can set to desired baseline
+            float baseY = (baseStopY != 0f) ? baseStopY : transform.position.y;
             myIndex = allInstances.IndexOf(this);
             stopY = baseY + myIndex * stopYSpacing;
             Debug.Log($"[Bird:{name}] Auto spaced stopY assigned index={myIndex} stopY={stopY:F2}");
@@ -120,6 +122,7 @@ public class BirdController : MonoBehaviour
     {
         // remove do registro
         allInstances.Remove(this);
+        RecomputeAutoSpacingForAll();
     }
 
     void Update()
@@ -144,8 +147,7 @@ public class BirdController : MonoBehaviour
                 reachedStopX = true;
                 Debug.Log($"[Bird:{name}] reached stopX at {newX:F2}");
 
-                // when we stop, we want to move to our stopY (not player Y)
-                // start shooting coroutine with small randomized delay
+                // quando parou, começa a rotina de tiro com pequeno delay randômico
                 if (shootWhenStopped && shooter != null && shootingCoroutine == null)
                 {
                     float sd = Random.Range(0f, initialShootingDelayMax);
@@ -272,7 +274,7 @@ public class BirdController : MonoBehaviour
         if (otherObj == null) return;
 
         // 1) detecta o script Projectile diretamente (mais robusto)
-        var proj = otherObj.GetComponent<Projectile>();
+        var proj = otherObj.GetComponent<PoderPassaroProjectile>();
         if (proj != null)
         {
             Debug.Log($"[Bird:{name}] Hit by Projectile component -> applying AddPower and removing projectile");
@@ -322,7 +324,7 @@ public class BirdController : MonoBehaviour
         // nada relevante encontrado
     }
 
-    // Destroy helper that avoids MissingReferenceException
+    // Destroy helper that evita MissingReferenceException
     private void DestroySafe(GameObject go)
     {
         if (go == null) return;
@@ -339,4 +341,22 @@ public class BirdController : MonoBehaviour
 
     // expõe se está morto (usado pelo projétil como checagem de segurança)
     public bool IsDead => isDead;
+
+    // Recalcula índices e stop positions quando uma instância é removida
+    private static void RecomputeAutoSpacingForAll()
+    {
+        for (int i = 0; i < allInstances.Count; i++)
+        {
+            var b = allInstances[i];
+            b.myIndex = i;
+            if (b.useAutoSpacing)
+            {
+                float baseX = (b.baseStopX != 0f) ? b.baseStopX : (b.stopPoint != null ? b.stopPoint.position.x : b.stopX);
+                b.stopX = baseX + i * b.stopSpacing;
+
+                float baseY = (b.baseStopY != 0f) ? b.baseStopY : b.transform.position.y;
+                b.stopY = baseY + i * b.stopYSpacing;
+            }
+        }
+    }
 }

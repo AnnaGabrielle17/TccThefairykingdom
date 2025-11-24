@@ -80,11 +80,12 @@ public class BirdShooter : MonoBehaviour
         }
         else
         {
-            // fallback simples
+            // fallback simples: usa velocity (não linearVelocity)
             var rb = go.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
                 rb.linearVelocity = Vector2.left * projectileSpeed;
+                rb.gravityScale = 0f;
             }
             else
             {
@@ -114,7 +115,6 @@ public class BirdShooter : MonoBehaviour
 
     /// <summary>
     /// Destrói ou retorna ao pool todos os projéteis ativos.
-    /// (CORREÇÃO 1: percorre uma CÓPIA da lista e limpa no final)
     /// </summary>
     public void DestroyAllProjectiles()
     {
