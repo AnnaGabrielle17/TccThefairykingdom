@@ -203,7 +203,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 3238312996279345363}
   spawnOffset: {x: -0.6, y: -0.15}
   projectileSpeed: 3
-  projectileDamage: 1
+  projectileDamage: 3
   fireCooldown: 2.5
   lastFireTime: -999
 --- !u!114 &9025527514673924586
@@ -222,16 +222,16 @@ MonoBehaviour:
   animator: {fileID: 0}
   bodyCollider: {fileID: 0}
   leftSpeed: 3
-  verticalSpeed: 0
+  verticalSpeed: 2
   stopPoint: {fileID: 0}
   stopX: 0
-  stopTolerance: 0.02
+  stopTolerance: 0
   followVerticalWhileMoving: 1
   useAutoSpacing: 1
-  baseStopX: -2.5
-  stopSpacing: 0.8
+  baseStopX: -8
+  stopSpacing: 0.7
   baseStopY: 0
-  stopYSpacing: 0.7
+  stopYSpacing: 0
   myIndex: -1
   startXVariation: 0.25
   startYVariation: 0.2
