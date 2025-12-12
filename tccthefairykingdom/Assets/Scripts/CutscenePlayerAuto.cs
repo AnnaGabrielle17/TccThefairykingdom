@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 [System.Serializable]
-public class Cutscene
+public class CutsceneData
 {
     public string title;
     [TextArea(2, 8)]
@@ -26,8 +26,11 @@ public class CutscenePlayerAuto : MonoBehaviour
     public Image backgroundImage;     // Image full-screen que receberá os sprites
     public TMP_Text dialogueText;     // TextMeshProUGUI onde o texto aparece
 
+    [Header("Optional UI")]
+    public GameObject dialogueBox;    // painel/frame preto semitransparente atrás do texto (arraste aqui)
+
     [Header("Cutscenes")]
-    public List<Cutscene> cutscenes = new List<Cutscene>();
+    public List<CutsceneData> cutscenes = new List<CutsceneData>();
 
     [Header("Typing")]
     public float lettersPerSecond = 60f;
@@ -50,6 +53,10 @@ public class CutscenePlayerAuto : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         if (uiRoot != null) uiRoot.SetActive(false);
+
+        // se quiser garantir que o dialogueBox comece desativado no editor/play
+        if (dialogueBox != null)
+            dialogueBox.SetActive(false);
     }
 
     void Start()
@@ -79,6 +86,10 @@ public class CutscenePlayerAuto : MonoBehaviour
         for (int ci = index; ci < cutscenes.Count; ci++)
         {
             var cs = cutscenes[ci];
+
+            // Mostrar/ocultar a caixa de diálogo conforme exista texto
+            if (dialogueBox != null)
+                dialogueBox.SetActive(cs.lines != null && cs.lines.Length > 0);
 
             // background
             if (backgroundImage != null)
@@ -206,7 +217,6 @@ public class CutscenePlayerAuto : MonoBehaviour
         }
 
         // agora a nova cena está ativa — podemos destruir este manager/UI preservada
-        // (certifique-se de que a nova cena tem sua própria UI/manager se necessário)
         Destroy(gameObject);
         yield break;
     }
