@@ -200,6 +200,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca20f29e51141e47904ce28c8d9cebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 30
+  deathVFX: {fileID: 0}
+  hitSfx: {fileID: 0}
+  deathSfx: {fileID: 0}
   horizontalSpeed: 2
   verticalSpeed: 2
   verticalRange: 1
@@ -236,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f25e497368d51f4999c08bcc00b55ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 5
+  maxHp: 4
   crystalPrefab: {fileID: 0}
   deathDelay: 0.4
   destroyOnDie: 1

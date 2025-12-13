@@ -221,7 +221,7 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   bodyCollider: {fileID: 0}
-  leftSpeed: 3
+  leftSpeed: 2
   verticalSpeed: 2
   stopPoint: {fileID: 0}
   stopX: 0

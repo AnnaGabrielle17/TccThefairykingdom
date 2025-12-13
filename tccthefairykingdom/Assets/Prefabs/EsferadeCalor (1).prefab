@@ -236,6 +236,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedX: 2
-  amplitude: 5
+  amplitude: 8
   frequency: 0.5
   useFixedUpdate: 1

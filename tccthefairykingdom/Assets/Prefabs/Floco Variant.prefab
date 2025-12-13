@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floco Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4901736660254074865, guid: f75cea89882dbda438269fe5e36b8942, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5033624151088885065, guid: f75cea89882dbda438269fe5e36b8942, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.7158823
