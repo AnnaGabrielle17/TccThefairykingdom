@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaa4900cf4c58eb4b90e46bd8f01664b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 2
+  walkSpeed: 4
   flipSpriteWhenLeft: 1
   rb: {fileID: 5725882823897979396}
   bubblePrefab: {fileID: 4931135776634900473, guid: 34e2441e3b558984ead3b727e763a2eb, type: 3}
