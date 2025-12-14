@@ -7,21 +7,25 @@ public class HeraBossController : MonoBehaviour
     public State state = State.MovingLeft;
 
     [Header("Movement")]
-    public float leftSpeed = 3f;         // velocidade enquanto vai para a esquerda
-    public float hoverSpeed = 4f;        // velocidade de seguir no eixo Y
-    public float stopX = 0f;             // X onde ela para de se mover no eixo X (ajuste no Inspector)
-    public bool stopWhenXLessThan = true; // se true: para quando transform.x <= stopX (útil dependendo da sua cena)
+    public float leftSpeed = 3f;
+    public float hoverSpeed = 4f;
+    public float stopX = 0f;
+    public bool stopWhenXLessThan = true;
 
     [Header("Combat")]
     public int maxHealth = 500;
-    public int contactDamage = 30;       // dano se colidir com o player
-    public Transform firePoint;          // ponto de onde sai o projétil
-    public GameObject projectilePrefab;  // prefab do poder (imagem que você mostrou)
+    public int contactDamage = 30;
+    public Transform firePoint;
+    public GameObject projectilePrefab;
     public float projectileSpeed = 7f;
-    public float fireRate = 1.0f;        // tiros por segundo enquanto está em Hovering
+    public float fireRate = 1.0f;
 
     [Header("References")]
-    public Transform player;             // arrastar o player no Inspector
+    public Transform player;
+
+    [Header("Cutscene de vitória (boss)")]
+    public bool triggerVictoryCutsceneOnDeath = true;
+    public float bossDeathDelay = 0.6f; // tempo antes de chamar a cutscene (sincronizar com animação)
 
     Rigidbody2D rb;
     int currentHealth;
@@ -57,7 +61,6 @@ public class HeraBossController : MonoBehaviour
 
     void MoveLeft()
     {
-        // movimento constante para a esquerda
         Vector2 pos = rb.position;
         pos.x += -leftSpeed * Time.deltaTime;
         rb.MovePosition(pos);
@@ -84,7 +87,6 @@ public class HeraBossController : MonoBehaviour
     void EnterHover()
     {
         state = State.Hovering;
-        // centraliza X para evitar drift. Mantém a X atual.
         rb.position = new Vector2(transform.position.x, transform.position.y);
     }
 
@@ -111,14 +113,13 @@ public class HeraBossController : MonoBehaviour
     {
         Vector2 dir = (player.position - firePoint.position).normalized;
         GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
-        // tenta configurar um script no projétil que aceite Init
         var ice = proj.GetComponent<HeraIceProjectile>();
-if (ice != null) {
-    ice.Init(dir, projectileSpeed);
-}
+        if (ice != null)
+        {
+            ice.Init(dir, projectileSpeed);
+        }
         else
         {
-            // fallback: procura Rigidbody2D
             var rbp = proj.GetComponent<Rigidbody2D>();
             if (rbp != null)
             {
@@ -127,20 +128,6 @@ if (ice != null) {
         }
     }
 
-    // dano por contato
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Player"))
-        {
-            var ph = collision.collider.GetComponent<PlayerHealth>();
-            if (ph != null)
-            {
-                ph.TakeDamage(contactDamage);
-            }
-        }
-    }
-
-    // chamar para receber dano
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
@@ -149,11 +136,36 @@ if (ice != null) {
 
     void Die()
     {
-        // anim, som, drop, etc
+        // animação/som/drops aqui se quiser
+
+        if (triggerVictoryCutsceneOnDeath)
+        {
+            // Primeiro: tenta usar o GameManager_Cutscene_Simple (se você está usando essa versão)
+            var gmSimple = GameManager_Cutscene_Simple.Instance;
+            if (gmSimple != null)
+            {
+                gmSimple.OnEnemyDeathWithDelay(bossDeathDelay);
+            }
+            else
+            {
+                // Se não encontrou, tenta achar um GameObject chamado "GameManager"
+                // e enviar uma mensagem "OnEnemyDeathWithDelay" (não falhará se não existir).
+                GameObject gmObj = GameObject.Find("GameManager");
+                if (gmObj != null)
+                {
+                    // SendMessage tenta chamar qualquer método público com esse nome no GameManager.
+                    gmObj.SendMessage("OnEnemyDeathWithDelay", bossDeathDelay, SendMessageOptions.DontRequireReceiver);
+                }
+                else
+                {
+                    Debug.LogWarning("triggerVictoryCutsceneOnDeath está true, mas não encontrei GameManager_Cutscene_Simple nem GameObject 'GameManager' para enviar a mensagem.");
+                }
+            }
+        }
+
         Destroy(gameObject);
     }
 
-    // visualização no editor: linha vertical do stopX
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;

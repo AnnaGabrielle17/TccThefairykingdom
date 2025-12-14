@@ -3,16 +3,19 @@ using System.Collections;
 
 public class EnemyHealth : MonoBehaviour
 {
-      public int maxHp = 3;
+    public int maxHp = 3;
     public GameObject crystalPrefab;
     public float deathDelay = 0.4f;
     public bool destroyOnDie = true;
 
-    [Header("When hit (flash/invulnerability)")]
+    [Header("Quando acertado (piscar/invulnerabilidade)")]
     public float invulnerableDuration = 0.6f;
     public int flashCount = 6; // quantas vezes pisca durante a invul
-    public Color flashColor = Color.white; // cor de "hit" (ou use Alpha)
-    
+    public Color flashColor = Color.white; // cor de "hit"
+
+    [Header("Cutscene de vitória (apenas se true)")]
+    public bool triggerVictoryCutsceneOnDeath = false; // leave false para inimigas normais
+
     private int currentHp;
     private bool isDead = false;
     private bool invulnerable = false;
@@ -22,7 +25,6 @@ public class EnemyHealth : MonoBehaviour
     private Animator animator;
     private MonoBehaviour[] behavioursToDisable;
 
-    // cache dos sprite renderers pra piscar
     private SpriteRenderer[] spriteRenderers;
     private Color[] originalColors;
 
@@ -45,19 +47,13 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int amount)
     {
         if (isDead) return;
-        if (invulnerable)
-        {
-            Debug.Log($"{gameObject.name} is invulnerable; ignored damage {amount}");
-            return;
-        }
+        if (invulnerable) return;
 
         currentHp -= amount;
-        Debug.Log($"{gameObject.name} levou {amount} de dano. Vida agora: {currentHp}/{maxHp}");
 
         if (animator != null)
             animator.SetTrigger("Hit");
 
-        // start flash/invulnerability
         if (invulnerableDuration > 0f)
             StartCoroutine(FlashWhenHit());
 
@@ -71,7 +67,6 @@ public class EnemyHealth : MonoBehaviour
         float interval = invulnerableDuration / Mathf.Max(1, flashCount);
         for (int i = 0; i < flashCount; i++)
         {
-            // alterna cor (flashColor) e original
             for (int s = 0; s < spriteRenderers.Length; s++)
             {
                 if (spriteRenderers[s] != null)
@@ -80,7 +75,6 @@ public class EnemyHealth : MonoBehaviour
             yield return new WaitForSeconds(interval);
         }
 
-        // garante restaurar cor original
         for (int s = 0; s < spriteRenderers.Length; s++)
             if (spriteRenderers[s] != null) spriteRenderers[s].color = originalColors[s];
 
@@ -124,8 +118,28 @@ public class EnemyHealth : MonoBehaviour
             Debug.LogWarning("EnemyHealth: crystalPrefab não atribuído.");
         }
 
+        // ********* Aqui está a correção *********
+        // Chama o GameManager correto (versão Simple) usando OnEnemyDeathWithDelay,
+        // para que o GameManager trate o delay e mostre a cutscene.
+        if (triggerVictoryCutsceneOnDeath)
+        {
+            // Tenta GameManager_Cutscene_Simple primeiro
+            var gmSimple = GameManager_Cutscene_Simple.Instance;
+            if (gmSimple != null)
+            {
+                gmSimple.OnEnemyDeathWithDelay(deathDelay);
+            }
+            else
+            {
+                // Se você estiver usando outra classe de GameManager (com nome diferente),
+                // você pode adicionar tratamentos aqui, ou só logar o warning.
+                Debug.LogWarning("triggerVictoryCutsceneOnDeath está true, mas GameManager_Cutscene_Simple.Instance é null.");
+            }
+        }
+
+        // destruir ou desativar inimigo (a chamada à cutscene já está sendo tratada pelo GameManager)
         if (destroyOnDie)
-            Destroy(gameObject, deathDelay);
+            Destroy(gameObject, deathDelay); // mantém small delay para animação
         else
             gameObject.SetActive(false);
     }
